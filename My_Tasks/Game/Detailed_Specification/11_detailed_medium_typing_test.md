@@ -1,0 +1,55 @@
+Category: Game
+
+Prompt style: Detailed Specification
+
+Title: Typing Speed Test Game
+
+Prompt: Create a typing speed test that measures words per minute and accuracy. Display a paragraph of text to type (around 100 words) with the first word highlighted. Show an input field below where the user types. As the user types, highlight the current word being typed in blue. When a word is completed correctly, turn it green and move highlight to next word. If a word is typed incorrectly, turn it red but still move to next word. Start a 60-second countdown timer when user begins typing their first character. Display timer, current WPM (calculated live as correct words divided by elapsed minutes), and accuracy percentage. When timer reaches zero or user completes all words, show results screen with final WPM, accuracy percentage, total words typed, correct words, incorrect words, and character accuracy (correct characters divided by total characters typed). Include difficulty levels: Easy (common words), Medium (mixed vocabulary), Hard (technical terms). Display a chart showing WPM over time in 10-second intervals. Highlight personal best WPM in gold if current attempt beats previous record. Include Restart and Change Difficulty buttons.
+
+Required libraries: react, tailwindcss, lucide-react, recharts
+
+## Rubric
+
+| ID        | Description                                                                                         | Weight | Rationale                                                                          | Dependent On |
+| --------- | --------------------------------------------------------------------------------------------------- | ------ | ---------------------------------------------------------------------------------- | ------------ |
+| content-1 | Display paragraph of text to type containing approximately 100 words                                | major  | Text paragraph provides typing content.                                            | None         |
+| visual-1  | Highlight first word initially                                                                      | major  | Initial highlight shows where typing begins.                                       | content-1    |
+| visual-2  | Display input field below text paragraph                                                            | major  | Input enables user typing.                                                         | None         |
+| state-1   | Track current word being typed                                                                      | major  | Word tracking manages typing progress.                                             | None         |
+| visual-3  | Highlight current word in blue color                                                                | major  | Blue indicates active typing target.                                               | state-1      |
+| interaction-1 | Compare typed word to target word when space or punctuation is entered                          | major  | Word completion triggers correctness check.                                        | visual-2     |
+| visual-4  | Turn word green when typed correctly                                                                | major  | Green confirms correct typing.                                                     | interaction-1 |
+| visual-5  | Turn word red when typed incorrectly                                                                | major  | Red indicates typing error.                                                        | interaction-1 |
+| state-2   | Move to next word after current word is completed regardless of correctness                         | major  | Auto-advancement maintains typing flow.                                            | interaction-1 |
+| visual-6  | Display 60-second countdown timer                                                                   | major  | Timer creates time-bounded challenge.                                              | None         |
+| state-3   | Start timer countdown when user types first character                                               | major  | First keystroke triggers timer initialization.                                     | visual-2     |
+| state-4   | Decrement timer by 1 second every second                                                            | major  | Timer countdown is time-evolving state.                                            | state-3      |
+| content-2 | Display current WPM calculated live                                                                 | major  | Live WPM provides real-time performance feedback.                                  | None         |
+| state-5   | Calculate WPM as (correct words / elapsed minutes)                                                  | major  | WPM calculation is derived from correctness and time.                              | content-2    |
+| state-6   | Update WPM display continuously as user types                                                       | major  | Continuous update shows evolving performance.                                      | state-5      |
+| content-3 | Display accuracy percentage                                                                         | major  | Accuracy shows typing correctness.                                                 | None         |
+| state-7   | Calculate accuracy as (correct words / total words attempted) × 100                                 | major  | Accuracy is derived percentage.                                                    | content-3    |
+| state-8   | Track correct words count                                                                           | major  | Correct count enables WPM and accuracy calculations.                               | interaction-1 |
+| state-9   | Track incorrect words count                                                                         | major  | Incorrect count enables accuracy calculation.                                      | interaction-1 |
+| state-10  | Stop timer and show results when 60 seconds elapse                                                  | major  | Time expiration triggers results screen.                                           | state-4      |
+| state-11  | Stop timer and show results when all words are completed                                            | major  | Completion triggers results screen.                                                | state-2      |
+| interaction-2 | Display results screen after test ends                                                          | major  | Results screen shows final performance metrics.                                    | state-10     |
+| content-4 | Display final WPM on results screen                                                                 | major  | Final WPM shows overall typing speed.                                              | interaction-2 |
+| content-5 | Display final accuracy percentage on results screen                                                 | major  | Final accuracy shows overall correctness.                                          | interaction-2 |
+| content-6 | Display total words typed on results screen                                                         | major  | Total words quantifies attempt scope.                                              | interaction-2 |
+| content-7 | Display correct words count on results screen                                                       | major  | Correct count shows successful typing.                                             | interaction-2 |
+| content-8 | Display incorrect words count on results screen                                                     | major  | Incorrect count shows errors made.                                                 | interaction-2 |
+| content-9 | Display character accuracy on results screen                                                        | major  | Character-level accuracy provides granular correctness metric.                     | interaction-2 |
+| state-12  | Calculate character accuracy as (correct characters / total characters) × 100                       | major  | Character accuracy requires character-level comparison.                            | content-9    |
+| visual-7  | Display difficulty selector with Easy, Medium, Hard options                                         | major  | Difficulty selection customizes vocabulary complexity.                             | None         |
+| state-13  | Load common words when Easy difficulty is selected                                                  | major  | Easy uses simple vocabulary.                                                       | visual-7     |
+| state-14  | Load mixed vocabulary when Medium difficulty is selected                                            | major  | Medium uses varied vocabulary.                                                     | visual-7     |
+| state-15  | Load technical terms when Hard difficulty is selected                                               | major  | Hard uses complex vocabulary.                                                      | visual-7     |
+| visual-8  | Display chart showing WPM over time in 10-second intervals                                          | major  | WPM chart visualizes performance progression.                                      | interaction-2 |
+| state-16  | Record WPM value every 10 seconds during test                                                       | major  | Interval sampling captures WPM evolution.                                          | visual-8     |
+| state-17  | Track personal best WPM across all attempts                                                         | major  | Best WPM provides historical peak metric.                                          | None         |
+| visual-9  | Highlight personal best WPM in gold on results if current beats previous                            | major  | Gold highlighting celebrates record breaking.                                      | state-17     |
+| visual-10 | Display Restart button on results screen                                                            | major  | Restart enables new attempt.                                                       | None         |
+| interaction-3 | Reset all state and begin new test when Restart is clicked                                      | major  | Restart creates fresh test attempt.                                                | visual-10    |
+| visual-11 | Display Change Difficulty button                                                                    | major  | Change Difficulty enables vocabulary switching.                                    | None         |
+| interaction-4 | Load new text with selected difficulty when Change Difficulty is clicked                        | major  | Difficulty change updates test content.                                            | visual-11    |

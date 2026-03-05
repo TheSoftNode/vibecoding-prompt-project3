@@ -1,0 +1,45 @@
+Category: Web Application
+
+Prompt style: Conversational
+
+Title: Expense Tracker with Budgets
+
+Prompt: I want to track my expenses with budget limits. Let me add an expense with description, amount, and category dropdown (Food, Transport, Entertainment, Other). Show all expenses in a list with their details and a delete button for each. At the top, display the total amount spent and a breakdown showing how much I spent per category with a progress bar for each. Set monthly budgets: Food $500, Transport $200, Entertainment $150, Other $100. Progress bars turn yellow when reaching 80% of budget and red when exceeding budget. Show "Overspent" badge next to categories that exceed their budget. Display daily average spend calculated as total divided by current day of month. When I delete an expense, update totals, breakdowns, progress bars, and daily average immediately.
+
+Required libraries: react, tailwindcss, lucide-react
+
+## Rubric
+
+| ID            | Description                                                                                                   | Weight | Rationale                                                                              | Dependent On  |
+| ------------- | ------------------------------------------------------------------------------------------------------------- | ------ | -------------------------------------------------------------------------------------- | ------------- |
+| visual-1      | Render input fields for expense description and amount                                                        | major  | Description and amount are the core attributes of each expense entry.                  | None          |
+| visual-2      | Display a category dropdown with four options: Food, Transport, Entertainment, and Other                      | major  | Category selection enables expense classification for breakdown calculations.          | None          |
+| visual-3      | Display an add button to create new expense entries                                                           | major  | Add button triggers expense creation from input values.                                | None          |
+| interaction-1 | Add a new expense to the list when the add button is clicked                                                  | major  | Expense addition is the primary data creation interaction.                             | visual-3      |
+| content-1     | Display each expense with its description, amount, category, and a delete button                              | major  | These four elements constitute the complete representation of an expense item.         | None          |
+| interaction-2 | Remove an expense from the list when its delete button is clicked                                             | major  | Deletion enables users to correct mistakes or remove outdated entries.                 | content-1     |
+| content-2     | Display the total amount spent across all expenses                                                            | major  | Total provides aggregate spending visibility at a glance.                              | None          |
+| layout-1      | Position the total amount display at the top of the page                                                      | major  | Top placement ensures the summary metric is immediately visible.                       | content-2     |
+| content-3     | Display a category breakdown showing the amount spent in each of the four categories                          | major  | Per-category totals enable users to identify spending patterns.                        | None          |
+| layout-2      | Position the category breakdown at the top of the page                                                        | major  | Top placement groups the breakdown with the total for cohesive summary presentation.   | content-3     |
+| visual-4      | Display a progress bar for each category in the breakdown                                                     | major  | Progress bars provide visual budget consumption feedback.                              | content-3     |
+| state-1       | Set Food budget limit to $500                                                                                 | major  | Food budget constraint enables budget tracking for the Food category.                  | None          |
+| state-2       | Set Transport budget limit to $200                                                                            | major  | Transport budget constraint enables budget tracking for the Transport category.        | None          |
+| state-3       | Set Entertainment budget limit to $150                                                                        | major  | Entertainment budget constraint enables budget tracking for the Entertainment category.| None          |
+| state-4       | Set Other budget limit to $100                                                                                | major  | Other budget constraint enables budget tracking for the Other category.                | None          |
+| state-5       | Calculate progress bar fill as category spent amount divided by category budget                               | major  | Progress fill is a derived percentage requiring division of spent by budget limit.     | visual-4, state-1 |
+| visual-5      | Apply yellow color to progress bar when category spending reaches 80% of budget                               | major  | Yellow signals approaching budget limit as a warning state.                            | state-5       |
+| visual-6      | Apply red color to progress bar when category spending exceeds 100% of budget                                 | major  | Red signals budget violation requiring attention.                                      | state-5       |
+| visual-7      | Display "Overspent" badge next to categories that exceed their budget                                         | major  | Overspent badge provides explicit text confirmation of budget violation.               | state-5       |
+| state-6       | Show "Overspent" badge only when category spending exceeds category budget                                    | major  | Conditional badge display tests threshold comparison logic.                            | visual-7      |
+| content-4     | Display daily average spend calculated as total divided by current day of month                               | major  | Daily average is a derived time-based metric requiring date-aware calculation.         | content-2     |
+| state-7       | Calculate current day of month from today's date                                                              | major  | Day-of-month extraction enables daily average computation.                             | content-4     |
+| state-8       | Divide total amount by current day of month to produce daily average                                          | major  | Daily average calculation is a derived value dependent on two variables.               | content-4, state-7 |
+| state-9       | Recalculate and update the total amount when an expense is added                                              | major  | Total synchronization ensures accuracy as expenses are created.                        | content-2     |
+| state-10      | Recalculate and update the total amount when an expense is deleted                                            | major  | Total must reflect removals to maintain correctness.                                   | content-2     |
+| state-11      | Recalculate and update the category breakdown when an expense is added                                        | major  | Category totals must update when new expenses are added to their respective categories.| content-3     |
+| state-12      | Recalculate and update the category breakdown when an expense is deleted                                      | major  | Category totals must update when expenses are removed from their categories.           | content-3     |
+| state-13      | Update all progress bar fills when an expense is added or deleted                                             | major  | Progress bars synchronize with category spending changes.                              | state-5       |
+| state-14      | Update progress bar colors when category spending crosses 80% or 100% thresholds                              | major  | Color transitions must trigger when budget percentage thresholds are crossed.          | visual-5, visual-6 |
+| state-15      | Update "Overspent" badge visibility when category spending crosses budget threshold                           | major  | Badge appearance/disappearance must synchronize with budget violation state.           | state-6       |
+| state-16      | Recalculate and update daily average when an expense is added or deleted                                      | major  | Daily average must reflect current total after any expense modification.               | content-4     |

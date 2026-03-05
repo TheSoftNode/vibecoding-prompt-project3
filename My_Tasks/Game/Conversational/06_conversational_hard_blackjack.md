@@ -1,0 +1,66 @@
+Category: Game
+
+Prompt style: Conversational
+
+Title: Blackjack Card Game
+
+Prompt: I want to play blackjack against a dealer. Start with 1000 chips. Each round I place a bet (minimum 10, maximum my current chips), then get dealt two cards face up. Dealer gets one card face up, one face down. Show card values (A=1 or 11, face cards=10). Display my hand total and dealer's visible total. I can Hit (take card), Stand (end turn), Double Down (double bet and take one card), or Split (if two cards match, split into two hands). After I stand, dealer reveals hidden card and hits until reaching 17 or higher. Winner determined by closest to 21 without going over. Busting over 21 loses immediately. Blackjack (21 with first two cards) pays 3:2. Push (tie) returns bet. Track chips, hands won/lost, win rate percentage, biggest win, and current streak. Show quick rules reference. Include sound effects toggle and animation for card dealing. Save game state so chips persist across sessions. Preload with standard 52-card deck that reshuffles when less than 20 cards remain.
+
+Required libraries: react, tailwindcss, lucide-react, framer-motion
+
+## Rubric
+
+| ID        | Description                                                                                         | Weight | Rationale                                                                          | Dependent On |
+| --------- | --------------------------------------------------------------------------------------------------- | ------ | ---------------------------------------------------------------------------------- | ------------ |
+| state-1   | Initialize player with 1000 chips                                                                   | major  | Starting chips establish betting economy.                                          | None         |
+| visual-1  | Display bet input with minimum 10 and maximum current chips                                         | major  | Bet interface enables wager placement.                                             | None         |
+| interaction-1 | Lock bet and deal cards when player places bet                                                  | major  | Bet confirmation starts round.                                                     | visual-1     |
+| state-2   | Create standard 52-card deck                                                                        | major  | Deck provides card source.                                                         | None         |
+| state-3   | Deal two cards face up to player                                                                    | major  | Initial deal establishes player hand.                                              | interaction-1 |
+| state-4   | Deal one card face up and one face down to dealer                                                   | major  | Partial dealer visibility creates information asymmetry.                           | interaction-1 |
+| content-1 | Display player's two cards                                                                          | major  | Card display shows player hand.                                                    | state-3      |
+| content-2 | Display dealer's face-up card                                                                       | major  | Visible dealer card provides partial information.                                  | state-4      |
+| visual-2  | Keep dealer's second card face down                                                                 | major  | Hidden card creates uncertainty.                                                   | state-4      |
+| state-5   | Calculate card values: A=1 or 11, face cards=10, numbers=face value                                 | major  | Value calculation implements blackjack card scoring.                               | None         |
+| content-3 | Display player hand total                                                                           | major  | Total shows proximity to 21.                                                       | state-5      |
+| content-4 | Display dealer's visible total                                                                      | major  | Partial dealer total informs player decisions.                                     | state-5      |
+| state-6   | Calculate optimal Ace value (1 or 11) to maximize hand without busting                              | major  | Ace flexibility requires conditional value selection.                              | state-5      |
+| visual-3  | Display Hit button                                                                                  | major  | Hit enables taking additional cards.                                               | None         |
+| interaction-2 | Deal one additional card to player when Hit is clicked                                          | major  | Hit adds card to player hand.                                                      | visual-3     |
+| visual-4  | Display Stand button                                                                                | major  | Stand ends player turn.                                                            | None         |
+| interaction-3 | End player turn when Stand is clicked                                                           | major  | Stand transitions to dealer play.                                                  | visual-4     |
+| visual-5  | Display Double Down button                                                                          | major  | Double Down enables bet doubling.                                                  | None         |
+| interaction-4 | Double bet amount and deal exactly one card when Double Down is clicked                         | major  | Double Down implements bet-and-draw mechanic.                                      | visual-5     |
+| state-7   | Automatically end player turn after Double Down card is dealt                                       | major  | Double Down forces immediate stand.                                                | interaction-4 |
+| visual-6  | Display Split button when player's two cards have equal value                                       | major  | Split button conditional on matching cards.                                        | state-3      |
+| interaction-5 | Create two separate hands and deal one card to each when Split is clicked                       | major  | Split divides hand into two independent hands.                                     | visual-6     |
+| state-8   | Track each split hand independently for hits and stands                                             | major  | Split hand independence requires separate state management.                        | interaction-5 |
+| state-9   | Detect bust when player hand exceeds 21                                                             | major  | Bust detection implements immediate loss condition.                                | content-3    |
+| interaction-6 | Immediately end round and lose bet when player busts                                            | major  | Bust triggers instant loss.                                                        | state-9      |
+| interaction-7 | Reveal dealer's face-down card after player stands                                              | major  | Dealer reveal transitions to dealer play phase.                                    | interaction-3 |
+| state-10  | Dealer hits (takes cards) until total reaches 17 or higher                                          | major  | Dealer strategy implements house rules.                                            | interaction-7 |
+| state-11  | Dealer stands when total reaches 17 or higher                                                       | major  | Dealer auto-stand implements house rules.                                          | state-10     |
+| state-12  | Detect bust when dealer hand exceeds 21                                                             | major  | Dealer bust creates player win condition.                                          | state-10     |
+| state-13  | Determine winner by comparing player and dealer totals                                              | major  | Total comparison implements win logic.                                             | state-11     |
+| state-14  | Detect blackjack when initial two cards total exactly 21                                            | major  | Blackjack detection implements premium win condition.                              | state-3      |
+| state-15  | Pay 3:2 on bet when player has blackjack and dealer does not                                        | major  | Blackjack payout multiplier rewards natural 21.                                    | state-14     |
+| state-16  | Detect push (tie) when player and dealer have equal totals                                          | major  | Tie detection implements bet return condition.                                     | state-13     |
+| interaction-8 | Return bet to player on push                                                                    | major  | Push refunds bet without win or loss.                                              | state-16     |
+| state-17  | Add winnings to chip count when player wins                                                         | major  | Win accumulation increases player bankroll.                                        | state-13     |
+| state-18  | Subtract bet from chip count when player loses                                                      | major  | Loss deduction decreases player bankroll.                                          | state-13     |
+| content-5 | Display current chip count                                                                          | major  | Chip display shows available bankroll.                                             | None         |
+| content-6 | Display hands won count                                                                             | major  | Win tracking shows success frequency.                                              | None         |
+| content-7 | Display hands lost count                                                                            | major  | Loss tracking shows failure frequency.                                             | None         |
+| content-8 | Display win rate percentage                                                                         | major  | Win rate provides normalized success metric.                                       | None         |
+| state-19  | Calculate win rate as (hands won / total hands) × 100                                               | major  | Win rate is derived percentage.                                                    | content-8    |
+| content-9 | Display biggest single win amount                                                                   | major  | Biggest win shows peak profit moment.                                              | None         |
+| state-20  | Track biggest win by comparing each win to maximum                                                  | major  | Max tracking requires ongoing comparison.                                          | content-9    |
+| content-10 | Display current streak (consecutive wins or losses)                                                | major  | Streak shows momentum.                                                             | None         |
+| state-21  | Increment win streak on win, reset on loss                                                          | major  | Streak tracking alternates between win and loss sequences.                         | content-10   |
+| visual-7  | Display quick rules reference panel                                                                 | major  | Rules provide gameplay guidance.                                                   | None         |
+| visual-8  | Display sound effects toggle                                                                        | major  | Toggle enables audio control.                                                      | None         |
+| interaction-9 | Enable or disable sound effects when toggle is clicked                                          | major  | Toggle controls audio playback.                                                    | visual-8     |
+| visual-9  | Animate card dealing with sliding motion                                                            | major  | Animation enhances visual appeal.                                                  | state-3      |
+| state-22  | Reshuffle deck when fewer than 20 cards remain                                                      | major  | Deck reset prevents card depletion.                                                | state-2      |
+| state-23  | Save chip count to browser storage after each round                                                 | major  | Persistence maintains bankroll across sessions.                                    | state-17     |
+| state-24  | Load saved chip count on page initialization                                                        | major  | Load functionality restores previous session state.                                | state-1      |
