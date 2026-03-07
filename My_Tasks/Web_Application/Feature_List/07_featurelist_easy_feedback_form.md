@@ -4,7 +4,7 @@ Prompt style: Feature List
 
 Title: Product Feedback Form
 
-Prompt: Build a product feedback form. Users should provide their name, email, and feedback text. Add a rating dropdown with options 1 to 5 stars. Include a submit button that displays all submitted feedback entries below the form, and the form fields should reset to empty after submission. Each entry should show name, rating, and feedback text.
+Prompt: Build a product feedback form. Users should provide their name, email, and feedback text. Add a rating dropdown with options 1 to 5 stars. Include a submit button that displays all submitted feedback entries below the form. The form fields should automatically clear after each successful submission to prepare for the next entry. Each entry should show name, rating, and feedback text.
 
 Required libraries: react, tailwindcss, lucide-react
 
@@ -21,4 +21,4 @@ Required libraries: react, tailwindcss, lucide-react
 | 7   | content     | Label submitted feedback entries with name                                   | major  | The name field identifies who submitted each piece of feedback, providing attribution and context.                               | C5           |
 | 8   | content     | Label submitted feedback entries with rating                                 | major  | The rating value shows the satisfaction score for each feedback, which is essential for evaluating product performance.          | C5           |
 | 9   | content     | Label submitted feedback entries with feedback text                          | major  | The feedback text contains the detailed user comments and is the most important information in each submission.                  | C5           |
-| 10  | layout      | Position feedback entries below the form                                     | minor  | Placing entries below the form creates a logical flow where users input above and see results below.                             | C7           |
+| 10  | layout      | Position feedback entries below the form                                     | minor  | Placing entries below the form creates a logical flow where users input above and see results below.                             | C5           |
