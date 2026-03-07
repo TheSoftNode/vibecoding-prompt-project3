@@ -4,7 +4,7 @@ Prompt style: Terse
 
 Title: Number Guessing Game
 
-Prompt: Number guessing game. Computer picks random number 1-100. Player inputs guess and clicks Submit. Show "Too high", "Too low", or "Correct! You won in X guesses" message. Display guess count. Reset button generates a new random number, and the guess count automatically resets to zero and remains at zero until the first guess of the new game.
+Prompt: Number guessing game. Computer picks random number 1-100. Player inputs guess and clicks Submit. Show "Too high", "Too low", or "Correct! You won in X guesses" after each guess. Display guess count. Reset button starts new game with new random number and guess count returns to zero.
 
 Required libraries: react, tailwindcss
 
