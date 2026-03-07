@@ -4,7 +4,7 @@ Prompt style: Terse
 
 Title: Number Guessing Game
 
-Prompt: Number guessing game. Computer picks random number 1-100. Player inputs guess and clicks Submit. Show "Too high", "Too low", or "Correct! You won in X guesses" message. Display guess count. Reset button starts new game.
+Prompt: Number guessing game. Computer picks random number 1-100. Player inputs guess and clicks Submit. Show "Too high", "Too low", or "Correct! You won in X guesses" message. Display guess count. Reset button generates a new random number and the guess count automatically resets to zero for the new game.
 
 Required libraries: react, tailwindcss
 
@@ -23,4 +23,4 @@ Required libraries: react, tailwindcss
 | 9   | state       | Increment guess count each time Submit is clicked                         | major  | Incrementing the counter on each guess ensures accurate tracking of the player's total attempts for performance measurement.               | C8            |
 | 10  | visual      | Display a Reset button                                                    | major  | The Reset button provides the interface control that allows players to start a new game with a fresh target number.                        | None          |
 | 11  | interaction | Generate new random number when Reset button is clicked                   | major  | Generating a new random number when resetting ensures each game session has a unique target for the player to discover.                    | C10           |
-| 12  | state       | Reset guess count to zero when Reset button is clicked                    | major  | Resetting the counter to zero ensures the new game starts with clean state and accurate attempt tracking.                                  | C11           |
+| 12  | state       | Reset guess count to zero automatically when a new game begins            | major  | Automatically resetting the counter to zero when a new game is detected ensures clean state and accurate attempt tracking without direct user interaction with the counter. | C11           |
