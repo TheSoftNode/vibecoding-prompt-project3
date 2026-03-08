@@ -18,12 +18,11 @@ Required libraries: react, tailwindcss
 | 4   | visual      | Display an add button                                                                 | major  | The add button is how you add items to the list.                                  | None         |
 | 5   | interaction | Add new item with name, quantity, and category to the list when add button is clicked | major  | Clicking add creates a new item with all the details filled in.                   | C4           |
 | 6   | visual      | Display Produce items in green, Dairy items in blue, and Meat items in red            | major  | Color coding makes it easier to scan the list by category type.                   | C5           |
-| 7   | visual      | Display checkbox for each item                                                        | major  | Checkboxes let you mark items as bought.                                          | C5           |
-| 8   | interaction | Toggle item checked status when checkbox is clicked                                   | major  | Clicking the checkbox marks the item as bought or unbought.                       | C7           |
-| 9   | state       | Calculate and display total item count                                                | major  | The count updates automatically to show how many items are on the list.           | C5           |
-| 10  | visual      | Display delete button for each item                                                   | major  | The delete button lets you remove items you don't need.                           | C5           |
-| 11  | interaction | Remove item from list when delete button is clicked                                   | major  | Clicking delete removes that item from the list.                                  | C10          |
-| 12  | layout      | Position the delete button on the right side of each item                             | minor  | Putting delete on the right keeps it accessible but out of the way.               | C10          |
+| 7   | interaction | Check off items by clicking a checkbox when bought                                    | major  | Clicking the checkbox marks items as bought to track shopping progress.           | C5           |
+| 8   | state       | Calculate and display total item count                                                | major  | The count updates automatically to show how many items are on the list.           | C5           |
+| 9   | visual      | Display delete button for each item                                                   | major  | The delete button lets you remove items you don't need.                           | C5           |
+| 10  | interaction | Remove item from list when delete button is clicked                                   | major  | Clicking delete removes that item from the list.                                  | C9           |
+| 11  | layout      | Position the delete button on the right side of each item                             | minor  | Putting delete on the right keeps it accessible but out of the way.               | C9           |
 
 ## Justification
 
