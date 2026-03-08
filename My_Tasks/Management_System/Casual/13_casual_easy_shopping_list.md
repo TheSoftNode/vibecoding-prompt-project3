@@ -12,17 +12,17 @@ Required libraries: react, tailwindcss
 
 | #   | ID          | Description                                                                           | Weight | Rationale                                                                         | Dependent On |
 | --- | ----------- | ------------------------------------------------------------------------------------- | ------ | --------------------------------------------------------------------------------- | ------------ |
-| 1   | visual      | Render input field for item name                                                      | major  | Entering the item name is how you specify what to buy.                            | None         |
-| 2   | visual      | Render input field for quantity                                                       | major  | The quantity field lets you specify how many of each item to get.                 | None         |
-| 3   | content     | Display category selector with Produce, Dairy, and Meat options                       | major  | The three category options organize items by type.                                | None         |
-| 4   | visual      | Display an add button                                                                 | major  | The add button is how you add items to the list.                                  | None         |
-| 5   | interaction | Add new item with name, quantity, and category to the list when add button is clicked | major  | Clicking add creates a new item with all the details filled in.                   | C4           |
-| 6   | visual      | Display Produce items in green, Dairy items in blue, and Meat items in red            | major  | Color coding makes it easier to scan the list by category type.                   | C5           |
-| 7   | interaction | Check off items by clicking a checkbox when bought                                    | major  | Clicking the checkbox marks items as bought to track shopping progress.           | C5           |
-| 8   | state       | Calculate and display total item count                                                | major  | The count updates automatically to show how many items are on the list.           | C5           |
-| 9   | visual      | Display delete button for each item                                                   | major  | The delete button lets you remove items you don't need.                           | C5           |
-| 10  | interaction | Remove item from list when delete button is clicked                                   | major  | Clicking delete removes that item from the list.                                  | C9           |
-| 11  | layout      | Position the delete button on the right side of each item                             | minor  | Putting delete on the right keeps it accessible but out of the way.               | C9           |
+| 1   | visual      | Render input field for item name                                                      | major  | The input field is the primary way to specify what items need to be purchased.                                  | None         |
+| 2   | visual      | Render input field for quantity                                                       | major  | The quantity field allows tracking how many of each item to buy for accurate shopping planning.                 | None         |
+| 3   | content     | Display category selector with Produce, Dairy, and Meat options                       | major  | The category selector provides the three options needed to organize items by type.                              | None         |
+| 4   | visual      | Display an add button                                                                 | major  | The add button triggers the action of adding new items to the shopping list.                                    | None         |
+| 5   | interaction | Add new item with name, quantity, and category to the list when add button is clicked | major  | Adding items with all details captures the complete shopping information for each entry.                        | C4           |
+| 6   | visual      | Display Produce items in green, Dairy items in blue, and Meat items in red            | major  | Color coding by category makes it faster to scan and locate items by type while shopping.                       | C5           |
+| 7   | interaction | Check off items by clicking a checkbox when bought                                    | major  | Checking off items tracks what's already been purchased to avoid buying duplicates.                             | C5           |
+| 8   | state       | Calculate and display total item count                                                | major  | The count is computed automatically to show how many items are on the list without manual tracking.             | C5           |
+| 9   | visual      | Display delete button for each item                                                   | major  | The delete button provides a way to remove items that are no longer needed.                                     | C5           |
+| 10  | interaction | Remove item from list when delete button is clicked                                   | major  | Deleting items cleans up the list by removing entries that are no longer relevant.                              | C9           |
+| 11  | layout      | Position the delete button on the right side of each item                             | minor  | Placing delete on the right keeps it accessible while preventing accidental clicks during normal list viewing.  | C9           |
 
 ## Justification
 
