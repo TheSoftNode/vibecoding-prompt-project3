@@ -2,9 +2,9 @@ Category: Quick Tools
 
 Prompt style: Feature List
 
-Title: Unit Converter Tool
+Title: Crypto Wallet Address Validator
 
-Prompt: Build unit converter. Category dropdown: Length, Weight, Temperature. Two dropdowns for from/to units. Input field for value. Result displays instantly on value change. Swap units button reverses conversion. Supports: meters/feet/inches, kg/lbs/oz, Celsius/Fahrenheit/Kelvin. Clear button resets.
+Prompt: Build crypto wallet address validator. Blockchain dropdown at top: Ethereum, Bitcoin, Solana. Paste input field for wallet address below dropdown. Validate button below input checks format. Result shows green checkmark with "Valid" or red X with "Invalid" below button. Address type label displays below result: "Ethereum (ERC-20)", "Bitcoin (Legacy/SegWit)", "Solana (Base58)".
 
 Required libraries: react, tailwindcss, lucide-react
 
