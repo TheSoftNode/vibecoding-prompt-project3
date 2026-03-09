@@ -4,26 +4,24 @@ Prompt style: Casual
 
 Title: Smart Shopping List
 
-Prompt: Shopping list app. Add items with quantity and category (Produce, Dairy, Meat). Categories show in different colors: Produce in green, Dairy in blue, Meat in red. Check off items when bought. Calculate and display total item count. Delete button on each item positioned on the right.
+Prompt: Shopping list app. Add items with name, price, and category (Produce, Dairy, Meat). Display items with category colors: Produce in green, Dairy in blue, Meat in red. Show total cost below the list as the sum of all prices.
 
 Required libraries: react, tailwindcss
 
 ## Rubric
 
-| #   | ID          | Description                                                                           | Weight | Rationale                                                                         | Dependent On |
-| --- | ----------- | ------------------------------------------------------------------------------------- | ------ | --------------------------------------------------------------------------------- | ------------ |
-| 1   | visual      | Render input field for item name                                                      | major  | The input field is the primary way to specify what items need to be purchased.                                  | None         |
-| 2   | visual      | Render input field for quantity                                                       | major  | The quantity field allows tracking how many of each item to buy for accurate shopping planning.                 | None         |
-| 3   | content     | Display category selector with Produce, Dairy, and Meat options                       | major  | The category selector provides the three options needed to organize items by type.                              | None         |
-| 4   | visual      | Display an add button                                                                 | major  | The add button triggers the action of adding new items to the shopping list.                                    | None         |
-| 5   | interaction | Add new item with name, quantity, and category to the list when add button is clicked | major  | Adding items with all details captures the complete shopping information for each entry.                        | C4           |
-| 6   | visual      | Display Produce items in green, Dairy items in blue, and Meat items in red            | major  | Color coding by category makes it faster to scan and locate items by type while shopping.                       | C5           |
-| 7   | interaction | Check off items by clicking a checkbox when bought                                    | major  | Checking off items tracks what's already been purchased to avoid buying duplicates.                             | C5           |
-| 8   | state       | Calculate and display total item count                                                | major  | The count is computed automatically to show how many items are on the list without manual tracking.             | C5           |
-| 9   | visual      | Display delete button for each item                                                   | major  | The delete button provides a way to remove items that are no longer needed.                                     | C5           |
-| 10  | interaction | Remove item from list when delete button is clicked                                   | major  | Deleting items cleans up the list by removing entries that are no longer relevant.                              | C9           |
-| 11  | layout      | Position the delete button on the right side of each item                             | minor  | Placing delete on the right keeps it accessible while preventing accidental clicks during normal list viewing.  | C9           |
+| #   | ID          | Description                                                                        | Weight | Rationale                                                                            | Dependent On |
+| --- | ----------- | ---------------------------------------------------------------------------------- | ------ | ------------------------------------------------------------------------------------ | ------------ |
+| 1   | visual      | Render input fields for item name and price                                        | major  | Name and price inputs capture the two details needed for each shopping item.         | None         |
+| 2   | content     | Display category selector with Produce, Dairy, and Meat options                    | major  | The category selector provides the three options for organizing items by type.       | None         |
+| 3   | visual      | Display an add button                                                              | major  | The add button triggers adding new items to the list.                                | None         |
+| 4   | interaction | Add new item with name, price, and category to the list when add button is clicked | major  | Adding items is the main way users build their shopping list.                        | C3           |
+| 5   | content     | Display each item showing name, price, and category                                | major  | Showing all three details lets users see what's on their list.                       | C4           |
+| 6   | visual      | Display Produce items in green, Dairy items in blue, and Meat items in red         | major  | Category colors make it faster to scan the list by item type.                        | C5           |
+| 7   | layout      | Position the total cost below the list                                             | minor  | Placing the total below separates summary information from the items.                | None         |
+| 8   | content     | Display total cost of all items                                                    | major  | The total cost shows the sum of all item prices.                                     | None         |
+| 9   | state       | Calculate total cost as the sum of all item prices                                 | major  | The total is computed by summing all item prices in the list.                        | C8           |
 
 ## Justification
 
-The shopping list works exactly as expected with input fields for item name and quantity, and a category selector showing Produce, Dairy, and Meat options. When the add button is clicked, the item appears in the list with the correct color. Produce items show in green, Dairy items in blue, and Meat items in red. Each item has a checkbox that marks it as checked when clicked. The total item count displays and updates automatically. A delete button positioned on the right of each item removes the item from the list when clicked.
+The shopping list works exactly as expected with input fields for item name and price, and a category selector showing Produce, Dairy, and Meat options. When the add button is clicked, the item appears in the list with the correct category color: Produce items in green, Dairy items in blue, and Meat items in red. Below the list, the total cost displays and updates automatically as items are added, calculated as the sum of all item prices.
