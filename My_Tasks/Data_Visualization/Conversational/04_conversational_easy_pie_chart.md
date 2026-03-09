@@ -20,8 +20,8 @@ Required libraries: react, tailwindcss, recharts
 | 6   | visual      | Display dark green color for 7+ tasks (Wednesday and Sunday)                                                   | major  | Dark green indicates high activity level meeting or exceeding goals.                    | C2           |
 | 7   | interaction | Show day name and task count below the heatmap when a square is clicked                                        | major  | Clicking reveals detailed information about the selected day.                           | C1           |
 | 8   | content     | Display the clicked day's name and task count                                                                  | major  | Day name and count provide specific details about the selected square.                  | C7           |
-| 9   | content     | Display total tasks for the week below the heatmap                                                             | major  | The total shows overall weekly productivity.                                            | None         |
-| 10  | state       | Calculate total tasks as the sum of all daily task counts                                                      | major  | The total is computed by summing all 7 days of task completion.                         | C9           |
+| 9   | state       | Calculate total tasks as the sum of all daily task counts                                                      | major  | The total is computed by summing all 7 days of task completion.                         | C2           |
+| 10  | content     | Display total tasks for the week below the heatmap                                                             | major  | The total shows overall weekly productivity.                                            | C9           |
 | 11  | layout      | Position the total tasks below the heatmap                                                                     | minor  | Placing the total below separates summary information from the grid visualization.      | C10          |
 
 ## Justification
