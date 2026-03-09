@@ -19,7 +19,7 @@ Required libraries: react, tailwindcss, framer-motion
 | 5   | state       | Animate the dollar bill moving to the right with smooth motion until it disappears off screen | major  | The smooth swipe animation represents the ongoing time-evolving motion state as the bill travels off screen.              | C4           |
 | 6   | content     | Display the text "Sent $100" after the bill disappears                                        | major  | The sent message provides textual confirmation of the completed money send action.                                        | C5           |
 | 7   | visual      | Display the "Sent $100" text in green color                                                   | major  | The green color provides positive visual feedback indicating a successful send action.                                    | C6           |
-| 8   | layout      | Center the "Sent $100" text below where the bill was originally positioned                    | minor  | Centered below positioning places the confirmation message in a natural reading location aligned with where the bill was. | C6           |
+| 8   | layout      | Center the "Sent $100" text below where the bill was originally positioned                    | minor  | Centered below positioning places the confirmation message in a natural reading location aligned with where the bill was. | None         |
 
 ## Justification
 
