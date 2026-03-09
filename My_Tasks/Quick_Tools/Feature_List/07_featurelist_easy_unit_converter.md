@@ -20,9 +20,9 @@ Required libraries: react, tailwindcss, lucide-react
 | 6   | visual      | Display validate button                                                          | major  | The button provides the trigger for initiating the address format check.                                      | None         |
 | 7   | layout      | Position validate button below input                                             | minor  | Placing the button below the input follows the natural workflow sequence.                                     | None         |
 | 8   | interaction | Validate address format when validate button is clicked                          | major  | Clicking the button triggers the validation check that determines if the address is properly formatted.       | None         |
-| 9   | state       | Check address format against the selected blockchain's rules                     | major  | Each blockchain has specific address format requirements that must be verified correctly.                     | C8           |
+| 9   | state       | Check address format against the selected blockchain's rules                     | major  | Each blockchain has specific address format requirements that must be verified correctly.                     | None         |
 | 10  | content     | Display "Valid" or "Invalid" text based on validation result                     | major  | The result text provides clear feedback about whether the address passed or failed validation.                | C9           |
-| 11  | interaction | Display result in green for valid or red for invalid                             | minor  | Color feedback provides visual reinforcement of the validation outcome.                                       | C10          |
+| 11  | interaction | Display result in green for valid or red for invalid                             | minor  | Color feedback provides visual reinforcement of the validation outcome.                                       | None         |
 | 12  | layout      | Position validation result below the validate button                             | minor  | Placing the result below the button shows the outcome in close proximity to the action that triggered it.     | None         |
 
 ## Justification
