@@ -22,8 +22,9 @@ Required libraries: react, tailwindcss, lucide-react
 | 8   | state       | Determine if name matches animal for each card                                   | major  | Match determination defines whether checkmark or X is the correct answer for the current animal-name pair.                   | None         |
 | 9   | interaction | Show "Correct!" in green text when correct button is tapped                     | major  | Green "Correct!" provides positive reinforcement feedback when children make the right choice.                               | None         |
 | 10  | interaction | Show "Wrong!" in red text when incorrect button is tapped                       | major  | Red "Wrong!" provides corrective feedback when children make the wrong choice.                                               | None         |
-| 11  | state       | Automatically advance to next animal after 1 second                              | major  | Automatic progression keeps the game moving and maintains engagement for young children without requiring navigation clicks. | None         |
-| 12  | content     | Display 4 animals in sequence: Cat with "Cat", Dog with "Bird", Cow with "Cow", Bird with "Dog" | major  | The specific animal-name pairs provide both matching examples (Cat/Cat, Cow/Cow) and mismatching examples (Dog/Bird, Bird/Dog) to teach name recognition. | None         |
+| 11  | layout      | Position feedback text below the buttons                                         | minor  | Placing feedback below buttons keeps the message visible without covering the game elements.                                 | None         |
+| 12  | state       | Advance to next animal automatically after 1 second                              | major  | Automatic progression keeps the game moving and maintains engagement for young children without requiring navigation clicks. | None         |
+| 13  | content     | Display 4 animals in sequence: Cat with "Cat", Dog with "Bird", Cow with "Cow", Bird with "Dog" | major  | The specific animal-name pairs provide both matching examples (Cat/Cat, Cow/Cow) and mismatching examples (Dog/Bird, Bird/Dog) to teach name recognition. | None         |
 
 ## Justification
 
