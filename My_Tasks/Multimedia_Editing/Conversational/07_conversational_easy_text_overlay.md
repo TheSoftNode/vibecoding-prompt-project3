@@ -19,10 +19,9 @@ Required libraries: react, tailwindcss, lucide-react
 | 5   | content     | Display placeholder "Enter text overlay" in input field          | minor  | The placeholder guides users on what to type in the input field.                                                                  | C4           |
 | 6   | layout      | Position text input field below upload button                    | minor  | Below positioning creates logical workflow from upload to text entry.                                                             | None         |
 | 7   | interaction | Display image centered below text input when file is selected    | major  | Uploading processes the selected file and loads it into the editor so users can begin adding text overlays.                       | C1           |
-| 8   | visual      | Display text overlay in white color                              | major  | White color ensures the text is visible on most image backgrounds.                                                                | None         |
-| 9   | layout      | Position text overlay centered on top of the image               | minor  | Centering the text overlay horizontally and vertically ensures it appears balanced regardless of the image dimensions or content. | None         |
-| 10  | state       | Store current text input value                                   | major  | The input value is stored as state and used to render the text that appears on the image.                                         | None         |
-| 11  | interaction | Update text overlay display as user types in input field         | major  | Typing triggers live text updates so users immediately see how their text looks on the image with each keystroke.                 | C4           |
+| 8   | layout      | Position text overlay centered on top of the image               | minor  | Centering the text overlay horizontally and vertically ensures it appears balanced regardless of the image dimensions or content. | None         |
+| 9   | state       | Store current text input value                                   | major  | The input value is stored as state and used to render the text that appears on the image.                                         | None         |
+| 10  | interaction | Display text overlay in white color as user types in input field | major  | Typing makes the white text appear on the image updating with each keystroke so users see their overlay in real-time.             | C4           |
 
 ## Justification
 
