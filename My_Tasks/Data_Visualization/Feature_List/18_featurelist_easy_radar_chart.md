@@ -4,9 +4,7 @@ Prompt style: Feature_List
 
 Title: Skill Radar Chart
 
-Prompt: Build a radar chart showing skill proficiency with these features:
-- Display a pentagon-shaped radar chart with 5 axes labeled "Coding", "Design", "Communication", "Leadership", "Problem Solving", each extending from the center
-- Show a filled polygon connecting the skill values at 80, 65, 90, 70, 85 respectively, with hover revealing the exact score for each skill
+Prompt: Build a radar chart showing skill proficiency. Display a pentagon-shaped radar chart with 5 axes labeled "Coding", "Design", "Communication", "Leadership", "Problem Solving", each extending from the center. Show a filled polygon connecting the skill values at 80, 65, 90, 70, 85 respectively, with hover revealing the exact score for each skill.
 
 Required libraries: react, tailwindcss, recharts
 
@@ -14,20 +12,20 @@ Required libraries: react, tailwindcss, recharts
 
 | #   | ID          | Description                                                  | Weight | Rationale                                                                                                        | Dependent On |
 | --- | ----------- | ------------------------------------------------------------ | ------ | ---------------------------------------------------------------------------------------------------------------- | ------------ |
-| 1   | visual      | Display pentagon-shaped radar chart structure                | major  | The pentagon shape is the foundation that holds all five skill axes in a radial layout.                          | None         |
-| 2   | content     | Display "Coding" axis label                                  | minor  | This label identifies the first skill being measured on the radar chart.                                         | None         |
-| 3   | content     | Display "Design" axis label                                  | minor  | This label identifies the second skill being measured.                                                           | None         |
-| 4   | content     | Display "Communication" axis label                           | minor  | This label identifies the third skill being measured.                                                            | None         |
-| 5   | content     | Display "Leadership" axis label                              | minor  | This label identifies the fourth skill being measured.                                                           | None         |
-| 6   | content     | Display "Problem Solving" axis label                         | minor  | This label identifies the fifth skill being measured.                                                            | None         |
-| 7   | layout      | Position axis labels extending from center point             | minor  | Radiating labels from center creates the classic radar chart spoke structure.                                    | None         |
-| 8   | visual      | Display filled polygon connecting skill values               | major  | The filled polygon visualizes the overall skill profile shape for quick pattern recognition.                     | None         |
-| 9   | state       | Plot Coding skill at value 80 on its axis                    | major  | Plotting 80 for Coding shows the proficiency level for that specific skill.                                      | None         |
-| 10  | state       | Plot Design skill at value 65 on its axis                    | major  | Plotting 65 for Design shows a lower proficiency compared to other skills.                                       | None         |
-| 11  | state       | Plot Communication skill at value 90 on its axis             | major  | Plotting 90 for Communication shows this is the strongest skill in the profile.                                  | None         |
-| 12  | state       | Plot Leadership skill at value 70 on its axis                | major  | Plotting 70 for Leadership shows mid-level proficiency.                                                          | None         |
-| 13  | state       | Plot Problem Solving skill at value 85 on its axis           | major  | Plotting 85 for Problem Solving shows high proficiency in this skill.                                            | None         |
-| 14  | interaction | Display tooltip with exact score when hovering over skill    | major  | Hover tooltips let users see precise numeric values instead of estimating from the polygon shape.                | None         |
+| 1   | visual      | Display pentagon-shaped radar chart structure                | major  | The pentagon shape creates the five-sided structure needed for plotting five different skills.                   | None         |
+| 2   | content     | Display "Coding" axis label                                  | minor  | Users need to know which axis represents coding skills.                                                          | None         |
+| 3   | content     | Display "Design" axis label                                  | minor  | Users need to know which axis represents design skills.                                                          | None         |
+| 4   | content     | Display "Communication" axis label                           | minor  | Users need to know which axis represents communication skills.                                                   | None         |
+| 5   | content     | Display "Leadership" axis label                              | minor  | Users need to know which axis represents leadership skills.                                                      | None         |
+| 6   | content     | Display "Problem Solving" axis label                         | minor  | Users need to know which axis represents problem solving skills.                                                 | None         |
+| 7   | layout      | Position axis labels extending from center point             | minor  | Labels radiating from the center match the standard radar chart layout.                                          | None         |
+| 8   | visual      | Display filled polygon connecting skill values               | major  | The filled polygon shows the overall skill profile at a glance.                                                  | None         |
+| 9   | content     | Plot Coding skill at value 80 on its axis                    | major  | The value 80 shows the coding proficiency level.                                                                 | None         |
+| 10  | content     | Plot Design skill at value 65 on its axis                    | major  | The value 65 shows the design proficiency level.                                                                 | None         |
+| 11  | content     | Plot Communication skill at value 90 on its axis             | major  | The value 90 shows the communication proficiency level.                                                          | None         |
+| 12  | content     | Plot Leadership skill at value 70 on its axis                | major  | The value 70 shows the leadership proficiency level.                                                             | None         |
+| 13  | content     | Plot Problem Solving skill at value 85 on its axis           | major  | The value 85 shows the problem solving proficiency level.                                                        | None         |
+| 14  | interaction | Display tooltip with exact score when hovering over skill    | major  | Hover tooltips give users the precise number without having to estimate from the chart.                          | None         |
 
 ## Justification
 
