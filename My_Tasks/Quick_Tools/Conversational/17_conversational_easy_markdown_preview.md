@@ -17,10 +17,10 @@ Required libraries: react, tailwindcss, lucide-react, marked
 | 3   | layout      | Position textarea on the left side                       | minor  | Left side for input keeps the split-view organized with a clear input-output flow.                               | None         |
 | 4   | layout      | Position preview area on the right side                  | minor  | Right side for output completes the split layout so users can see both at once.                                  | None         |
 | 5   | state       | Parse # syntax as heading                                | major  | Headings let users structure their documents with titles and sections.                                           | None         |
-| 6   | state       | Parse **text** syntax as bold                            | major  | Bold formatting helps users emphasize key words or phrases.                                                      | None         |
-| 7   | state       | Parse *text* syntax as italic                            | major  | Italics give users another way to add emphasis or style to their text.                                           | None         |
+| 6   | state       | Parse **bold** syntax as bold text                       | major  | Bold formatting helps users emphasize key words or phrases.                                                      | None         |
+| 7   | state       | Parse *italic* syntax as italic text                     | major  | Italics give users another way to add emphasis or style to their text.                                           | None         |
 | 8   | state       | Parse - syntax as bullet list                            | major  | Bullet lists make it easy to create unordered lists without manual formatting.                                   | None         |
-| 9   | content     | Display rendered HTML in preview area                    | major  | Showing the HTML output confirms that the markdown converted correctly.                                          | None         |
+| 9   | state       | Display rendered HTML in preview area                    | major  | Showing the HTML output confirms that the markdown converted correctly.                                          | None         |
 | 10  | interaction | Update preview in real-time as user types                | major  | Real-time updates mean users see their formatting immediately without clicking a button.                         | C1           |
 
 ## Justification
