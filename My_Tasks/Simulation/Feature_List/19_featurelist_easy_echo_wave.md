@@ -12,12 +12,12 @@ Required libraries: react, tailwindcss, lucide-react
 
 | #   | ID          | Description                                               | Weight | Rationale                                                                                                        | Dependent On |
 | --- | ----------- | --------------------------------------------------------- | ------ | ---------------------------------------------------------------------------------------------------------------- | ------------ |
-| 1   | visual      | Display simulation area                                   | major  | The simulation area gives users space to see the wave animations.                                                | None         |
-| 2   | visual      | Display center point                                      | minor  | The center point shows users where waves originate from.                                                         | None         |
-| 3   | content     | Display label "Origin" on center point                    | minor  | The label identifies the wave starting location.                                                                 | None         |
-| 4   | interaction | Create new wave ring when spacebar is pressed             | major  | Spacebar creates waves, giving users direct control over when ripples appear.                                    | None         |
+| 1   | visual      | Display simulation area with center point                 | major  | The simulation area with center point gives users the space and starting location for waves.                     | None         |
+| 2   | content     | Display label "Origin" on center point                    | minor  | The label identifies the wave starting location.                                                                 | None         |
+| 3   | interaction | Create circular wave ring when spacebar is pressed        | major  | Spacebar creates waves, giving users direct control over when ripples appear.                                    | None         |
+| 4   | visual      | Display wave ring starting from center                    | major  | The wave ring appears at the center point where waves originate.                                                 | None         |
 | 5   | state       | Expand wave ring radius over 3 seconds                    | major  | The expanding motion creates the ripple effect spreading outward from center.                                    | None         |
-| 6   | state       | Fade out wave ring after expansion completes              | major  | Fading makes old waves disappear so the screen doesn't get cluttered.                                            | C5           |
+| 6   | state       | Fade out wave ring after 3 seconds                        | major  | Fading makes old waves disappear so the screen doesn't get cluttered.                                            | None         |
 | 7   | state       | Allow multiple wave rings to exist at the same time       | major  | Multiple waves let users create layered patterns with overlapping ripples.                                       | None         |
 | 8   | layout      | Position center point in middle of simulation area        | minor  | Centering the origin point creates symmetric wave expansion in all directions.                                   | None         |
 
