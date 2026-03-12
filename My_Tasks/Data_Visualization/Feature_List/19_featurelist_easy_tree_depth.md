@@ -17,9 +17,9 @@ Required libraries: react, tailwindcss, lucide-react
 | 3   | content     | Display labels "A", "B", "C" on child nodes               | minor  | Child labels help users tell the different nodes apart.                                                          | None         |
 | 4   | interaction | Highlight clicked node in blue                            | major  | Blue highlighting shows users which node they selected.                                                          | None         |
 | 5   | state       | Calculate depth level for clicked node                    | major  | Depth calculation determines how many levels down from root the clicked node sits.                               | None         |
-| 6   | content     | Display depth level number next to clicked node           | minor  | Showing the number gives users exact hierarchy position information.                                             | C5           |
+| 6   | interaction | Display depth level number next to clicked node           | major  | Showing the depth on click is the core behavior that reveals hierarchy information.                              | None         |
 | 7   | layout      | Position root at top with child nodes below               | minor  | Top-down layout makes the tree structure easy to read from root downward.                                        | None         |
-| 8   | layout      | Connect nodes with lines to show parent-child relationships | major | Connection lines make the hierarchical structure clear and easy to follow.                                       | None         |
+| 8   | visual      | Connect nodes with lines to show parent-child relationships | major | Connection lines make the hierarchical structure clear and easy to follow.                                       | None         |
 
 ## Justification
 
