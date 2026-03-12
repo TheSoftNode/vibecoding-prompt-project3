@@ -4,7 +4,7 @@ Prompt style: Feature_List
 
 Title: Hierarchical Tree Depth Visualizer
 
-Prompt: Build a hierarchical tree depth visualizer. Display a tree structure with a root node labeled "Root" at the top, connected to 3 child nodes labeled "A", "B", "C" below it. When clicking any node, highlight that node in blue and display its depth level number next to it. Keep the clicked node highlighted until a different node is clicked.
+Prompt: Build a hierarchical tree depth visualizer. Display a tree structure with a root node labeled "Root" at the top, connected to 3 child nodes labeled "A", "B", "C" below it. When clicking any node, highlight that node in blue and show its depth level number next to it. Only the clicked node should show its depth number. Keep the clicked node highlighted until a different node is clicked.
 
 Required libraries: react, tailwindcss, lucide-react
 
@@ -24,4 +24,4 @@ Required libraries: react, tailwindcss, lucide-react
 
 ## Justification
 
-The hierarchical tree depth visualizer works exactly as expected with click-based highlighting and depth level display. A root node labeled "Root" appears at the top of the tree structure. Three child nodes labeled "A", "B", and "C" display below the root, connected by lines. When users click any node, that node highlights in blue and the depth level number appears next to the clicked node. The clicked node stays highlighted until a different node is clicked.
+The hierarchical tree depth visualizer achieved an 77.78% pass rate with two specific failures. A root node labeled "Root" appears at the top of the tree structure. Three child nodes labeled "A", "B", and "C" display below the root. When users click any node, that node highlights in blue and the clicked node stays highlighted until a different node is clicked. However, the model failed to connect the child nodes to the root node with lines as required. Additionally, the model displayed depth level numbers on all nodes simultaneously as static text, instead of showing the depth number only on the clicked node. These two positioning and interaction failures caused the 80% pass rate despite the highlighting and selection persistence working correctly.
