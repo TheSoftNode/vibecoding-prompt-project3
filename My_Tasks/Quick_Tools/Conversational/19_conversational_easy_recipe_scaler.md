@@ -4,7 +4,7 @@ Prompt style: Conversational
 
 Title: Recipe Ingredient Scaler
 
-Prompt: I need a recipe scaler for adjusting ingredient amounts. Start with three ingredients already filled in: "Flour 2 cups", "Sugar 1 cup", and "Butter 0.5 cups". Above them, show four preset scale buttons in a row: "Half (0.5x)" in light gray, "Normal (1x)" in blue, "Double (2x)" in light gray, and "Triple (3x)" in light gray. When I click any scale button, all the ingredient amounts should adjust to match that scale. Highlight the clicked button in blue while changing the others back to light gray.
+Prompt: I need a recipe scaler for adjusting ingredient amounts. Start with three ingredients: "Flour 2 cups", "Sugar 1 cup", and "Butter 0.5 cups". Below them, show the total cups calculated by adding all ingredients together, like "Total: 3.5 cups" in bold text. Above the ingredients, show three scale buttons: "Half (0.5x)", "Double (2x)", and "Triple (3x)". When I click a button, update all ingredient amounts to that scale. The total should always reflect the sum of the current ingredient amounts.
 
 Required libraries: react, tailwindcss, lucide-react
 
@@ -16,19 +16,16 @@ Required libraries: react, tailwindcss, lucide-react
 | 2   | content     | Display "Sugar 1 cup" ingredient initially            | major  | Showing the ingredient name and amount lets users see what they're scaling.                                      | None         |
 | 3   | content     | Display "Butter 0.5 cups" ingredient initially        | major  | Showing the ingredient name and amount lets users see what they're scaling.                                      | None         |
 | 4   | content     | Display "Half (0.5x)" button                          | major  | The button gives users the control to scale down the recipe.                                                     | None         |
-| 5   | content     | Display "Normal (1x)" button                          | major  | The button gives users the control to return to original amounts.                                                | None         |
-| 6   | content     | Display "Double (2x)" button                          | major  | The button gives users the control to scale up the recipe.                                                       | None         |
-| 7   | content     | Display "Triple (3x)" button                          | major  | The button gives users the control to scale up the recipe further.                                               | None         |
-| 8   | visual      | Display "Normal (1x)" button in blue initially        | minor  | Blue color shows users the recipe is at its original scale.                                                      | C5           |
-| 9   | visual      | Display "Half (0.5x)" button in light gray initially  | minor  | Gray color shows this scale option is not currently selected.                                                    | C4           |
-| 10  | visual      | Display "Double (2x)" button in light gray initially  | minor  | Gray color shows this scale option is not currently selected.                                                    | C6           |
-| 11  | visual      | Display "Triple (3x)" button in light gray initially  | minor  | Gray color shows this scale option is not currently selected.                                                    | C7           |
-| 12  | interaction | Adjust ingredient amounts to match scale when button clicked | major  | The adjusted amounts reflect the selected scale size for the recipe.                                             | C1, C2, C3   |
-| 13  | interaction | Update all ingredient displays when button is clicked | major  | Updated displays show users the new quantities they need for the scaled recipe.                                  | C1, C2, C3   |
-| 14  | interaction | Highlight clicked button in blue when clicked         | minor  | Blue highlighting confirms which scale the user just selected.                                                   | None         |
-| 15  | interaction | Change other buttons to light gray when button clicked | minor  | Gray color on unselected buttons clarifies which scale is active.                                                | None         |
-| 16  | layout      | Position buttons in a row above ingredients           | minor  | Placing controls above the ingredient list creates clear top-down workflow.                                      | None         |
+| 5   | content     | Display "Double (2x)" button                          | major  | The button gives users the control to scale up the recipe.                                                       | None         |
+| 6   | content     | Display "Triple (3x)" button                          | major  | The button gives users the control to scale up the recipe further.                                               | None         |
+| 7   | content     | Display "Total: 3.5 cups" initially                   | major  | Showing the total tells users how much the recipe makes in total.                                                | None         |
+| 8   | visual      | Display total in bold text                            | minor  | Bold styling emphasizes the total as the key summary value.                                                      | None         |
+| 9   | state       | Calculate total cups by adding all ingredients        | major  | The total calculation sums all ingredient amounts to show combined quantity.                                     | None         |
+| 10  | interaction | Update all ingredient amounts when button is clicked  | major  | Updated amounts show users the new quantities they need for the scaled recipe.                                   | None         |
+| 11  | interaction | Update total display when button is clicked           | major  | The updated total reflects the sum of the new scaled amounts.                                                    | C9, C10      |
+| 12  | layout      | Position scale buttons above ingredients              | minor  | Placing controls above the ingredient list creates clear top-down workflow.                                      | None         |
+| 13  | layout      | Position total display below ingredients              | minor  | Placing the total below shows it as the result of adding the ingredients above.                                  | None         |
 
 ## Justification
 
-The Recipe Ingredient Scaler works exactly as expected with preset scale buttons. Three ingredients are already filled in: "Flour 2 cups", "Sugar 1 cup", and "Butter 0.5 cups". Above them, four preset scale buttons appear in a row: "Half (0.5x)" in light gray, "Normal (1x)" in blue, "Double (2x)" in light gray, and "Triple (3x)" in light gray. When users click any button, all the ingredient amounts adjust to match that scale. The clicked button highlights in blue while the others change back to light gray.
+The Recipe Ingredient Scaler works exactly as expected with preset scale buttons and automatic total calculation. Three ingredients display: "Flour 2 cups", "Sugar 1 cup", and "Butter 0.5 cups". Below them, "Total: 3.5 cups" shows in bold text, calculated by adding all ingredients together. Above the ingredients, three scale buttons appear: "Half (0.5x)", "Double (2x)", and "Triple (3x)". When users click a button, all ingredient amounts update to that scale. The total always reflects the sum of the current ingredient amounts.
