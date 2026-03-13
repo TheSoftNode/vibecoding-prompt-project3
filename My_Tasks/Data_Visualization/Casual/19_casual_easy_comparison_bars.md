@@ -17,14 +17,16 @@ Required libraries: react, tailwindcss, lucide-react
 | 3   | content     | Display "Price 6/10" for Product A                    | major  | Specific rating values help users compare the actual scores between products.                                    | None         |
 | 4   | content     | Display "Quality 7/10" for Product B                  | major  | Specific rating values help users compare the actual scores between products.                                    | None         |
 | 5   | content     | Display "Price 9/10" for Product B                    | major  | Specific rating values help users compare the actual scores between products.                                    | None         |
-| 6   | state       | Calculate average from Product A's two ratings        | major  | The average calculation summarizes Product A's overall performance.                                              | None         |
-| 7   | state       | Calculate average from Product B's two ratings        | major  | The average calculation summarizes Product B's overall performance.                                              | None         |
-| 8   | content     | Display average below Product A                       | major  | Showing the average helps users quickly compare overall product quality.                                         | None         |
-| 9   | content     | Display average below Product B                       | major  | Showing the average helps users quickly compare overall product quality.                                         | None         |
-| 10  | visual      | Color Product A bars blue                             | minor  | Blue color helps users quickly identify Product A's bars.                                                        | None         |
-| 11  | visual      | Color Product B bars orange                           | minor  | Orange color helps users quickly identify Product B's bars.                                                      | None         |
-| 12  | interaction | Highlight clicked product in bold                     | major  | Bold highlighting shows users which product they selected.                                                       | None         |
-| 13  | layout      | Position products side-by-side                        | minor  | Side-by-side positioning makes it easy to compare bars horizontally.                                             | None         |
+| 6   | visual      | Display each rating as a horizontal bar               | major  | Horizontal bars provide the visual representation for comparing ratings.                                         | None         |
+| 7   | state       | Size bars proportionally to their rating values       | major  | Proportional sizing lets users visually compare ratings at a glance.                                             | None         |
+| 8   | state       | Calculate average from Product A's two ratings        | major  | The average calculation summarizes Product A's overall performance.                                              | None         |
+| 9   | state       | Calculate average from Product B's two ratings        | major  | The average calculation summarizes Product B's overall performance.                                              | None         |
+| 10  | content     | Display average below Product A                       | major  | Showing the average helps users quickly compare overall product quality.                                         | None         |
+| 11  | content     | Display average below Product B                       | major  | Showing the average helps users quickly compare overall product quality.                                         | None         |
+| 12  | visual      | Color Product A bars blue                             | minor  | Blue color helps users quickly identify Product A's bars.                                                        | None         |
+| 13  | visual      | Color Product B bars orange                           | minor  | Orange color helps users quickly identify Product B's bars.                                                      | None         |
+| 14  | interaction | Highlight clicked product in bold                     | major  | Bold highlighting shows users which product they selected.                                                       | None         |
+| 15  | layout      | Position products side-by-side                        | minor  | Side-by-side positioning makes it easy to compare bars horizontally.                                             | None         |
 
 ## Justification
 
