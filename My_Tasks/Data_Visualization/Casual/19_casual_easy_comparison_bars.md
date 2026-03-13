@@ -4,7 +4,7 @@ Prompt style: Casual
 
 Title: Side-by-Side Product Comparison
 
-Prompt: Show me a comparison chart for two products. Put "Product A" on the left and "Product B" on the right. For each product, display 3 horizontal bars showing ratings: "Quality 8/10", "Price 6/10", "Support 9/10". Make each bar's length match its rating number out of 10. Color Product A bars blue and Product B bars orange. When someone clicks on any bar, highlight that entire product's column in a light background color and show which product was selected with text at the bottom saying "Selected: Product A" or "Selected: Product B".
+Prompt: Build a side-by-side product comparison chart with two columns labeled "Product A" and "Product B". Each column displays 3 horizontal rating bars: Quality (8/10), Price (6/10), Support (9/10), with each bar's width calculated as a percentage of its rating value out of 10. Color all Product A bars blue, Product B bars orange. Clicking any bar highlights its entire product column and displays "Selected: [product name]" text below.
 
 Required libraries: react, tailwindcss, lucide-react
 
@@ -12,21 +12,16 @@ Required libraries: react, tailwindcss, lucide-react
 
 | #   | ID          | Description                                           | Weight | Rationale                                                                                                        | Dependent On |
 | --- | ----------- | ----------------------------------------------------- | ------ | ---------------------------------------------------------------------------------------------------------------- | ------------ |
-| 1   | content     | Display "Product A" label on left                     | major  | The label identifies the first product being compared.                                                           | None         |
-| 2   | content     | Display "Product B" label on right                    | major  | The label identifies the second product being compared.                                                          | None         |
-| 3   | content     | Display "Quality 8/10" bar for Product A              | major  | The rating shows Product A's quality score.                                                                      | None         |
-| 4   | content     | Display "Price 6/10" bar for Product A                | major  | The rating shows Product A's price score.                                                                        | None         |
-| 5   | content     | Display "Support 9/10" bar for Product A              | major  | The rating shows Product A's support score.                                                                      | None         |
-| 6   | content     | Display "Quality 8/10" bar for Product B              | major  | The rating shows Product B's quality score.                                                                      | None         |
-| 7   | content     | Display "Price 6/10" bar for Product B                | major  | The rating shows Product B's price score.                                                                        | None         |
-| 8   | content     | Display "Support 9/10" bar for Product B              | major  | The rating shows Product B's support score.                                                                      | None         |
-| 9   | state       | Scale bar length to match rating value out of 10     | major  | Proportional lengths let users visually compare ratings.                                                         | None         |
-| 10  | visual      | Color Product A bars blue                             | minor  | Blue color distinguishes Product A's bars.                                                                       | None         |
-| 11  | visual      | Color Product B bars orange                           | minor  | Orange color distinguishes Product B's bars.                                                                     | None         |
-| 12  | interaction | Highlight product column when bar is clicked          | major  | Clicking a bar highlights the entire product to show selection.                                                  | None         |
-| 13  | interaction | Display "Selected: Product A" or "Selected: Product B" text | major  | The selection text confirms which product the user clicked.                                                      | C12          |
-| 14  | layout      | Position Product A on left side                       | minor  | Left positioning creates the side-by-side comparison layout.                                                     | None         |
-| 15  | layout      | Position Product B on right side                      | minor  | Right positioning completes the side-by-side comparison layout.                                                  | None         |
+| 1   | content     | Display "Product A" and "Product B" labels            | major  | Users need to know which product they're looking at to make meaningful comparisons.                              | None         |
+| 2   | content     | Display "Quality (8/10)" rating for both products     | major  | Specific rating values help users compare the actual scores between products.                                    | None         |
+| 3   | content     | Display "Price (6/10)" rating for both products       | major  | Specific rating values help users compare the actual scores between products.                                    | None         |
+| 4   | content     | Display "Support (9/10)" rating for both products     | major  | Specific rating values help users compare the actual scores between products.                                    | None         |
+| 5   | state       | Calculate bar width as percentage of rating value     | major  | The bars need proportional sizing so users can quickly see which ratings are higher or lower at a glance.        | None         |
+| 6   | visual      | Color all Product A bars blue                         | minor  | Different colors help users quickly distinguish which bars belong to which product.                              | None         |
+| 7   | visual      | Color all Product B bars orange                       | minor  | Different colors help users quickly distinguish which bars belong to which product.                              | None         |
+| 8   | interaction | Highlight product column when bar is clicked          | major  | The visual feedback shows users which product they've selected for comparison.                                   | None         |
+| 9   | interaction | Display "Selected: [product name]" text below when bar is clicked | major  | The text confirmation ensures users know exactly which product is currently selected.                            | C8           |
+| 10  | layout      | Position products side-by-side as columns             | minor  | Side-by-side positioning makes it easy to compare bars across the two products horizontally.                     | None         |
 
 ## Justification
 
