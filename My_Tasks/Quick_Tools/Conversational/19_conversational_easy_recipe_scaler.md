@@ -23,10 +23,10 @@ Required libraries: react, tailwindcss, lucide-react
 | 9   | visual      | Display "Half (0.5x)" button in light gray initially  | minor  | Gray color shows this scale option is not currently selected.                                                    | C4           |
 | 10  | visual      | Display "Double (2x)" button in light gray initially  | minor  | Gray color shows this scale option is not currently selected.                                                    | C6           |
 | 11  | visual      | Display "Triple (3x)" button in light gray initially  | minor  | Gray color shows this scale option is not currently selected.                                                    | C7           |
-| 12  | state       | Adjust ingredient amounts to match scale when button clicked | major  | The adjusted amounts reflect the selected scale size for the recipe.                                             | C1, C2, C3   |
-| 13  | interaction | Update all ingredient displays when button is clicked | major  | Updated displays show users the new quantities they need for the scaled recipe.                                  | C12          |
-| 14  | interaction | Highlight clicked button in blue when clicked         | major  | Blue highlighting confirms which scale the user just selected.                                                   | C4, C5, C6, C7 |
-| 15  | interaction | Change other buttons to light gray when button clicked | major  | Gray color on unselected buttons clarifies which scale is active.                                                | C14          |
+| 12  | interaction | Adjust ingredient amounts to match scale when button clicked | major  | The adjusted amounts reflect the selected scale size for the recipe.                                             | C1, C2, C3   |
+| 13  | interaction | Update all ingredient displays when button is clicked | major  | Updated displays show users the new quantities they need for the scaled recipe.                                  | C1, C2, C3   |
+| 14  | interaction | Highlight clicked button in blue when clicked         | minor  | Blue highlighting confirms which scale the user just selected.                                                   | None         |
+| 15  | interaction | Change other buttons to light gray when button clicked | minor  | Gray color on unselected buttons clarifies which scale is active.                                                | None         |
 | 16  | layout      | Position buttons in a row above ingredients           | minor  | Placing controls above the ingredient list creates clear top-down workflow.                                      | None         |
 
 ## Justification
