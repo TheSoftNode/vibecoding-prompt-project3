@@ -12,17 +12,19 @@ Required libraries: react, tailwindcss, lucide-react
 
 | #   | ID          | Description                                           | Weight | Rationale                                                                                                        | Dependent On |
 | --- | ----------- | ----------------------------------------------------- | ------ | ---------------------------------------------------------------------------------------------------------------- | ------------ |
-| 1   | content     | Display "Personal Info" step label                    | major  | The label shows users the first step in the wizard.                                                              | None         |
-| 2   | content     | Display "Preferences" step label                      | major  | The label shows users the second step in the wizard.                                                             | None         |
-| 3   | content     | Display "Review" step label                           | major  | The label shows users the final step in the wizard.                                                              | None         |
+| 1   | content     | Display "Personal Info" step label                    | major  | Users need to see all three step names to understand the workflow.                                               | None         |
+| 2   | content     | Display "Preferences" step label                      | major  | Users need to see all three step names to understand the workflow.                                               | None         |
+| 3   | content     | Display "Review" step label                           | major  | Users need to see all three step names to understand the workflow.                                               | None         |
 | 4   | layout      | Position three step labels horizontally               | minor  | Horizontal layout creates a left-to-right flow showing workflow progression.                                     | None         |
-| 5   | visual      | Highlight future steps in gray                         | major  | Gray highlighting shows which steps haven't been reached yet.                                                    | None         |
-| 6   | content     | Display "Next" button                                 | major  | The button text tells users how to move forward through the wizard.                                              | None         |
-| 7   | state       | Start wizard on step 1 (Personal Info)                | major  | Starting at step 1 puts users at the beginning of the workflow.                                                  | None         |
-| 8   | interaction | Advance to next step when "Next" button is clicked    | major  | Clicking Next moves users forward through the step sequence.                                                     | None         |
-| 9   | state       | Update step highlighting when advancing to next step  | major  | Updating colors shows progress as users move forward through steps.                                              | None         |
-| 10  | interaction | Change button to "Finish" on step 3                   | major  | Changing to Finish tells users the wizard is ready to complete.                                                  | None         |
-| 11  | layout      | Position button below step labels                     | minor  | Putting the button below keeps navigation separate from step indicators.                                         | None         |
+| 5   | visual      | Highlight current step in blue                        | major  | Blue highlighting shows users which step they're currently on.                                                   | None         |
+| 6   | visual      | Highlight completed steps in green                    | major  | Green highlighting shows which steps have already been finished.                                                 | None         |
+| 7   | visual      | Highlight future steps in gray                        | major  | Gray highlighting shows which steps haven't been reached yet.                                                    | None         |
+| 8   | content     | Display "Next" button                                 | major  | The button text tells users how to move forward through the wizard.                                              | None         |
+| 9   | state       | Start wizard on step 1 (Personal Info)                | major  | Starting at step 1 puts users at the beginning of the workflow.                                                  | None         |
+| 10  | interaction | Advance to next step when "Next" button is clicked    | major  | Clicking Next moves users forward through the step sequence.                                                     | None         |
+| 11  | state       | Update step highlighting when advancing to next step  | major  | Updating colors shows progress as users move forward through steps.                                              | None         |
+| 12  | interaction | Change button to "Finish" on step 3                   | major  | Changing to Finish tells users the wizard is ready to complete.                                                  | None         |
+| 13  | layout      | Position button below step labels                     | minor  | Putting the button below keeps navigation separate from step indicators.                                         | None         |
 
 ## Justification
 
