@@ -4,7 +4,7 @@ Prompt style: Terse
 
 Title: Energy Flow Sankey
 
-Prompt: Sankey diagram showing energy flow. 3 sources on left: "Coal 40", "Wind 35", "Solar 25". 2 destinations on right: "Homes 60", "Industry 40". Show 6 colored flow bands connecting sources to destinations, with band width proportional to flow amount: Coal→Homes 30, Coal→Industry 10, Wind→Homes 25, Wind→Industry 10, Solar→Homes 5, Solar→Industry 20.
+Prompt: Sankey diagram showing energy flow. 3 sources on left: "Coal 40", "Wind 35", "Solar 25". 2 destinations on right: "Homes 60", "Industry 40". Show 6 colored flow bands connecting sources to destinations, with band width proportional to flow amount: Coal→Homes 30, Coal→Industry 10, Wind→Homes 25, Wind→Industry 10, Solar→Homes 5, Solar→Industry 20. Hovering over any flow band displays its exact value.
 
 Required libraries: react, tailwindcss, lucide-react
 
@@ -25,9 +25,10 @@ Required libraries: react, tailwindcss, lucide-react
 | 11  | visual      | Display Wind to Industry flow band with width 10      | minor  | The band width represents 10 units flowing from wind to industry.                                                | None         |
 | 12  | visual      | Display Solar to Homes flow band with width 5         | minor  | The band width represents 5 units flowing from solar to homes.                                                   | None         |
 | 13  | visual      | Display Solar to Industry flow band with width 20     | major  | The band width represents 20 units flowing from solar to industry.                                               | None         |
-| 14  | layout      | Position sources on left side                         | minor  | Left positioning creates the standard left-to-right flow direction.                                              | None         |
-| 15  | layout      | Position destinations on right side                   | minor  | Right positioning completes the left-to-right flow visualization.                                                | None         |
+| 14  | interaction | Display exact value when hovering over flow band      | minor  | Hovering shows the precise flow amount for detailed inspection.                                                  | None         |
+| 15  | layout      | Position sources on left side                         | minor  | Left positioning creates the standard left-to-right flow direction.                                              | None         |
+| 16  | layout      | Position destinations on right side                   | minor  | Right positioning completes the left-to-right flow visualization.                                                | None         |
 
 ## Justification
 
-The energy flow Sankey diagram works exactly as expected with proportional flow visualization. Three source labels "Coal 40", "Wind 35", and "Solar 25" display on the left side. Two destination labels "Homes 60" and "Industry 40" display on the right side. Colored flow bands connect sources to destinations, with band widths proportional to the flow values. Coal splits into a 30-width band flowing to Homes and a 10-width band to Industry. Wind splits into a 25-width band to Homes and a 10-width band to Industry. Solar splits into a 5-width band to Homes and a 20-width band to Industry. The proportional widths visually communicate the energy distribution across sources and destinations.
+The energy flow Sankey diagram works exactly as expected with proportional flow visualization and hover tooltips. Three source labels "Coal 40", "Wind 35", and "Solar 25" display on the left side. Two destination labels "Homes 60" and "Industry 40" display on the right side. Colored flow bands connect sources to destinations, with band widths proportional to the flow values. Coal splits into a 30-width band flowing to Homes and a 10-width band to Industry. Wind splits into a 25-width band to Homes and a 10-width band to Industry. Solar splits into a 5-width band to Homes and a 20-width band to Industry. Hovering over any flow band displays its exact value. The proportional widths visually communicate the energy distribution across sources and destinations.
