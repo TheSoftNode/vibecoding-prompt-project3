@@ -20,8 +20,8 @@ Required libraries: react, tailwindcss, lucide-react
 | 6   | content     | Display "Low (25%)" button                           | major  | The preset button lets users quickly set the battery to low level.                                               | None         |
 | 7   | content     | Display "Medium (50%)" button                        | major  | The preset button lets users quickly set the battery to medium level.                                            | None         |
 | 8   | content     | Display "Full (100%)" button                         | major  | The preset button lets users quickly set the battery to full level.                                              | None         |
-| 9   | interaction | Recalculate arc fill when button is clicked          | major  | Clicking a preset recalculates the arc fill to show the new battery level visually.                              | None         |
-| 10  | interaction | Update percentage text when button is clicked        | major  | Clicking a preset updates the text to display the new battery percentage.                                        | None         |
+| 9   | interaction | Recalculate arc fill when button is clicked          | major  | Clicking a preset recalculates the arc fill to show the new battery level visually.                              | C6, C7, C8   |
+| 10  | interaction | Update percentage text when button is clicked        | major  | Clicking a preset updates the text to display the new battery percentage.                                        | C6, C7, C8   |
 | 11  | layout      | Position percentage text below arc                   | minor  | Placing the text below the arc keeps the numerical value near its visual representation.                         | None         |
 | 12  | layout      | Position buttons underneath percentage text          | minor  | Placing buttons below separates the controls from the gauge display.                                             | None         |
 
