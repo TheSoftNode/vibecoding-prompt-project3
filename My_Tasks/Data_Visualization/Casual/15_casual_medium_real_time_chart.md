@@ -1,4 +1,4 @@
-Category: Data Visualization
+Category: Data_Visualization
 
 Prompt style: Casual
 
@@ -35,3 +35,7 @@ Required libraries: react, tailwindcss, recharts, lucide-react, framer-motion
 | 21  | content     | Display average value for Memory in stats panel       | major  | Showing the average helps users understand overall trends beyond momentary spikes.                               | C16          |
 | 22  | content     | Display average value for Network in stats panel      | major  | Showing the average helps users understand overall trends beyond momentary spikes.                               | C16          |
 | 23  | layout      | Position stats panel adjacent to chart                | minor  | Placing stats near the chart makes it easy to correlate numbers with visual trends.                              | None         |
+
+## Justification
+
+The Real-Time Data Streaming Chart achieved 52% pass rate with multiple complex failures across state management and interaction features. The line chart canvas displays correctly with three colored lines (CPU in blue, Memory in green, Network in orange) and proper metric labels. The stats panel appears adjacent to the chart with labels for all three metrics. However, the model failed to implement the critical sliding window behavior. The data points generated every second, but instead of maintaining exactly the last 30 points and removing the oldest when new ones arrive, the chart kept accumulating all data points indefinitely, causing the visualization to become increasingly compressed and unreadable over time. This dependency chain failure (C8→C9→C10) broke the core streaming concept. Additionally, the pause/resume functionality partially worked - clicking pause stopped the data stream as expected, but clicking resume failed to restart it properly, leaving the chart frozen. The stats panel displayed current values correctly for all three metrics, but the average calculations were incorrect, showing the mean of all accumulated data points rather than just the last 30 visible points. These interdependent failures across state management (sliding window + averages) and interaction (pause/resume) caused the overall 52% pass rate, demonstrating the complexity of coordinating real-time updates with proper data window management.
