@@ -4,7 +4,7 @@ Prompt style: Conversational
 
 Title: Battery Radial Gauge
 
-Prompt: I'd like to display a battery level indicator as a radial gauge. Show a semicircular arc at the top labeled "Battery Level". The arc should fill from left to right with green color representing 75% charge. Below the arc, display the percentage value "75%" in large text. Add a slider underneath labeled "Adjust Level" that lets users drag to change the battery percentage from 0% to 100%. When the slider moves, update both the arc fill amount and the percentage text to match the new value.
+Prompt: I'd like to build a battery level gauge as a semicircular arc labeled "Battery Level". The arc displays with green fill calculated to represent 75% charge, with the percentage value "75%" shown in large text below it. Add three preset buttons underneath: "Low (25%)", "Medium (50%)", "Full (100%)". When clicking any preset button, recalculate the arc fill to match that percentage and update the displayed text value.
 
 Required libraries: react, tailwindcss, lucide-react
 
@@ -12,18 +12,19 @@ Required libraries: react, tailwindcss, lucide-react
 
 | #   | ID          | Description                                           | Weight | Rationale                                                                                                        | Dependent On |
 | --- | ----------- | ----------------------------------------------------- | ------ | ---------------------------------------------------------------------------------------------------------------- | ------------ |
-| 1   | content     | Display "Battery Level" label above arc              | minor  | The label tells users what the gauge represents.                                                                 | None         |
-| 2   | visual      | Display semicircular arc at top                      | major  | The arc provides the visual gauge structure.                                                                     | None         |
-| 3   | visual      | Fill arc with green color representing 75% charge    | major  | The green fill shows the initial battery level visually.                                                         | None         |
-| 4   | content     | Display "75%" percentage text below arc              | major  | The percentage gives users the precise numerical value.                                                          | None         |
-| 5   | content     | Display slider labeled "Adjust Level"                | major  | The slider and label give users the control to change battery level.                                             | None         |
-| 6   | state       | Set slider range from 0% to 100%                     | minor  | The range defines the valid battery percentage values.                                                           | None         |
-| 7   | interaction | Update arc fill when slider moves                    | major  | Moving the slider changes the visual gauge fill to match the new level.                                          | C5           |
-| 8   | interaction | Update percentage text when slider moves             | major  | Moving the slider updates the numerical display to show the new value.                                           | C5           |
-| 9   | layout      | Position arc at top of display                       | minor  | Placing the arc at the top creates clear visual hierarchy.                                                       | None         |
-| 10  | layout      | Position percentage text below arc                   | minor  | Putting text below the arc keeps the numerical value near its visual representation.                             | None         |
-| 11  | layout      | Position slider underneath percentage text           | minor  | Placing the slider below separates controls from the gauge display.                                              | None         |
+| 1   | content     | Display "Battery Level" label                        | minor  | The label helps users understand what the gauge is measuring.                                                    | None         |
+| 2   | visual      | Display semicircular arc                             | major  | The arc provides the core visual structure for the gauge.                                                        | None         |
+| 3   | state       | Calculate arc fill to represent 75% charge           | major  | The fill calculation converts the percentage into a visual representation users can see at a glance.             | None         |
+| 4   | visual      | Fill arc with green color                            | minor  | Green color provides quick visual feedback about the battery status.                                             | None         |
+| 5   | content     | Display "75%" percentage text below arc              | major  | The percentage number gives users the exact battery level.                                                       | None         |
+| 6   | content     | Display "Low (25%)" button                           | major  | The preset button lets users quickly set the battery to low level.                                               | None         |
+| 7   | content     | Display "Medium (50%)" button                        | major  | The preset button lets users quickly set the battery to medium level.                                            | None         |
+| 8   | content     | Display "Full (100%)" button                         | major  | The preset button lets users quickly set the battery to full level.                                              | None         |
+| 9   | interaction | Recalculate arc fill when button is clicked          | major  | Clicking a preset recalculates the arc fill to show the new battery level visually.                              | None         |
+| 10  | interaction | Update percentage text when button is clicked        | major  | Clicking a preset updates the text to display the new battery percentage.                                        | None         |
+| 11  | layout      | Position percentage text below arc                   | minor  | Placing the text below the arc keeps the numerical value near its visual representation.                         | None         |
+| 12  | layout      | Position buttons underneath percentage text          | minor  | Placing buttons below separates the controls from the gauge display.                                             | None         |
 
 ## Justification
 
-The battery radial gauge works exactly as expected with interactive level adjustment. A semicircular arc displays at the top labeled "Battery Level", filled with green color representing 75% charge. Below the arc, the percentage value "75%" displays in large text. Underneath, a slider labeled "Adjust Level" allows users to drag and change the battery percentage from 0% to 100%. When users move the slider, both the arc fill amount and the percentage text update in real-time to match the new value selected.
+The battery radial gauge works exactly as expected with preset level controls. A semicircular arc displays labeled "Battery Level", with green fill calculated to represent 75% charge. Below the arc, the percentage value "75%" displays in large text. Underneath, three preset buttons appear: "Low (25%)", "Medium (50%)", and "Full (100%)". When users click any preset button, the arc fill recalculates to match that percentage and the displayed text value updates accordingly.
