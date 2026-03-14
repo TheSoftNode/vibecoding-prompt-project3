@@ -4,7 +4,7 @@ Prompt style: Casual
 
 Title: Real-Time Data Streaming Chart
 
-Prompt: Build a live streaming line chart that generates random data points between 0-100 every second for three metrics: CPU, Memory, Network. Display exactly three lines: CPU in blue, Memory in green, Network in orange. The chart must show only the last 30 data points at all times - when the 31st point arrives, remove the oldest point before adding the new one. Below the chart, display a single button labeled "Pause Stream". When clicked, stop generating new data and change the button text to "Resume Stream". When clicked again, restart data generation and change the text back to "Pause Stream". To the right of the chart, show a stats panel displaying the most recent value and the rolling average (calculated from only the visible 30 points) for each of the three metrics.
+Prompt: Need a live chart that streams random CPU, Memory, and Network data (0-100 range) every second. Show three colored lines: CPU in blue, Memory in green, Network in orange. Keep exactly 30 points visible - when the 31st point arrives, remove the oldest point first before adding the new one. Add a pause/resume button below the chart that stops and restarts the stream. Put a stats panel to the right showing current values and rolling averages for all three metrics.
 
 Required libraries: react, tailwindcss, recharts, lucide-react
 

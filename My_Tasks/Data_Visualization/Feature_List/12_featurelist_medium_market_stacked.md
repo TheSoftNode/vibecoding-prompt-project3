@@ -1,0 +1,38 @@
+Category: Data_Visualization
+
+Prompt style: Feature List
+
+Title: Market Share Evolution Stacked Area Chart
+
+Prompt: Display a stacked area chart showing market share evolution for four companies over quarters. Stack areas to 100% at each quarter with smooth transitions. Show companies stacked bottom to top in consistent order. When hovering an area, highlight it and gray others with a tooltip. Provide filter buttons for full period vs recent half - redrawing for recent recalculates trend direction. Display trend badges (Growing/Shrinking/Stable) next to company names that update when filter changes. Preload with sample market share data showing realistic competitive dynamics.
+
+Required libraries: react, tailwindcss, lucide-react, recharts
+
+## Rubric
+
+| #   | ID          | Description                                                      | Weight | Rationale                                                                                                 | Dependent On |
+| --- | ----------- | ---------------------------------------------------------------- | ------ | --------------------------------------------------------------------------------------------------------- | ------------ |
+| 1   | visual      | Display stacked area chart with four company areas               | major  | The four stacked areas establish the foundation for comparing market share evolution.                     | None         |
+| 2   | content     | Label companies as A, B, C, D                                    | minor  | Labels help users identify which area represents each company.                                            | None         |
+| 3   | layout      | Stack areas in order: A bottom, B second, C third, D top         | major  | Consistent stacking order enables users to track specific companies across the timeline.                  | C1           |
+| 4   | visual      | Display 12 quarters on x-axis (Q1 through Q12)                   | major  | Twelve quarters provide the complete timeline for analyzing market share trends.                          | None         |
+| 5   | state       | Ensure areas sum to 100% at each quarter                         | major  | The 100% constraint accurately represents total market share distribution at every point.                 | None         |
+| 6   | visual      | Set Company A at 45% in Q1 and 38% in Q12 with smooth transition | major  | Smooth transitions between start and end values create realistic market evolution curves.                 | None         |
+| 7   | visual      | Set Company B at 30% in Q1 and 35% in Q12 with smooth transition | major  | B's growth trajectory shows market share gains over the period.                                           | None         |
+| 8   | visual      | Set Company C at 15% in Q1 and 20% in Q12 with smooth transition | major  | C's expansion reveals competitive dynamics in the market.                                                 | None         |
+| 9   | visual      | Set Company D at 10% in Q1 and 7% in Q12 with smooth transition  | major  | D's decline completes the market redistribution picture.                                                  | None         |
+| 10  | visual      | Draw areas as smooth curves, not straight line segments          | minor  | Smooth curves create a polished appearance and suggest gradual market changes.                            | None         |
+| 11  | interaction | Highlight hovered area with increased opacity                    | minor  | Increased opacity provides clear visual feedback about which company the user is examining.               | None         |
+| 12  | interaction | Gray out non-hovered areas when hovering                         | minor  | Graying out other areas focuses attention on the selected company.                                        | C11          |
+| 13  | content     | Display tooltip with company name and percentage on hover        | major  | Tooltips provide exact values that complement the visual area heights.                                    | C11          |
+| 14  | interaction | Display "Full Period" and "Recent Half" filter buttons           | minor  | Filter buttons let users compare full timeline vs recent performance.                                     | None         |
+| 15  | state       | Redraw chart showing Q7-Q12 only when "Recent Half" selected     | major  | Redrawing with only recent quarters focuses the view on latest competitive dynamics.                      | C14          |
+| 16  | state       | Calculate trend from selected period only (Q1-Q12 vs Q7-Q12)     | major  | Period-specific trends reveal whether recent movements match long-term patterns.                          | C15          |
+| 17  | visual      | Display "Growing" badge if increase > 2 points in period         | major  | Growing badges highlight companies gaining market share in the selected timeframe.                        | C16          |
+| 18  | visual      | Display "Shrinking" badge if decrease > 2 points in period       | major  | Shrinking badges draw attention to companies losing competitive position.                                 | C16          |
+| 19  | visual      | Display "Stable" badge if change within ±2 points in period      | major  | Stable badges indicate companies maintaining their market position.                                       | C16          |
+| 20  | interaction | Update badges when filter changes                                | major  | Dynamic badge updates ensure trend assessments match the currently selected time period.                  | C14, C16     |
+
+## Justification
+
+The Market Share Evolution Stacked Area Chart achieved 50% pass rate (10/20 criteria) with failures in stacking logic, filtering, and trend calculations. The chart correctly displays four company areas (C1 passed) labeled A, B, C, D (C2 passed) across 12 quarters Q1-Q12 (C4 passed). However, the stacking order failed C3 - instead of A at bottom, B second, C third, D top, the areas appeared in reverse order with D at bottom and A at top. The 100% sum constraint failed C5 catastrophically - at Q6, the areas summed to 107%, creating a visible gap above the chart, indicating the model treated each company's percentage as independent rather than ensuring they summed to exactly 100% at each point. The start/end values worked partially: Company A correctly showed 45% in Q1 and 38% in Q12 (C6 passed), and Company B showed 30% to 35% (C7 passed), but Company C failed C8 by showing 15% to 18% instead of 15% to 20%, and Company D failed C9 by showing 10% to 9% instead of 10% to 7%. The curves appeared smooth rather than segmented (C10 passed). Hover interactions worked: the hovered area highlighted with increased opacity (C11 passed), other areas grayed out (C12 passed), and a tooltip displayed company name and percentage (C13 passed). The filter buttons displayed below the chart (C14 passed), but the redraw logic failed C15 - selecting "Recent Half" kept all 12 quarters visible and simply highlighted Q7-Q12 in a different shade instead of redrawing to show only those 6 quarters. The trend calculation failed C16 critically - it always calculated from Q1 to Q12 regardless of filter selection, so Company A showed "Shrinking" badge (45% to 38% = -7 points) even when "Recent Half" was selected, when it should recalculate from Q7 to Q12 only. The badge displays worked correctly showing "Growing", "Shrinking", or "Stable" based on the >2 point thresholds (C17, C18, C19 passed), but failed C20 by not updating when the filter changed, remaining stuck on Full Period calculations.

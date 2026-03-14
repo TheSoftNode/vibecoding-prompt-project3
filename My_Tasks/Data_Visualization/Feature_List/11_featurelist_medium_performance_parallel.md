@@ -1,0 +1,34 @@
+Category: Data_Visualization
+
+Prompt style: Feature List
+
+Title: Employee Performance Parallel Coordinates
+
+Prompt: Build a parallel coordinates chart comparing employees across four metrics: Quality Score, Speed Score, Customer Rating, and Projects Completed. Display four vertical axes evenly spaced. Draw each employee as a line connecting their values across axes. Color and style lines based on Quality Score zones - high scores get blue thick lines, low scores get red thin lines, middle range gray medium. Provide range sliders to filter by Quality and Projects - show only employees matching both ranges and update visible count. Display metric averages from visible employees only, or show "No employees match" when filtered out. Preload with sample employee data.
+
+Required libraries: react, tailwindcss, lucide-react
+
+## Rubric
+
+| #   | ID          | Description                                                      | Weight | Rationale                                                                                                 | Dependent On |
+| --- | ----------- | ---------------------------------------------------------------- | ------ | --------------------------------------------------------------------------------------------------------- | ------------ |
+| 1   | visual      | Display four vertical axes evenly spaced horizontally            | major  | The four axes establish the foundation for comparing employees across multiple metrics.                   | None         |
+| 2   | content     | Label axes as Quality Score, Speed Score, Customer Rating, Projects Completed | minor  | Axis labels help users identify which metric each axis represents.                                        | None         |
+| 3   | visual      | Display axes with scales: 0-100, 0-100, 0-100, 0-20             | major  | Proper scales ensure values plot at correct positions on each axis.                                       | None         |
+| 4   | state       | Convert star ratings to 0-100 scale (5 stars = 100)             | major  | Scale conversion allows customer ratings to plot on the same 0-100 range as other metrics.                | None         |
+| 5   | visual      | Draw 8 lines connecting each employee's values across axes       | major  | Lines show each employee's performance profile across all four metrics.                                   | C1           |
+| 6   | state       | Determine line color and thickness based on Quality Score zones  | major  | Zone-based styling helps users quickly identify high vs low quality performers.                           | None         |
+| 7   | visual      | Color lines blue with thick stroke when Quality > 80            | major  | Blue thick lines immediately highlight top quality performers.                                            | C6           |
+| 8   | visual      | Color lines red with thin stroke when Quality < 70              | major  | Red thin lines draw attention to low quality performers needing improvement.                              | C6           |
+| 9   | visual      | Color lines gray with medium stroke when Quality 70-80          | major  | Gray medium lines indicate middle-tier performers in the quality range.                                   | C6           |
+| 10  | interaction | Display two range sliders for Quality Score and Projects Completed | minor  | Range sliders provide intuitive controls for filtering the employee dataset.                              | None         |
+| 11  | interaction | Show only lines matching both Quality AND Projects ranges       | major  | AND logic filters to employees meeting both criteria simultaneously.                                      | C10          |
+| 12  | interaction | Hide lines outside either range                                  | major  | Hiding non-matching lines focuses attention on the filtered subset.                                       | C10, C11     |
+| 13  | content     | Display "X of 8 employees visible" count                         | major  | The count gives users immediate feedback about filter impact.                                             | C11, C12     |
+| 14  | state       | Calculate average of each metric from visible employees only    | major  | Filtered averages show typical performance within the selected subset.                                    | C11, C12     |
+| 15  | content     | Display averages for all four metrics in summary box            | major  | Showing all metric averages enables comparison of the filtered group's overall profile.                   | C14          |
+| 16  | content     | Display "No employees match filters" when count is zero         | minor  | The message prevents confusion when filters exclude all employees.                                        | C13          |
+
+## Justification
+
+The Employee Performance Parallel Coordinates chart achieved 50% pass rate (8/16 criteria) with failures in scale conversion, filtering logic, and dynamic calculations. The visualization correctly displays four vertical axes evenly spaced (C1 passed) labeled Quality Score, Speed Score, Customer Rating, and Projects Completed (C2 passed) with scales 0-100, 0-100, 0-100, and 0-20 (C3 passed). However, the star rating conversion completely failed C4 - instead of converting ratings to the 0-100 scale (where Alice's 4.5 stars should plot at 90), the model plotted ratings directly on a 1-5 range, causing all customer rating values to cluster in the bottom 5% of the axis. Eight lines correctly connected employee values across axes (C5 passed). The zone-based styling calculation worked (C6 passed) identifying which employees fell into which quality zones, but the visual execution failed C7, C8, and C9 - instead of three distinct visual styles (blue thick, red thin, gray medium), all lines appeared the same thickness with only color differences, and Alice's line (Quality 85, should be blue) appeared green. The filter sliders displayed below the chart (C10 passed), but the filtering logic failed C11 critically - when setting Quality min=75 and Projects min=12, the chart showed Bob (Quality 60, Projects 18) because it used OR logic (matches either filter) instead of AND logic (must match both). The hide behavior worked correctly for truly excluded lines (C12 passed). The employee count failed C13 by showing "4 of 8 employees visible" when only 3 actually matched both filters. The average calculation failed C14 by continuing to include all 8 employees instead of recalculating from only the 3 visible ones - Quality average showed 76.9 (average of all 8) instead of 84.7 (average of Alice, Dan, Frank). The summary box displayed averages (C15 passed) but they were incorrect due to C14's failure. The "No employees match filters" message (C16) was untested since filtering logic errors meant at least one employee always appeared.
