@@ -13,15 +13,14 @@ Required libraries: react, tailwindcss, recharts, lucide-react
 | #   | ID          | Description                                                  | Weight | Rationale                                                                      | Dependent On |
 | --- | ----------- | ------------------------------------------------------------ | ------ | ------------------------------------------------------------------------------ | ------------ |
 | 1   | visual      | Display a donut chart with 5 slices                          | major  | The donut chart provides the visual structure for displaying time proportions. | None         |
-| 2   | visual      | Apply a different color to each slice                        | minor  | Different colors help users visually distinguish between activities.           | C1           |
-| 3   | content     | Display activity name on each slice                          | major  | Activity names help users identify which slice represents each activity.       | C1           |
-| 4   | layout      | Position activity names on the slices                        | minor  | Positioning names on slices ensures immediate visibility without interaction.  | C3           |
+| 2   | visual      | Apply a different color to each slice                        | minor  | Different colors help users visually distinguish between activities.           | None         |
+| 3   | content     | Display activity name on each slice                          | major  | Activity names help users identify which slice represents each activity.       | None         |
+| 4   | layout      | Position activity names on the slices                        | minor  | Positioning names on slices ensures immediate visibility without interaction.  | None         |
 | 5   | content     | Display total hours (24) in the center initially             | major  | The initial center text provides the total time context for all activities.    | None         |
-| 6   | layout      | Position total hours text in the center of the donut         | minor  | Center positioning makes the total immediately visible to users.               | C5           |
+| 6   | layout      | Position total hours text in the center of the donut         | minor  | Center positioning makes the total immediately visible to users.               | None         |
 | 7   | state       | Load realistic sample data for the five activities           | minor  | Sample data enables users to see the chart working with realistic values.      | None         |
-| 8   | interaction | Update center text when slice clicked                        | major  | Updating center text shows details for the selected activity.                  | None         |
-| 9   | interaction | Display exact hours for clicked activity in center           | major  | Exact hours give users precise time values for the selected activity.          | None         |
-| 10  | interaction | Display percentage for clicked activity in center            | major  | The percentage shows the proportion of time for the selected activity.         | None         |
+| 8   | interaction | Display exact hours for clicked activity in center           | major  | Exact hours give users precise time values for the selected activity.          | None         |
+| 9   | interaction | Display percentage for clicked activity in center            | major  | The percentage shows the proportion of time for the selected activity.         | None         |
 
 ## Justification
 
