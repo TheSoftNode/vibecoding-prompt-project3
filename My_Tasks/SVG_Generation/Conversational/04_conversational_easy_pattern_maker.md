@@ -18,10 +18,10 @@ Required libraries: react, tailwindcss, lucide-react
 | 4   | interaction | Create an SVG circular seal when the Generate Stamp button is clicked                             | major  | Clicking initiates the stamp generation.                                                             | None         |
 | 5   | state       | Calculate curved text path positioning around the circle border                                   | major  | Computing positions places each character correctly along the curve.                                 | C4           |
 | 6   | visual      | Display the input text curved around the circle border as SVG                                     | major  | Curved text creates the authentic stamp seal appearance.                                             | C5           |
-| 7   | layout      | Position the star icon in the center of the circle                                                | minor  | Center placement creates the focal point of the stamp.                                               | None         |
+| 7   | layout      | Position the star icon in the center of the circle                                                | minor  | Center placement creates the focal point of the stamp.                                               | C4           |
 | 8   | visual      | Apply the selected color to the stamp elements                                                    | major  | Using the chosen color customizes the stamp appearance.                                              | C4           |
 | 9   | content     | Label the download button "Download SVG"                                                           | minor  | The label identifies the export function.                                                            | None         |
-| 10  | interaction | Download the stamp as SVG file when the Download SVG button is clicked                            | major  | Clicking saves the generated stamp.                                                                  | None         |
+| 10  | interaction | Download the stamp as SVG file when the Download SVG button is clicked                            | major  | Clicking saves the generated stamp.                                                                  | C4           |
 
 ## Justification
 
