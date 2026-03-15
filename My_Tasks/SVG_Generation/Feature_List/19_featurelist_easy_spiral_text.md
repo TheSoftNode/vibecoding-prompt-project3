@@ -19,7 +19,7 @@ Required libraries: react, tailwindcss, lucide-react
 | 5   | layout      | Position SVG canvas below input field                 | minor  | Placing canvas below separates input from output display.                  | C3           |
 | 6   | layout      | Position spiral starting from center of canvas        | major  | Starting from center creates the classic spiral effect expanding outward.  | C4           |
 | 7   | state       | Arrange each character along spiral path              | major  | Character positioning creates the spiral text effect users expect to see.  | None         |
-| 8   | visual      | Display letters spiraling outward from center         | major  | Letters spiraling outward create the visual effect of text following the curve. | C7           |
+| 8   | state       | Display letters spiraling outward from center         | major  | Letters spiraling outward create the visual effect of text following the curve. | None         |
 | 9   | interaction | Update spiral text in real-time as typing             | major  | Real-time updates let users see the spiral forming with each keystroke.    | None         |
 
 ## Justification
