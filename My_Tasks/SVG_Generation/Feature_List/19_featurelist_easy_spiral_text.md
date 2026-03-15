@@ -20,7 +20,7 @@ Required libraries: react, tailwindcss, lucide-react
 | 6   | state       | Arrange each character along spiral path                  | major  | Character positioning creates the spiral text effect users expect to see.                                        | None         |
 | 7   | state       | Position letters at equal intervals along curve           | major  | Equal spacing keeps the text readable and evenly distributed.                                                    | C6           |
 | 8   | state       | Rotate each letter to follow spiral tangent direction     | major  | Rotation makes letters align with the curve instead of staying horizontal.                                       | C6           |
-| 9   | interaction | Update spiral text in real-time as typing                 | major  | Real-time updates let users see the spiral forming with each keystroke.                                          | C6           |
+| 9   | interaction | Update spiral text in real-time as typing                 | major  | Real-time updates let users see the spiral forming with each keystroke.                                          | None         |
 
 ## Justification
 
