@@ -4,27 +4,26 @@ Prompt style: Casual
 
 Title: Shadow Shape Matcher
 
-Prompt: Need a shape matching puzzle game. Show a black filled silhouette target shape at the top. Below it, display three colorful geometric shapes that users can drag with their mouse: a red circle, a blue square, and a green triangle. When a user drags a shape and drops it onto the matching part of the silhouette, snap it into place and keep it there. When all three shapes are correctly placed to complete the silhouette, display "Perfect Match!" in large green text below the shapes. Load a new random silhouette pattern automatically after 2 seconds.
+Prompt: Need a shape matching puzzle game. At the top, show three empty black outlined boxes arranged side by side: a circular outline, a square outline, and a triangular outline. Below them, load three colorful shapes in random positions that users can drag: a red circle, a blue square, and a green triangle. When a user drags a shape and drops it into its matching outlined box, snap it into place and fill the outlined box with the shape's color. When all three outlined boxes are filled with their matching colors, display "Perfect Match!" in large green text below the shapes.
 
 Required libraries: react, tailwindcss, lucide-react
 
 ## Rubric
 
-| #  | ID          | Description                                              | Weight | Rationale                                                                          | Dependent On |
-|----|-------------|----------------------------------------------------------|--------|------------------------------------------------------------------------------------|--------------|
-| 1  | visual      | Display a black filled silhouette target shape at the top | major  | The silhouette shows users the pattern they need to recreate.                     | None         |
-| 2  | layout      | Position silhouette at the top of the display            | minor  | Top positioning creates clear visual separation between target and shapes.         | C1           |
-| 3  | visual      | Display three colorful geometric shapes below silhouette | major  | The shapes provide the draggable pieces for the puzzle.                            | None         |
-| 4  | visual      | Display red circle as one draggable shape                | minor  | The red circle is one of the three pieces users can manipulate.                    | C3           |
-| 5  | visual      | Display blue square as one draggable shape               | minor  | The blue square is one of the three pieces users can manipulate.                   | C3           |
-| 6  | visual      | Display green triangle as one draggable shape            | minor  | The green triangle is one of the three pieces users can manipulate.                | C3           |
-| 7  | interaction | Allow dragging shapes with mouse                         | major  | Dragging lets users move shapes to match the silhouette.                           | None         |
-| 8  | interaction | Snap shape into place when dropped on matching silhouette part | major  | Snapping provides visual feedback that the shape is correctly positioned.          | None         |
-| 9  | state       | Keep shape in place after correct drop                   | major  | Keeping shapes placed maintains the puzzle progress toward completion.             | C8           |
-| 10 | content     | Display "Perfect Match!" when all shapes placed correctly | major  | The success message rewards users for completing the puzzle.                       | None         |
-| 11 | visual      | Display message in large green text below shapes         | minor  | Large green text makes the success message prominent and positive.                 | C10          |
-| 12 | state       | Load new random silhouette pattern after 2 seconds       | major  | Auto-loading keeps the game progressing with fresh challenges.                     | None         |
+| #   | ID          | Description                                                    | Weight | Rationale                                                                  | Dependent On |
+| --- | ----------- | -------------------------------------------------------------- | ------ | -------------------------------------------------------------------------- | ------------ |
+| 1   | visual      | Display three empty black outlined boxes at the top            | major  | The outlined boxes show users where to place each shape.                   | None         |
+| 2   | visual      | Show circular outline, square outline, and triangular outline  | major  | The three different outlines indicate which shape goes where.              | None         |
+| 3   | layout      | Arrange the three outlined boxes side by side                  | minor  | Side-by-side arrangement creates clear distinct targets.                   | None         |
+| 4   | visual      | Display three colorful shapes below the outlined boxes         | major  | The shapes provide the draggable pieces for the puzzle.                    | None         |
+| 5   | visual      | Display red circle, blue square, and green triangle            | major  | The three specific colored shapes match the three outlines.                | None         |
+| 6   | state       | Load shapes in random positions                                | major  | Random positioning varies the initial layout each time.                    | None         |
+| 7   | interaction | Allow dragging shapes with mouse                               | major  | Dragging lets users move shapes to the outlined boxes.                     | None         |
+| 8   | interaction | Snap shape into place when dropped into matching box           | major  | Snapping provides feedback that the shape is correctly placed.             | None         |
+| 9   | interaction | Fill outlined box with shape's color when shape placed         | major  | Color filling provides visual confirmation of correct placement.           | None         |
+| 10  | content     | Display "Perfect Match!" when all boxes filled                 | major  | The success message rewards users for completing the puzzle.               | None         |
+| 11  | visual      | Display message in large green text below shapes               | minor  | Large green text makes the success message prominent and positive.         | None         |
 
 ## Justification
 
-The Shadow Shape Matcher works as expected with drag-and-drop puzzle mechanics. A black filled silhouette target shape displays at the top of the screen. Below it, three colorful geometric shapes appear that users can drag: a red circle, a blue square, and a green triangle. When users drag a shape and drop it onto the matching part of the silhouette, it snaps into place and stays there. When all three shapes are correctly placed to complete the silhouette, "Perfect Match!" displays in large green text below the shapes. A new random silhouette pattern loads automatically after 2 seconds.
+The Shadow Shape Matcher works as expected with drag-and-drop puzzle mechanics. Three empty black outlined boxes display at the top arranged side by side: a circular outline, a square outline, and a triangular outline. Below them, three colorful shapes load in random positions: a red circle, a blue square, and a green triangle. When users drag a shape and drop it into its matching outlined box, it snaps into place and fills the outlined box with the shape's color. When all three outlined boxes are filled with their matching colors, "Perfect Match!" displays in large green text below the shapes.
