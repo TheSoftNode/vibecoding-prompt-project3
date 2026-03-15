@@ -14,12 +14,13 @@ Required libraries: react, tailwindcss, lucide-react
 | --- | ----------- | ----------------------------------------------------- | ------ | -------------------------------------------------------------------------- | ------------ |
 | 1   | content     | Display heading "Spiral Text Generator" at the top    | minor  | The heading tells users what tool they are using.                          | None         |
 | 2   | visual      | Display a text input field                            | major  | The input field allows users to type their message for the spiral.         | None         |
-| 3   | content     | Display placeholder text "Type your message..." in input field | minor  | The placeholder guides users on what to enter.                             | None         |
-| 4   | visual      | Display an SVG canvas                                 | major  | The SVG canvas provides the space to render the spiral text.               | None         |
-| 5   | layout      | Position SVG canvas below input field                 | minor  | Placing canvas below separates input from output display.                  | C4           |
-| 6   | state       | Load the input field with sample text "HELLO" on initial render | major  | Loading sample text provides initial content for users to see the spiral effect immediately. | None         |
-| 7   | layout      | Position letters spiraling outward from center        | major  | Positioning letters in a spiral pattern creates the visual flow outward from the center. | None         |
-| 8   | interaction | Update spiral text in real-time as typing             | major  | Real-time updates let users see the spiral forming with each keystroke.    | None         |
+| 3   | layout      | Position input field below heading                    | minor  | Placing input below heading creates a logical top-to-bottom flow.          | C1           |
+| 4   | content     | Display placeholder text "Type your message..." in input field | minor  | The placeholder guides users on what to enter.                             | None         |
+| 5   | visual      | Display an SVG canvas                                 | major  | The SVG canvas provides the space to render the spiral text.               | None         |
+| 6   | layout      | Position SVG canvas below input field                 | minor  | Placing canvas below separates input from output display.                  | C5           |
+| 7   | state       | Load the input field with sample text "HELLO" on initial render | major  | Loading sample text provides initial content for users to see the spiral effect immediately. | None         |
+| 8   | layout      | Position letters spiraling outward from center        | major  | Positioning letters in a spiral pattern creates the visual flow outward from the center. | None         |
+| 9   | interaction | Update spiral text in real-time as typing             | major  | Real-time updates let users see the spiral forming with each keystroke.    | None         |
 
 ## Justification
 
