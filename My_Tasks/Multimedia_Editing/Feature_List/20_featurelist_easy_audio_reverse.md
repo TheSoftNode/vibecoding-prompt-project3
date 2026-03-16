@@ -12,18 +12,18 @@ Required libraries: react, tailwindcss, lucide-react
 
 | #  | ID          | Description                                              | Weight | Rationale                                                                          | Dependent On |
 |----|-------------|----------------------------------------------------------|--------|------------------------------------------------------------------------------------|--------------|
-| 1  | visual      | Display file upload button                               | major  | Users need a way to upload their image file for editing.                           | None         |
-| 2  | layout      | Position upload button at the top of the interface       | minor  | Top positioning makes the upload control easy to find when starting.               | C1           |
-| 3  | content     | Label button "Upload Image"                              | minor  | A clear label helps users know what file type to upload.                           | C1           |
-| 4  | visual      | Display uploaded image                                   | major  | Showing the image lets users see what they are editing.                            | None         |
-| 5  | layout      | Position image below upload button                       | minor  | Positioning below the upload button creates a clear top-to-bottom flow.            | C1, C4       |
-| 6  | layout      | Display image at original orientation                    | minor  | Original orientation shows the image in its initial unrotated position.            | C4           |
-| 7  | visual      | Display three rotation buttons below the image           | major  | The rotation buttons provide the controls for rotating the image.                  | None         |
-| 8  | layout      | Arrange buttons horizontally in a row                    | minor  | Horizontal arrangement creates clear side-by-side layout.                          | C7           |
-| 9  | content     | Label buttons "Rotate 90° Left", "Rotate 180°", "Rotate 90° Right" | major  | The labels tell users which rotation each button applies.                          | None         |
-| 10 | interaction | Rotate image when rotation button clicked                | major  | Clicking rotates the image to the new orientation.                                 | None         |
-| 11 | state       | Rotate image by specified amount in corresponding direction | major  | The rotation transformation applies the correct degree change to the image.        | None         |
-| 12 | state       | Update image display to show new rotated orientation     | major  | The updated image shows the rotation result visually.                              | None         |
+| 1  | visual      | Display file upload button                               | major  | The upload button helps users bring their image file into the editor for rotation. | None         |
+| 2  | layout      | Position upload button at the top of the interface       | minor  | Positioning at the top makes the upload button easy to find so users can start editing quickly. | C1           |
+| 3  | content     | Label button "Upload Image"                              | minor  | The label communicates what action the button performs and what type of file to select. | C1           |
+| 4  | visual      | Display uploaded image                                   | major  | Users need to see their image displayed so they can decide how to rotate it.       | None         |
+| 5  | layout      | Position image below upload button                       | minor  | Placing the image below the upload button creates a logical top-down workflow from uploading to editing. | C1, C4       |
+| 6  | layout      | Display image at original orientation                    | minor  | Starting with the original orientation gives users a baseline before applying any rotation changes. | C4           |
+| 7  | visual      | Display three rotation buttons below the image           | major  | The rotation buttons give users the controls they need to actually rotate the image. | None         |
+| 8  | layout      | Arrange buttons horizontally in a row                    | minor  | Arranging buttons side by side makes it easy to compare and choose between rotation options. | C7           |
+| 9  | content     | Label buttons "Rotate 90° Left", "Rotate 180°", "Rotate 90° Right" | major  | Clear button labels tell users exactly how much and in which direction each button will rotate the image. | None         |
+| 10 | interaction | Rotate image when rotation button clicked                | major  | Clicking a rotation button triggers the rotation action that changes the image orientation. | None         |
+| 11 | state       | Rotate image by specified amount in corresponding direction | major  | The rotation calculation must apply the exact degree amount in the correct direction to match user expectations. | None         |
+| 12 | state       | Update image display to show new rotated orientation     | major  | After rotation is applied, the display must update to show the new orientation so users can see the result. | None         |
 
 ## Justification
 
