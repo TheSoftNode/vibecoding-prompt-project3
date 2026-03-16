@@ -4,7 +4,7 @@ Prompt style: Feature_List
 
 Title: Audio Reverse Player
 
-Prompt: Build an audio reversal tool. Display a file upload button labeled "Upload Audio File" at the top. After uploading an audio file, show two audio players side by side. Label the left player "Original" and make it play the normal audio. Label the right player "Reversed" and make it play the audio backwards. Each player should have play and pause controls. Display the audio duration in seconds below each player.
+Prompt: Build an audio reversal tool. Display a file upload button labeled "Upload Audio File" at the top. After a user uploads an audio file, show two audio players positioned side by side for comparison. Label the left player "Original" and make it play the normal audio in forward direction. Label the right player "Reversed" and make it play the same audio backwards in reverse direction. Each player should have play and pause controls so users can start and stop playback. Display the audio duration in seconds below each player to show the track length.
 
 Required libraries: react, tailwindcss, lucide-react
 
@@ -21,9 +21,10 @@ Required libraries: react, tailwindcss, lucide-react
 | 7  | content     | Label right player "Reversed"                            | major  | The label tells users which player has the backwards audio.                        | None         |
 | 8  | visual      | Display play and pause controls on each player           | major  | Controls let users start and stop playback for comparison.                         | None         |
 | 9  | interaction | Play audio when play button clicked on each player       | major  | Playing audio lets users hear the original and reversed versions.                  | None         |
-| 10 | state       | Play audio backwards on Reversed player                  | major  | Backwards playback creates the reversal effect users want to hear.                 | None         |
-| 11 | content     | Display audio duration in seconds below each player      | major  | Duration information shows users the length of each audio track.                   | None         |
+| 10 | state       | Play audio in forward direction on Original player       | major  | Forward playback provides the normal reference audio for comparison.               | None         |
+| 11 | state       | Play audio in reverse direction on Reversed player       | major  | Reverse playback creates the backwards effect users want to hear.                  | None         |
+| 12 | state       | Display audio duration in seconds below each player      | major  | Duration information shows users the length of each audio track.                   | None         |
 
 ## Justification
 
-The Audio Reverse Player works as expected with dual playback comparison. A file upload button labeled "Upload Audio File" displays at the top for users to select their audio. After uploading, two audio players appear side by side with the left player labeled "Original" and the right player labeled "Reversed". Each player has play and pause controls. The Original player plays the normal audio while the Reversed player plays the audio backwards. The audio duration in seconds displays below each player.
+The Audio Reverse Player works as expected with dual playback comparison. A file upload button labeled "Upload Audio File" displays at the top for users to select their audio. After uploading, two audio players appear positioned side by side with the left player labeled "Original" and the right player labeled "Reversed". Each player has play and pause controls. The Original player plays the audio in forward direction while the Reversed player plays the same audio in reverse direction. The audio duration in seconds displays below each player.
