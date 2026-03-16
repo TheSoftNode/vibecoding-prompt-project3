@@ -4,7 +4,7 @@ Prompt style: Casual
 
 Title: Shadow Shape Matcher
 
-Prompt: Need a shape matching puzzle game. At the top, show three empty black outlined boxes arranged side by side: a circular outline, a square outline, and a triangular outline. Below them, load three colorful shapes in random positions that users can drag: a red circle, a blue square, and a green triangle. When a user drags a shape and drops it into its matching outlined box, snap it into place and fill the outlined box with the shape's color. When all three outlined boxes are filled with their matching colors, display "Perfect Match!" in large green text below the shapes.
+Prompt: Need a shape matching puzzle game. At the top, show three empty black outlined boxes arranged side by side: a circular outline, a square outline, and a triangular outline. Below them, display three buttons labeled "Circle", "Square", and "Triangle" in random order. When a user clicks a button, fill the matching outlined box with the corresponding color: red for Circle, blue for Square, and green for Triangle.
 
 Required libraries: react, tailwindcss, lucide-react
 
@@ -12,18 +12,19 @@ Required libraries: react, tailwindcss, lucide-react
 
 | #   | ID          | Description                                                    | Weight | Rationale                                                                  | Dependent On |
 | --- | ----------- | -------------------------------------------------------------- | ------ | -------------------------------------------------------------------------- | ------------ |
-| 1   | visual      | Display three empty black outlined boxes at the top            | major  | The outlined boxes show users where to place each shape.                   | None         |
-| 2   | visual      | Show circular outline, square outline, and triangular outline  | major  | The three different outlines indicate which shape goes where.              | None         |
-| 3   | layout      | Arrange the three outlined boxes side by side                  | minor  | Side-by-side arrangement creates clear distinct targets.                   | None         |
-| 4   | visual      | Display three colorful shapes below the outlined boxes         | major  | The shapes provide the draggable pieces for the puzzle.                    | None         |
-| 5   | visual      | Display red circle, blue square, and green triangle            | major  | The three specific colored shapes match the three outlines.                | None         |
-| 6   | state       | Load shapes in random positions                                | major  | Random positioning varies the initial layout each time.                    | None         |
-| 7   | interaction | Allow dragging shapes with mouse                               | major  | Dragging lets users move shapes to the outlined boxes.                     | None         |
-| 8   | interaction | Snap shape into place when dropped into matching box           | major  | Snapping provides feedback that the shape is correctly placed.             | None         |
-| 9   | interaction | Fill outlined box with shape's color when shape placed         | major  | Color filling provides visual confirmation of correct placement.           | None         |
-| 10  | content     | Display "Perfect Match!" when all boxes filled                 | major  | The success message rewards users for completing the puzzle.               | None         |
-| 11  | visual      | Display message in large green text below shapes               | minor  | Large green text makes the success message prominent and positive.         | None         |
+| 1   | visual      | Display three empty black outlined boxes                       | major  | The outlined boxes show users the target shapes to fill.                   | None         |
+| 2   | layout      | Position outlined boxes at the top                             | minor  | Top positioning creates clear visual separation from the buttons.          | C1           |
+| 3   | visual      | Show circular outline, square outline, and triangular outline  | major  | The three different outlines indicate which shape corresponds to each button. | None         |
+| 4   | layout      | Arrange the three outlined boxes side by side                  | minor  | Side-by-side arrangement makes it easy to see all three targets.           | C1           |
+| 5   | visual      | Display three buttons                                          | major  | The buttons provide the controls for filling the boxes.                    | None         |
+| 6   | layout      | Position the three buttons below the outlined boxes            | minor  | Below positioning separates controls from target boxes.                    | C5           |
+| 7   | content     | Label the three buttons "Circle", "Square", and "Triangle"     | major  | The labels tell users which button fills which outlined box.               | C5           |
+| 8   | state       | Display the three buttons in random order on each load         | major  | Random order varies the button layout each time for variety.               | C5           |
+| 9   | interaction | Fill matching outlined box when button clicked                 | major  | Clicking lets users fill the boxes to complete the puzzle.                 | None         |
+| 10  | visual      | Fill circle outline with red when Circle clicked               | major  | Red color provides visual feedback for the circle match.                   | None         |
+| 11  | visual      | Fill square outline with blue when Square clicked              | major  | Blue color provides visual feedback for the square match.                  | None         |
+| 12  | visual      | Fill triangle outline with green when Triangle clicked         | major  | Green color provides visual feedback for the triangle match.               | None         |
 
 ## Justification
 
-The Shadow Shape Matcher works as expected with drag-and-drop puzzle mechanics. Three empty black outlined boxes display at the top arranged side by side: a circular outline, a square outline, and a triangular outline. Below them, three colorful shapes load in random positions: a red circle, a blue square, and a green triangle. When users drag a shape and drop it into its matching outlined box, it snaps into place and fills the outlined box with the shape's color. When all three outlined boxes are filled with their matching colors, "Perfect Match!" displays in large green text below the shapes.
+The Shadow Shape Matcher works as expected with click-to-fill mechanics. Three empty black outlined boxes display at the top arranged side by side: a circular outline, a square outline, and a triangular outline. Below them, three buttons display in random order labeled "Circle", "Square", and "Triangle". When users click the Circle button, the circular outline fills with red. When users click the Square button, the square outline fills with blue. When users click the Triangle button, the triangular outline fills with green.
