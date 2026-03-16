@@ -2,9 +2,9 @@ Category: Web_Application
 
 Prompt style: Feature_List
 
-Title: Smart Contract Event Logger
+Title: Token Allowance Manager
 
-Prompt: Build a smart contract event logger for tracking blockchain transaction events. At the top, display a form with an input field labeled "Event Name" where users can type the name of a blockchain event they want to log. Below the input field, show an "Add Event" button. When a user clicks the button, add the entered event name to a list of logged events displayed below the button, showing each event with a timestamp of when it was added. Display all logged events in a vertical list where each event shows the event name followed by the timestamp in parentheses.
+Prompt: Build a token allowance manager for managing ERC20 token spending permissions. At the top, display two tabs labeled "View Allowances" and "Set Allowance" arranged horizontally. Load the app with the View Allowances tab active by default. When a user clicks the "View Allowances" tab, show a table displaying three sample token allowances with columns for token name, spender address, and approved amount. When a user clicks the "Set Allowance" tab, switch the view to show a form with an input field labeled "Amount to Approve" and a "Set Approval" button below it, hiding the table while the form is displayed.
 
 Required libraries: react, tailwindcss, lucide-react
 
@@ -12,18 +12,20 @@ Required libraries: react, tailwindcss, lucide-react
 
 | #   | ID          | Description                                               | Weight | Rationale                                                                                                        | Dependent On |
 | --- | ----------- | --------------------------------------------------------- | ------ | ---------------------------------------------------------------------------------------------------------------- | ------------ |
-| 1   | visual      | Display input field                                       | major  | The input field lets users type event names.                                                                     | None         |
-| 2   | layout      | Position input field at top                               | minor  | Top positioning makes the form easy to find.                                                                     | C1           |
-| 3   | content     | Label input field "Event Name"                            | minor  | The label tells users what to enter.                                                                             | C1           |
-| 4   | visual      | Display "Add Event" button                                | major  | The button lets users add events to the log.                                                                     | None         |
-| 5   | layout      | Position button below input field                         | minor  | Positioning below creates clear form flow.                                                                       | C1, C4       |
-| 6   | interaction | Add event to list when user clicks button                 | major  | Clicking adds the event to the logged events.                                                                    | None         |
-| 7   | state       | Generate timestamp when event is added                    | major  | Timestamp records when each event was logged.                                                                    | C6           |
-| 8   | visual      | Display logged events in vertical list                    | major  | The list shows all logged events.                                                                                | None         |
-| 9   | layout      | Position list below button                                | minor  | Positioning below creates clear vertical flow.                                                                   | C4, C8       |
-| 10  | content     | Show event name for each logged event                     | major  | The event name identifies what was logged.                                                                       | None         |
-| 11  | content     | Show timestamp in parentheses after event name            | major  | The timestamp shows when the event was added.                                                                    | None         |
+| 1   | visual      | Display two tabs                                          | major  | The tabs allow users to switch between viewing and setting allowances.                                           | None         |
+| 2   | layout      | Position tabs at top arranged horizontally                | minor  | Positioning tabs at the top in a horizontal row makes navigation easy to find and use.                           | C1           |
+| 3   | content     | Label tabs "View Allowances" and "Set Allowance"          | major  | Clear tab labels tell users what functionality each view provides.                                               | None         |
+| 4   | state       | Load app with View Allowances tab active by default       | major  | Loading with a default active tab ensures users see content immediately when the app starts.                     | None         |
+| 5   | interaction | Show table when user clicks "View Allowances" tab         | major  | Clicking the View tab switches to the allowances display view.                                                   | None         |
+| 6   | visual      | Display table with three sample token allowances          | major  | The table shows existing token spending permissions for users to review.                                         | None         |
+| 7   | content     | Show token name, spender address, and approved amount columns | major  | The three columns provide complete information about each token allowance.                                    | None         |
+| 8   | interaction | Switch view when user clicks "Set Allowance" tab          | major  | Clicking the Set tab changes to the form view for setting new allowances.                                        | None         |
+| 9   | visual      | Display form with input field when Set Allowance tab active | major  | The form provides controls for users to set new token allowances.                                              | None         |
+| 10  | content     | Label input field "Amount to Approve"                     | minor  | The label tells users what value to enter for the allowance.                                                     | C9           |
+| 11  | visual      | Display "Set Approval" button in form                     | major  | The button allows users to submit the new allowance amount.                                                      | None         |
+| 12  | layout      | Position button below input field                         | minor  | Placing the button below the input follows standard form layout.                                                 | C9, C11      |
+| 13  | state       | Hide table while form is displayed                        | major  | Hiding the table when showing the form prevents confusion by showing only one view at a time.                    | C8           |
 
 ## Justification
 
-The smart contract event logger works exactly as expected for tracking blockchain transaction events. At the top, a form displays with an input field labeled "Event Name" where users can type the name of a blockchain event they want to log. Below the input field, an "Add Event" button appears. When users click the button, the entered event name gets added to a list of logged events displayed below the button, with each event showing a timestamp of when it was added. All logged events display in a vertical list where each event shows the event name followed by the timestamp in parentheses.
+The token allowance manager works exactly as expected for managing ERC20 token spending permissions. At the top, two tabs labeled "View Allowances" and "Set Allowance" display arranged horizontally. The app loads with the View Allowances tab active by default. When users click the "View Allowances" tab, a table appears displaying three sample token allowances with columns for token name, spender address, and approved amount. When users click the "Set Allowance" tab, the view switches to show a form with an input field labeled "Amount to Approve" and a "Set Approval" button below it, hiding the table while the form is displayed.
