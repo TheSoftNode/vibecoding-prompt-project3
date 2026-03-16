@@ -2,9 +2,9 @@ Category: Multimedia_Editing
 
 Prompt style: Feature_List
 
-Title: Audio Reverse Player
+Title: Image Rotation Editor
 
-Prompt: Build an audio reversal tool. Display a file upload button labeled "Upload Audio File" at the top. After a user uploads an audio file, show two audio players positioned side by side for comparison. Label the left player "Original" and make it play the normal audio in forward direction. Label the right player "Reversed" and make it play the same audio backwards in reverse direction. Each player should have play and pause controls so users can start and stop playback. Display the audio duration in seconds below each player to show the track length.
+Prompt: Build an image rotation editor for editing image files. Display a file upload button labeled "Upload Image" at the top of the interface. After a user uploads an image file, display the uploaded image below the upload button at its original orientation. Below the displayed image, show three rotation buttons labeled "Rotate 90° Left", "Rotate 180°", and "Rotate 90° Right" arranged horizontally in a row. When a user clicks any of the rotation buttons, rotate the displayed image by the specified amount in the corresponding direction and update the image display to show the new rotated orientation immediately.
 
 Required libraries: react, tailwindcss, lucide-react
 
@@ -12,19 +12,19 @@ Required libraries: react, tailwindcss, lucide-react
 
 | #  | ID          | Description                                              | Weight | Rationale                                                                          | Dependent On |
 |----|-------------|----------------------------------------------------------|--------|------------------------------------------------------------------------------------|--------------|
-| 1  | visual      | Display file upload button                               | major  | Users need a way to select their audio file for reversal.                          | None         |
-| 2  | layout      | Position upload button at the top                        | minor  | Top positioning makes the upload control easy to find first.                       | C1           |
-| 3  | content     | Label button "Upload Audio File"                         | minor  | A clear label helps users know what file type to upload.                           | C1           |
-| 4  | visual      | Display two audio players after upload                   | major  | Dual players let users compare original and reversed audio side by side.           | None         |
-| 5  | layout      | Position players side by side                            | major  | Side-by-side layout makes comparison between original and reversed easy.           | C4           |
-| 6  | content     | Label left player "Original"                             | major  | The label tells users which player has the normal audio.                           | None         |
-| 7  | content     | Label right player "Reversed"                            | major  | The label tells users which player has the backwards audio.                        | None         |
-| 8  | visual      | Display play and pause controls on each player           | major  | Controls let users start and stop playback for comparison.                         | None         |
-| 9  | interaction | Play audio when play button clicked on each player       | major  | Playing audio lets users hear the original and reversed versions.                  | None         |
-| 10 | state       | Play audio in forward direction on Original player       | major  | Forward playback provides the normal reference audio for comparison.               | None         |
-| 11 | state       | Play audio in reverse direction on Reversed player       | major  | Reverse playback creates the backwards effect users want to hear.                  | None         |
-| 12 | state       | Display audio duration in seconds below each player      | major  | Duration information shows users the length of each audio track.                   | None         |
+| 1  | visual      | Display file upload button                               | major  | Users need a way to upload their image file for editing.                           | None         |
+| 2  | layout      | Position upload button at the top of the interface       | minor  | Top positioning makes the upload control easy to find when starting.               | C1           |
+| 3  | content     | Label button "Upload Image"                              | minor  | A clear label helps users know what file type to upload.                           | C1           |
+| 4  | visual      | Display uploaded image                                   | major  | Showing the image lets users see what they are editing.                            | None         |
+| 5  | layout      | Position image below upload button                       | minor  | Positioning below the upload button creates a clear top-to-bottom flow.            | C1, C4       |
+| 6  | layout      | Display image at original orientation                    | minor  | Original orientation shows the image in its initial unrotated position.            | C4           |
+| 7  | visual      | Display three rotation buttons below the image           | major  | The rotation buttons provide the controls for rotating the image.                  | None         |
+| 8  | layout      | Arrange buttons horizontally in a row                    | minor  | Horizontal arrangement creates clear side-by-side layout.                          | C7           |
+| 9  | content     | Label buttons "Rotate 90° Left", "Rotate 180°", "Rotate 90° Right" | major  | The labels tell users which rotation each button applies.                          | None         |
+| 10 | interaction | Rotate image when rotation button clicked                | major  | Clicking rotates the image to the new orientation.                                 | None         |
+| 11 | state       | Rotate image by specified amount in corresponding direction | major  | The rotation transformation applies the correct degree change to the image.        | None         |
+| 12 | state       | Update image display to show new rotated orientation     | major  | The updated image shows the rotation result visually.                              | None         |
 
 ## Justification
 
-The Audio Reverse Player works as expected with dual playback comparison. A file upload button labeled "Upload Audio File" displays at the top for users to select their audio. After uploading, two audio players appear positioned side by side with the left player labeled "Original" and the right player labeled "Reversed". Each player has play and pause controls. The Original player plays the audio in forward direction while the Reversed player plays the same audio in reverse direction. The audio duration in seconds displays below each player.
+The Image Rotation Editor works as expected for editing image files. A file upload button labeled "Upload Image" displays at the top of the interface. After uploading an image file, the uploaded image displays below the upload button at its original orientation. Below the displayed image, three rotation buttons appear labeled "Rotate 90° Left", "Rotate 180°", and "Rotate 90° Right" arranged horizontally in a row. When users click any of the rotation buttons, the displayed image rotates by the specified amount in the corresponding direction and the image display updates to show the new rotated orientation immediately.
