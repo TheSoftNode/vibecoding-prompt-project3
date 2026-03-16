@@ -17,13 +17,13 @@ Required libraries: react, tailwindcss, lucide-react
 | 3   | visual      | Show circular outline, square outline, and triangular outline  | major  | The three different outlines indicate which shape corresponds to each button. | None         |
 | 4   | layout      | Arrange the three outlined boxes side by side                  | minor  | Side-by-side arrangement makes it easy to see all three targets.           | C1           |
 | 5   | visual      | Display three buttons                                          | major  | The buttons provide the controls for filling the boxes.                    | None         |
-| 6   | layout      | Position the three buttons below the outlined boxes            | minor  | Below positioning separates controls from target boxes.                    | C5           |
+| 6   | layout      | Position the three buttons below the outlined boxes            | minor  | Below positioning separates controls from target boxes.                    | C1, C5       |
 | 7   | content     | Label the three buttons "Circle", "Square", and "Triangle"     | major  | The labels tell users which button fills which outlined box.               | C5           |
-| 8   | state       | Display the three buttons in random order on each load         | major  | Random order varies the button layout each time for variety.               | C5           |
+| 8   | state       | Display the three buttons in random order on each load         | minor  | Random order varies the button layout each time for variety.               | C5           |
 | 9   | interaction | Fill matching outlined box when button clicked                 | major  | Clicking lets users fill the boxes to complete the puzzle.                 | None         |
-| 10  | visual      | Fill circle outline with red when Circle clicked               | major  | Red color provides visual feedback for the circle match.                   | None         |
-| 11  | visual      | Fill square outline with blue when Square clicked              | major  | Blue color provides visual feedback for the square match.                  | None         |
-| 12  | visual      | Fill triangle outline with green when Triangle clicked         | major  | Green color provides visual feedback for the triangle match.               | None         |
+| 10  | interaction | Fill circle outline with red when Circle clicked               | major  | Red color provides visual feedback for the circle match.                   | None         |
+| 11  | interaction | Fill square outline with blue when Square clicked              | major  | Blue color provides visual feedback for the square match.                  | None         |
+| 12  | interaction | Fill triangle outline with green when Triangle clicked         | major  | Green color provides visual feedback for the triangle match.               | None         |
 
 ## Justification
 
