@@ -4,7 +4,7 @@ Prompt style: Casual
 
 Title: Shadow Shape Matcher
 
-Prompt: Need a shape matching puzzle game. At the top, show three empty black outlined boxes arranged side by side: a circular outline, a square outline, and a triangular outline. Below them, display three buttons labeled "Circle", "Square", and "Triangle" in random order on each load. When a user clicks a button, fill the matching outlined box with the corresponding color and keep it filled: red for Circle, blue for Square, and green for Triangle.
+Prompt: Need a shape matching puzzle game. At the top, show three empty black outlined boxes arranged side by side: a circular outline, a square outline, and a triangular outline. Below them, display three buttons labeled "Circle", "Square", and "Triangle" in random order on each load. When a user clicks a button, fill the matching outlined box with the corresponding color: red for Circle, blue for Square, and green for Triangle. Keep filled boxes filled.
 
 Required libraries: react, tailwindcss, lucide-react
 
