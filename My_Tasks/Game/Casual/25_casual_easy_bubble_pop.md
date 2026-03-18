@@ -12,21 +12,20 @@ Required libraries: react, tailwindcss, lucide-react
 
 | #   | ID          | Description                                          | Weight | Rationale                                                                                    | Dependent On |
 | --- | ----------- | ---------------------------------------------------- | ------ | -------------------------------------------------------------------------------------------- | ------------ |
-| 1   | visual      | Display 6 bubbles on screen                          | major  | Showing bubbles gives players the targets they need to pop.                                  | None         |
+| 1   | visual      | Display 6 bubbles floating on screen                 | major  | Showing bubbles gives players the targets they need to pop.                                  | None         |
 | 2   | content     | Label each bubble with letters A through F           | major  | Labeling bubbles identifies each one uniquely so players can distinguish them.               | C1           |
-| 3   | layout      | Position bubbles scattered across screen             | minor  | Scattering bubbles creates the floating visual appearance for the popping game.              | C1           |
-| 4   | interaction | Detect bubble click from player                      | major  | Detecting clicks captures which bubble the player wants to pop.                              | C1           |
-| 5   | visual      | Display visual effect when bubble clicked            | major  | Showing pop effect gives satisfying feedback that the bubble was successfully clicked.       | C4           |
-| 6   | interaction | Remove bubble from screen after click                | major  | Removing bubble shows the popping action was completed and that bubble is gone.              | C4           |
-| 7   | visual      | Display "Pop Count" label                            | minor  | Showing label tells players what the number below it represents.                             | None         |
-| 8   | layout      | Position "Pop Count" at bottom of screen             | minor  | Placing count at bottom keeps it visible without blocking the bubbles above.                 | C7           |
-| 9   | state       | Increment count by 1 when bubble removed             | major  | Incrementing count tracks how many bubbles the player has successfully popped so far.        | C6           |
-| 10  | content     | Display current pop count number                     | major  | Showing number tells players how many bubbles they have popped.                              | C9           |
-| 11  | state       | Detect when all 6 bubbles are removed                | major  | Detecting completion determines when the player finished popping every bubble.               | C6           |
-| 12  | content     | Display "All Clear!" message when all removed        | major  | Showing message tells players they successfully popped all bubbles and completed the round.  | C11          |
-| 13  | visual      | Display "New Round" button when all removed          | major  | Showing button gives players the control to start another popping round.                     | C11          |
-| 14  | interaction | Respawn all 6 bubbles when "New Round" clicked       | major  | Clicking button creates fresh bubbles so players can pop them again in a new round.          | C13          |
+| 3   | layout      | Position bubbles scattered across screen             | minor  | Scattering bubbles creates a floating appearance for the popping game.                       | C1           |
+| 4   | interaction | Pop bubble when clicked                              | major  | Clicking bubble triggers the popping action players expect.                                  | C1           |
+| 5   | visual      | Display visual effect when bubble pops               | major  | Showing effect gives satisfying feedback that the bubble was successfully popped.            | C4           |
+| 6   | interaction | Remove bubble from screen after popping              | major  | Removing bubble shows the popping action was registered and changes game state.              | C4           |
+| 7   | content     | Display "Pop Count" at the bottom                    | minor  | Showing count label tells players what the number represents.                                | None         |
+| 8   | state       | Increment count when bubble is popped                | major  | Incrementing count tracks how many bubbles the player has successfully popped.               | C6           |
+| 9   | content     | Update displayed count after each pop                | major  | Updating display shows players their popping progress in real time.                          | C8           |
+| 10  | state       | Detect when all 6 bubbles are popped                 | major  | Detecting completion determines when the round is finished.                                  | C6           |
+| 11  | content     | Display "All Clear!" message when all popped         | major  | Showing completion message tells players they finished popping all bubbles.                  | C10          |
+| 12  | visual      | Display "New Round" button after all popped          | major  | Showing button gives players control to start another round.                                 | C10          |
+| 13  | interaction | Respawn all 6 bubbles when "New Round" clicked       | major  | Clicking button restarts the game with fresh bubbles for another popping round.              | C12          |
 
 ## Justification
 
-The bubble chain popper game works as expected for simple clicking gameplay with round completion. Six bubbles display on screen positioned scattered across the interface, each labeled with letters A through F. A "Pop Count" label displays positioned at the bottom of the screen with the current pop count number showing how many bubbles have been popped. When players click a bubble, the game detects the click, displays a visual effect, removes the bubble from the screen, increments the count by 1, and displays the updated pop count number. When all 6 bubbles are removed, the game detects completion, displays "All Clear!" message, and displays a "New Round" button. When players click the "New Round" button, all 6 bubbles respawn on screen.
+The bubble chain popper game works as expected for simple clicking gameplay with round completion. Six bubbles display floating on screen, scattered across the interface, each labeled with letters A through F. When players click a bubble, it pops with a visual effect and disappears from the screen. A "Pop Count" displays at the bottom and increments each time a bubble is popped, updating the display in real time. When all 6 bubbles are popped, the game detects completion, displays "All Clear!" message, and shows a "New Round" button. When players click the "New Round" button, all 6 bubbles respawn on screen.
