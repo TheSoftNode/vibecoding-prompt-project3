@@ -13,17 +13,18 @@ Required libraries: react, tailwindcss, lucide-react
 | #   | ID          | Description                                                | Weight | Rationale                                                                                           | Dependent On |
 | --- | ----------- | ---------------------------------------------------------- | ------ | --------------------------------------------------------------------------------------------------- | ------------ |
 | 1   | visual      | Display large center magnet                                | major  | Showing the center magnet establishes the fixed repulsion source in the field.                      | None         |
-| 2   | content     | Display label "North Pole" on center magnet                | major  | Showing the north pole label identifies the magnetic polarity causing repulsion.                    | C1           |
+| 2   | content     | Display label "North Pole" on center magnet                | minor  | Showing the north pole label identifies the magnetic polarity causing repulsion.                    | C1           |
 | 3   | layout      | Position center magnet at middle of screen                 | minor  | Centering the main magnet creates equal repulsion distance to all corners.                          | C1           |
 | 4   | visual      | Display four smaller corner magnets                        | major  | Showing four corner magnets gives users the objects that will be repelled.                          | None         |
-| 5   | content     | Display labels "N1", "N2", "N3", "N4" on corner magnets    | major  | Showing labels identifies each corner magnet in the repulsion system.                               | C4           |
+| 5   | content     | Display labels "N1", "N2", "N3", "N4" on corner magnets    | minor  | Showing labels identifies each corner magnet in the repulsion system.                               | C4           |
 | 6   | layout      | Position four magnets at screen corners initially          | minor  | Placing magnets at corners establishes their starting positions before repulsion.                   | C4           |
-| 7   | visual      | Display Activate button                                    | minor  | Showing the activate button gives users a control to start the repulsion simulation.                | None         |
+| 7   | visual      | Display Activate button                                    | major  | Showing the activate button gives users a control to start the repulsion simulation.                | None         |
 | 8   | interaction | Start outward drift when Activate button clicked           | major  | Clicking activate initiates the magnetic repulsion movement for all corner magnets.                 | C7           |
 | 9   | state       | Move corner magnets away from center in their directions   | major  | Moving magnets outward simulates the north-north magnetic repulsion force.                          | C8           |
 | 10  | state       | Move all magnets at same speed                             | major  | Using equal speed for all magnets shows uniform repulsion strength from the center.                 | C9           |
-| 11  | visual      | Display Reset button                                       | minor  | Showing the reset button gives users a control to restart the simulation.                           | None         |
-| 12  | interaction | Return corner magnets to starting positions when Reset clicked | major | Clicking reset moves all magnets back to corners so users can run repulsion again.              | C11          |
+| 11  | state       | Drift corner magnets slowly away from center               | major  | Slow movement simulates gradual magnetic repulsion force over time.                                 | C9           |
+| 12  | visual      | Display Reset button                                       | minor  | Showing the reset button gives users a control to restart the simulation.                           | None         |
+| 13  | interaction | Return corner magnets to starting positions when Reset clicked | major | Clicking reset moves all magnets back to corners so users can run repulsion again.              | C12          |
 
 ## Justification
 
