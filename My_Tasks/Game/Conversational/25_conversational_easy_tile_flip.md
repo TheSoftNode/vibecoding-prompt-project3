@@ -14,18 +14,17 @@ Required libraries: react, tailwindcss, lucide-react
 | --- | ----------- | ---------------------------------------------------- | ------ | -------------------------------------------------------------------------------------------- | ------------ |
 | 1   | visual      | Display 8 square tiles                               | major  | Showing tiles gives players the objects they need to flip.                                   | None         |
 | 2   | layout      | Arrange tiles in two rows of 4                       | minor  | Arranging in rows creates an organized grid layout for the flipping game.                    | C1           |
-| 3   | visual      | Show each tile starting as gray color                | major  | Starting gray establishes the initial unflipped state players will change.                   | C1           |
+| 3   | visual      | Show each tile starting as gray color                | minor  | Starting gray establishes the initial unflipped state players will change.                   | None         |
 | 4   | interaction | Flip tile to blue when clicked                       | major  | Clicking tile changes its color showing the flipping action.                                 | C1           |
 | 5   | state       | Keep tile blue after flipping                        | major  | Maintaining blue color shows the tile stays flipped and won't revert.                        | C4           |
-| 6   | content     | Display move counter labeled "Moves: 0"              | major  | Showing counter tells players how many flips they've made.                                   | None         |
+| 6   | content     | Display move counter labeled "Moves: 0"              | minor  | Showing counter tells players how many flips they've made.                                   | None         |
 | 7   | layout      | Position move counter at top                         | minor  | Top positioning keeps counter visible while players flip tiles below.                        | C6           |
-| 8   | interaction | Detect each tile click                               | major  | Detecting clicks captures player interactions for counting and flipping.                     | C1           |
-| 9   | state       | Increment move counter when tile clicked             | major  | Incrementing count tracks the total number of moves the player makes.                        | C8           |
-| 10  | content     | Update displayed move count after each click         | major  | Updating display shows players their flip count in real time.                                | C9           |
-| 11  | state       | Detect when all 8 tiles are blue                     | major  | Checking completion determines when the player has flipped every tile.                       | C5           |
-| 12  | content     | Display "Complete!" message when all flipped         | major  | Showing message tells players they successfully flipped all tiles.                           | C11          |
-| 13  | visual      | Display "Complete!" in bold text                     | minor  | Bold formatting makes the completion message prominent and celebratory.                      | C12          |
-| 14  | interaction | Disable tile clicking after completion               | major  | Disabling clicks prevents further flipping once the challenge is complete.                   | C11          |
+| 8   | state       | Increment move counter when tile clicked             | major  | Incrementing count tracks the total number of moves the player makes.                        | C4           |
+| 9   | content     | Update displayed move count after each click         | minor  | Updating display shows players their flip count in real time.                                | C8           |
+| 10  | state       | Detect when all 8 tiles are blue                     | major  | Checking completion determines when the player has flipped every tile.                       | C5           |
+| 11  | content     | Display "Complete!" message when all flipped         | major  | Showing message tells players they successfully flipped all tiles.                           | C10          |
+| 12  | visual      | Display "Complete!" in bold text                     | minor  | Bold formatting makes the completion message prominent and celebratory.                      | C11          |
+| 13  | interaction | Disable tile clicking after completion               | major  | Disabling clicks prevents further flipping once the challenge is complete.                   | C10          |
 
 ## Justification
 
