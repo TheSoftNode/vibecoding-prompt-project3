@@ -14,7 +14,7 @@ Required libraries: react, tailwindcss, lucide-react
 | --- | ----------- | ---------------------------------------------------- | ------ | -------------------------------------------------------------------------------------------- | ------------ |
 | 1   | visual      | Display 8 square tiles                               | major  | Showing tiles gives players the objects they need to flip.                                   | None         |
 | 2   | layout      | Arrange tiles in two rows of 4                       | minor  | Arranging in rows creates an organized grid layout for the flipping game.                    | C1           |
-| 3   | state       | Initialize each tile as gray                         | minor  | Setting initial gray state establishes the unflipped condition players will change.          | None         |
+| 3   | state       | Start each tile as gray                              | minor  | Starting tiles in gray state establishes the unflipped condition players will change.        | None         |
 | 4   | visual      | Display each tile in gray color initially            | minor  | Showing gray color makes the initial unflipped state visible to players.                     | C3           |
 | 5   | interaction | Flip tile to blue when clicked                       | major  | Clicking tile changes its color showing the flipping action.                                 | C1           |
 | 6   | state       | Keep tile blue after flipping                        | major  | Maintaining blue color shows the tile stays flipped and won't revert.                        | C5           |
