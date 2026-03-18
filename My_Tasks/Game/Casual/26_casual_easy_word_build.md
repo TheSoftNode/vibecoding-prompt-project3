@@ -4,7 +4,7 @@ Prompt style: Casual
 
 Title: Word Builder
 
-Prompt: Need a word building game. Show 6 letter buttons displaying random letters. When I click letters in order, they add to a word display area at the top. Display a "Check" button that validates if the built word matches the target word "GAMES". If correct, show "Correct!" in green. If wrong, show "Try Again!" in yellow. Display a "Clear" button that empties the word display and lets me start building again.
+Prompt: Need a word building game. Show 6 letter buttons displaying the letters G, A, M, E, S, and one random extra letter. When I click letters in order, they add to a word display area at the top. Display a "Check" button that validates if the built word matches the target word "GAMES". If correct, show "Correct!" in green. If wrong, show "Try Again!" in yellow. Display a "Clear" button that empties the word display and lets me start building again.
 
 Required libraries: react, tailwindcss, lucide-react
 
@@ -13,7 +13,7 @@ Required libraries: react, tailwindcss, lucide-react
 | #   | ID          | Description                                          | Weight | Rationale                                                                                    | Dependent On |
 | --- | ----------- | ---------------------------------------------------- | ------ | -------------------------------------------------------------------------------------------- | ------------ |
 | 1   | visual      | Display 6 letter buttons                             | major  | Showing letter buttons gives players the building blocks for word construction.              | None         |
-| 2   | state       | Assign random letters to buttons                     | major  | Randomizing letters creates different letter combinations for building words.                | None         |
+| 2   | state       | Assign letters G, A, M, E, S and one random letter   | major  | Assigning specific letters ensures the target word can be built while the random letter adds variety. | None         |
 | 3   | content     | Display letters on buttons                           | major  | Showing letters tells players what characters they can use to build words.                   | C2           |
 | 4   | visual      | Display word display area at top                     | major  | Showing display area gives players a space to see their constructed word.                    | None         |
 | 5   | layout      | Position word display at top of screen               | minor  | Top positioning keeps the word visible above the letter buttons.                             | C4           |
@@ -29,4 +29,4 @@ Required libraries: react, tailwindcss, lucide-react
 
 ## Justification
 
-The word builder game works as expected for sequential letter selection with validation. Six letter buttons display showing random letters assigned to each button. A word display area displays positioned at the top of the screen. When players click letters in order, each clicked letter adds to the word display showing letters in click order. A "Check" button displays and when clicked, validates if the built word matches the target word "GAMES" by comparing the two. If the word matches, "Correct!" displays in green. If wrong, "Try Again!" displays in yellow. A "Clear" button displays and when clicked, empties the word display letting players start building again.
+The word builder game works exactly as expected for sequential letter selection with validation. Six letter buttons display showing the letters G, A, M, E, S and one random extra letter assigned to each button. A word display area displays positioned at the top of the screen. When players click letters in order, each clicked letter adds to the word display showing letters in click order. A "Check" button displays and when clicked, validates if the built word matches the target word "GAMES" by comparing the two. If the word matches, "Correct!" displays in green. If wrong, "Try Again!" displays in yellow. A "Clear" button displays and when clicked, empties the word display letting players start building again.
