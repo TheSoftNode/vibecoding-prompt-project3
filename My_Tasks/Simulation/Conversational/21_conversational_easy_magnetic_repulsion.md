@@ -4,7 +4,7 @@ Prompt style: Conversational
 
 Title: Magnetic Repulsion Field
 
-Prompt: I need a magnetic field repulsion simulator. Display a large magnet labeled "North Pole" fixed at the center of the screen. Around it, display four smaller magnets labeled "N1", "N2", "N3", "N4" positioned at the four corners. When users click the "Activate" button, the four corner magnets start slowly drifting away from the center magnet in their respective directions, simulating north-north repulsion. Each magnet moves outward at the same speed. When any corner magnet reaches the edge of the screen, all magnets stop moving. Include a "Reset" button that returns all corner magnets to their starting corner positions.
+Prompt: I need a magnetic field repulsion simulator. Display a large magnet labeled "North Pole" fixed at the center of the screen. Around it, display four smaller magnets labeled "N1", "N2", "N3", "N4" positioned at the four corners. When users click the "Activate" button, the four corner magnets start slowly drifting away from the center magnet in their respective directions, simulating north-north repulsion. Each magnet moves outward at the same speed. Include a "Reset" button that returns all corner magnets to their starting corner positions.
 
 Required libraries: react, tailwindcss, lucide-react
 
@@ -22,10 +22,9 @@ Required libraries: react, tailwindcss, lucide-react
 | 8   | interaction | Start outward drift when Activate button clicked           | major  | Clicking activate initiates the magnetic repulsion movement for all corner magnets.                 | C7           |
 | 9   | state       | Move corner magnets away from center in their directions   | major  | Moving magnets outward simulates the north-north magnetic repulsion force.                          | C8           |
 | 10  | state       | Move all magnets at same speed                             | major  | Using equal speed for all magnets shows uniform repulsion strength from the center.                 | C9           |
-| 11  | state       | Stop all magnets when any reaches screen edge              | major  | Stopping at edge prevents magnets from disappearing and marks simulation completion.                | C9           |
-| 12  | visual      | Display Reset button                                       | minor  | Showing the reset button gives users a control to restart the simulation.                           | None         |
-| 13  | interaction | Return corner magnets to starting positions when Reset clicked | major | Clicking reset moves all magnets back to corners so users can run repulsion again.              | C12          |
+| 11  | visual      | Display Reset button                                       | minor  | Showing the reset button gives users a control to restart the simulation.                           | None         |
+| 12  | interaction | Return corner magnets to starting positions when Reset clicked | major | Clicking reset moves all magnets back to corners so users can run repulsion again.              | C11          |
 
 ## Justification
 
-The magnetic repulsion simulator works as expected for animated field interaction. A large magnet labeled "North Pole" displays fixed at the center of the screen. Four smaller magnets labeled "N1", "N2", "N3", "N4" display positioned at the four corners. An activate button displays and when clicked, starts the four corner magnets drifting slowly away from the center magnet in their respective directions, simulating north-north repulsion. All magnets move outward at the same speed. When any corner magnet reaches the edge of the screen, all magnets stop moving. A reset button displays and when clicked, returns all corner magnets to their starting corner positions.
+The magnetic repulsion simulator works as expected for animated field interaction. A large magnet labeled "North Pole" displays fixed at the center of the screen. Four smaller magnets labeled "N1", "N2", "N3", "N4" display positioned at the four corners. An activate button displays and when clicked, starts the four corner magnets drifting slowly away from the center magnet in their respective directions, simulating north-north repulsion. All magnets move outward at the same speed. A reset button displays and when clicked, returns all corner magnets to their starting corner positions.
