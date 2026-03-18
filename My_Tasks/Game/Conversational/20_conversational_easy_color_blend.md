@@ -4,28 +4,29 @@ Prompt style: Conversational
 
 Title: Color Blend Mixer
 
-Prompt: I want to build a color mixing challenge game. At the top, display a target color box showing a randomly generated color. Below that, show three sliders labeled "Red", "Green", and "Blue" ranging from 0 to 255. Next to the sliders, display a preview box that updates to show the current mixed color as I move the sliders. When my mixed color matches the target color within a 10-point tolerance for each RGB value, display "Color Matched!" in bold text below the preview box and add 1 point to a score counter shown at the top. After a match, generate a new random target color automatically.
+Prompt: I want to build a color mixing challenge game. At the top, display a target color box showing the color RGB(180, 90, 200) with its values labeled "Target RGB: [180, 90, 200]". Below that, show three sliders labeled "Red", "Green", and "Blue" ranging from 0 to 255, each displaying its current value. Next to the sliders, display a preview box that updates to show the current mixed color as I move the sliders. Below the preview box, display the current mixed RGB values labeled "Your RGB: [R, G, B]". When my mixed color is close enough to the target color, display "Perfect Match!" message in green. When getting closer but not close enough yet, display "Getting Close!" message in yellow.
 
 Required libraries: react, tailwindcss, lucide-react
 
 ## Rubric
 
-| #  | ID          | Description                                              | Weight | Rationale                                                                          | Dependent On |
-|----|-------------|----------------------------------------------------------|--------|------------------------------------------------------------------------------------|--------------|
-| 1  | visual      | Display a target color box at the top                    | major  | The target shows users the color they need to recreate.                            | None         |
-| 2  | state       | Show randomly generated color in target box              | major  | Random colors create unpredictable challenges for each round.                      | None         |
-| 3  | visual      | Display three sliders below target color                 | major  | The sliders provide the controls for mixing the color.                             | None         |
-| 4  | content     | Label sliders "Red", "Green", and "Blue"                 | major  | The labels tell users which color component each slider controls.                  | C3           |
-| 5  | state       | Set slider range from 0 to 255                           | major  | The 0-255 range matches standard RGB color values.                                 | None         |
-| 6  | visual      | Display a preview box next to sliders                    | major  | The preview shows users their current mixed color result.                          | None         |
-| 7  | interaction | Update preview box color as sliders move                 | major  | Real-time updates let users see their color mix as they adjust sliders.            | None         |
-| 8  | state       | Match colors within 10-point tolerance for each RGB value | major  | The tolerance makes matching achievable without requiring perfect precision.       | None         |
-| 9  | content     | Display "Color Matched!" when colors match               | major  | The success message tells users they achieved the target color.                    | None         |
-| 10 | visual      | Display message in bold text below preview box           | minor  | Bold text makes the success message prominent.                                     | C9           |
-| 11 | visual      | Display score counter at the top                         | major  | The score shows users their total successful matches.                              | None         |
-| 12 | interaction | Add 1 point to score when color matches                  | major  | Scoring rewards users for successful color mixing.                                 | None         |
-| 13 | state       | Generate new random target color after match             | major  | Auto-generating keeps the game progressing with new challenges.                    | None         |
+| #  | ID          | Description                                                   | Weight | Rationale                                                                                      | Dependent On |
+|----|-------------|---------------------------------------------------------------|--------|------------------------------------------------------------------------------------------------|--------------|
+| 1  | visual      | Display target color box at the top                           | major  | Showing the target box gives players the color goal they need to recreate.                     | None         |
+| 2  | visual      | Show color RGB(180, 90, 200) in target box                    | major  | Displaying the specific target color establishes the mixing goal players aim for.              | C1           |
+| 3  | content     | Display label "Target RGB: [180, 90, 200]"                    | major  | Showing target RGB values helps players understand the exact goal numerically.                 | C2           |
+| 4  | visual      | Display three sliders below target color                      | major  | Showing sliders gives players the controls to build their color mix.                           | None         |
+| 5  | content     | Display labels "Red", "Green", "Blue" on sliders              | major  | Showing labels identifies which color component each slider adjusts.                           | C4           |
+| 6  | state       | Set slider range from 0 to 255                                | major  | Setting range to 0-255 matches standard RGB color values for mixing.                           | C4           |
+| 7  | content     | Display current value on each slider                          | major  | Showing values tells players the exact RGB number they are setting.                            | C4           |
+| 8  | layout      | Position preview box next to sliders                          | minor  | Placing preview next to sliders keeps color result visible while adjusting.                    | None         |
+| 9  | interaction | Update preview box to show current mixed color as sliders move| major  | Updating preview in real time shows players their current color mix as they adjust.            | C4           |
+| 10 | content     | Display label "Your RGB: [R, G, B]" showing current mix       | major  | Showing current RGB values helps players compare their mix to the target numerically.          | C9           |
+| 11 | state       | Check if mixed color is close enough to target                | major  | Determining closeness tells players if they achieved a good enough match.                      | C9           |
+| 12 | content     | Display "Perfect Match!" in green when close enough           | major  | Showing success message tells players they matched the target color well enough.               | C11          |
+| 13 | state       | Check if getting closer but not close enough yet              | major  | Checking progress state provides feedback when players are approaching but not there yet.      | C9           |
+| 14 | content     | Display "Getting Close!" in yellow when closer but not matched| major  | Showing progress message encourages players by showing they are moving toward the target.      | C13          |
 
 ## Justification
 
-The Color Blend Mixer works as expected with real-time color mixing and matching validation. A target color box displays at the top showing a randomly generated color. A score counter appears at the top tracking successful matches. Below the target, three sliders labeled "Red", "Green", and "Blue" appear ranging from 0 to 255. Next to the sliders, a preview box displays that updates to show the current mixed color as users move the sliders. When the mixed color matches the target color within a 10-point tolerance for each RGB value, "Color Matched!" displays in bold text below the preview box and 1 point adds to the score counter. After a match, a new random target color generates automatically.
+The color blend mixer game works as expected for RGB color matching challenges. A target color box displays at the top showing the color RGB(180, 90, 200) with its values labeled "Target RGB: [180, 90, 200]". Below that, three sliders display labeled "Red", "Green", and "Blue" ranging from 0 to 255, each displaying its current value. A preview box positioned next to the sliders displays and updates to show the current mixed color as players move the sliders. Below the preview box, the current mixed RGB values display labeled "Your RGB: [R, G, B]". When the mixed color is close enough to the target color, "Perfect Match!" message displays in green. When getting closer but not close enough yet, "Getting Close!" message displays in yellow.
