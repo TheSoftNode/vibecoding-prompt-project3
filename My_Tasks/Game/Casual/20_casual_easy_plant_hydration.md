@@ -2,30 +2,29 @@ Category: Game
 
 Prompt style: Casual
 
-Title: Plant Hydration Matcher
+Title: Plant Care Puzzle
 
-Prompt: Need a plant watering puzzle game. At the top, show three empty transparent containers arranged side by side: a cactus pot, a fern pot, and a succulent pot. Below them, display three buttons labeled "Cactus", "Fern", and "Succulent" in random order on each load. When a user clicks a button, fill the matching pot with the corresponding water level color: brown for Cactus, blue for Fern, and yellow for Succulent. Keep filled pots filled.
+Prompt: Need a plant watering memory game. Show three empty pots labeled "Cactus", "Fern", and "Succulent" arranged side by side. Below them, display three color buttons: brown, blue, and yellow. Players must remember which color waters which plant: brown for Cactus, blue for Fern, yellow for Succulent. When a player clicks a color button, that color fills the next unfilled pot from left to right only if the color matches the pot's plant type. When all three pots are filled correctly, display "You Win! Plants happy!" message.
 
 Required libraries: react, tailwindcss, lucide-react
 
 ## Rubric
 
-| #   | ID          | Description                                                    | Weight | Rationale                                                                  | Dependent On |
-| --- | ----------- | -------------------------------------------------------------- | ------ | -------------------------------------------------------------------------- | ------------ |
-| 1   | visual      | Display three empty transparent containers                     | major  | The transparent containers show users the target pots to fill.             | None         |
-| 2   | layout      | Position containers at the top                                 | minor  | Top positioning creates clear visual separation from the buttons.          | C1           |
-| 3   | visual      | Show cactus pot, fern pot, and succulent pot                   | major  | The three different pots identify which container corresponds to each button. | None         |
-| 4   | layout      | Arrange the three containers side by side                      | minor  | Side-by-side arrangement makes it easy to see all three targets.           | C1           |
-| 5   | visual      | Display three buttons                                          | major  | The buttons provide the controls for filling the pots.                     | None         |
-| 6   | layout      | Position the three buttons below the containers                | minor  | Below positioning separates controls from target containers.               | C1, C5       |
-| 7   | content     | Label the three buttons "Cactus", "Fern", and "Succulent"      | major  | The labels tell users which button fills which pot.                        | C5           |
-| 8   | state       | Display the three buttons in random order on each load         | minor  | Random order varies the button layout each time for variety.               | C5           |
-| 9   | interaction | Fill matching pot when corresponding button clicked            | major  | Clicking fills the correct pot based on button label matching plant type. | C7           |
-| 10  | interaction | Fill cactus pot with brown when Cactus clicked                 | major  | Brown color provides visual feedback for the cactus water level match.     | None         |
-| 11  | interaction | Fill fern pot with blue when Fern clicked                      | major  | Blue color provides visual feedback for the fern water level match.        | None         |
-| 12  | interaction | Fill succulent pot with yellow when Succulent clicked          | major  | Yellow color provides visual feedback for the succulent water level match. | None         |
-| 13  | state       | Keep filled pots filled after clicking                         | major  | Maintaining fill state ensures pots stay colored after interaction completes. | C10, C11, C12 |
+| #   | ID          | Description                                                | Weight | Rationale                                                                           | Dependent On |
+| --- | ----------- | ---------------------------------------------------------- | ------ | ----------------------------------------------------------------------------------- | ------------ |
+| 1   | visual      | Display three empty pots                                   | major  | The pots show players the containers that need to be filled.                        | None         |
+| 2   | content     | Label pots "Cactus", "Fern", and "Succulent"              | major  | Labels identify which plant type each pot contains for memory matching.            | C1           |
+| 3   | layout      | Arrange three pots side by side                            | minor  | Side-by-side arrangement creates clear left-to-right fill order.                    | C1           |
+| 4   | visual      | Display three color buttons                                | major  | Color buttons provide the controls for filling pots with water colors.             | None         |
+| 5   | content     | Show brown, blue, and yellow button colors                 | major  | The three specific colors correspond to the three plant watering requirements.      | C4           |
+| 6   | layout      | Position color buttons below the pots                      | minor  | Below positioning separates controls from target pots.                              | C1, C4       |
+| 7   | state       | Track next unfilled pot from left to right                 | major  | Tracking the next pot determines which container receives the clicked color.        | None         |
+| 8   | interaction | Fill next unfilled pot when color button clicked           | major  | Clicking a color fills the next pot in sequence creating the gameplay flow.         | C7           |
+| 9   | state       | Check if clicked color matches pot's plant type            | major  | Matching logic determines if the player chose the correct water color.              | C8           |
+| 10  | state       | Keep pot filled if color matches plant type                | major  | Correct matches stay filled, advancing the game toward completion.                  | C9           |
+| 11  | state       | Check if all three pots are correctly filled               | major  | Checking completion determines when the win condition is met.                       | C10          |
+| 12  | content     | Display "You Win! Plants happy!" when all pots filled      | major  | Win message provides feedback that the memory puzzle is completed successfully.     | C11          |
 
 ## Justification
 
-The Plant Hydration Matcher works as expected with click-to-fill mechanics. Three empty transparent containers display at the top arranged side by side: a cactus pot, a fern pot, and a succulent pot. Below them, three buttons display in random order labeled "Cactus", "Fern", and "Succulent". When users click the Cactus button, the cactus pot fills with brown and stays filled. When users click the Fern button, the fern pot fills with blue and stays filled. When users click the Succulent button, the succulent pot fills with yellow and stays filled.
+The Plant Care Puzzle works as expected as a memory matching game with a win condition. Three empty pots display arranged side by side, labeled "Cactus", "Fern", and "Succulent" from left to right. Below them, three color buttons display: brown, blue, and yellow. Players must remember that brown waters Cactus, blue waters Fern, and yellow waters Succulent. The game tracks the next unfilled pot from left to right. When a player clicks a color button, the game checks if the clicked color matches the next pot's plant type. If the color matches (brown for Cactus, blue for Fern, yellow for Succulent), that color fills the pot and it stays filled. If the color doesn't match, nothing happens and the player must try again. When all three pots are correctly filled, the game checks completion and displays "You Win! Plants happy!" message.
