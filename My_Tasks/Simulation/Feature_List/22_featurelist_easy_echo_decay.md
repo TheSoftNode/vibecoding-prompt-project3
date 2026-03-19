@@ -2,9 +2,9 @@ Category: Simulation
 
 Prompt style: Feature_List
 
-Title: Echo Decay Visualizer
+Title: Voltage Cascade Simulator
 
-Prompt: Build an acoustic echo decay simulator with these features: Display a sound source circle labeled "Source" at the left side. Display five echo circles labeled "E1", "E2", "E3", "E4", "E5" spreading horizontally to the right. When users click the "Emit" button, the source pulses once and then each echo lights up in sequence with decreasing brightness, E1 brightest down to E5 dimmest, simulating sound decay over distance. Each echo activates 0.5 seconds after the previous one. After E5 lights up, all echoes fade back to dim. Include a "Clear" button that resets all echoes to dim state.
+Prompt: Build a voltage cascade simulator with these features: Display six circular nodes arranged horizontally in a single row. Label the leftmost node "Power" and the remaining five nodes "V1", "V2", "V3", "V4", "V5" from left to right. All nodes start in gray color. Display a "Power On" button below the nodes. When users click the Power On button, the Power node turns green and stays green, then V1 turns green and stays green, then V2 turns green and stays green, then V3 turns green and stays green, then V4 turns green and stays green, then V5 turns green and stays green, showing voltage flowing through the circuit from power source to endpoints.
 
 Required libraries: react, tailwindcss, lucide-react
 
@@ -12,21 +12,19 @@ Required libraries: react, tailwindcss, lucide-react
 
 | #   | ID          | Description                                                | Weight | Rationale                                                                                           | Dependent On |
 | --- | ----------- | ---------------------------------------------------------- | ------ | --------------------------------------------------------------------------------------------------- | ------------ |
-| 1   | visual      | Display source circle                                      | major  | Showing the source circle establishes the origin point for echo generation.                         | None         |
-| 2   | content     | Display label "Source" on source circle                    | major  | Showing the source label identifies the acoustic emission point.                                    | C1           |
-| 3   | layout      | Position source circle at left side                        | minor  | Placing source at left creates the starting point for rightward echo spread.                        | C1           |
-| 4   | visual      | Display five echo circles                                  | major  | Showing five echo circles gives users the propagating sound reflections.                            | None         |
-| 5   | content     | Display labels "E1", "E2", "E3", "E4", "E5" on echoes      | major  | Showing labels identifies each echo in the decay sequence.                                          | C4           |
-| 6   | layout      | Spread echo circles horizontally to the right              | minor  | Positioning echoes rightward shows distance progression from source.                                | C4           |
-| 7   | visual      | Display Emit button                                        | minor  | Showing the emit button gives users a control to trigger the echo sequence.                         | None         |
-| 8   | interaction | Pulse source once when Emit button clicked                 | major  | Clicking emit creates the initial sound burst that generates echoes.                                | C7           |
-| 9   | state       | Light up echoes in sequence E1 to E5                       | major  | Activating echoes sequentially simulates sound traveling through space over time.                   | C8           |
-| 10  | state       | Decrease brightness from E1 brightest to E5 dimmest        | major  | Reducing brightness across echoes shows acoustic energy decay with distance.                        | C9           |
-| 11  | state       | Activate each echo 0.5 seconds after previous              | major  | Timing each echo at 0.5 second intervals controls the propagation speed users observe.              | C9           |
-| 12  | state       | Fade all echoes back to dim after E5 lights up             | major  | Returning echoes to dim marks the end of the decay cycle.                                           | C9           |
-| 13  | visual      | Display Clear button                                       | minor  | Showing the clear button gives users a control to reset the simulation.                             | None         |
-| 14  | interaction | Reset all echoes to dim when Clear clicked                 | major  | Clicking clear returns all echoes to starting state so users can emit again.                        | C13          |
+| 1   | visual      | Display six circular nodes                                 | major  | The nodes provide the circuit components users observe during voltage flow.                         | None         |
+| 2   | layout      | Arrange nodes horizontally in single row                   | minor  | Horizontal arrangement creates an organized linear circuit layout.                                  | C1           |
+| 3   | content     | Display label "Power" on leftmost node                     | minor  | The power label identifies the voltage source in the circuit.                                       | C1           |
+| 4   | content     | Display labels "V1", "V2", "V3", "V4", "V5" from left to right | minor  | Voltage labels identify each position in the cascade sequence.                                      | C1           |
+| 5   | visual      | Display all nodes in gray color initially                  | minor  | Gray color establishes the unpowered starting state.                                                | C1           |
+| 6   | visual      | Display Power On button below nodes                        | minor  | The power button gives users control to trigger the voltage cascade.                                | None         |
+| 7   | state       | Turn Power node green and keep green when clicked          | major  | Green on power node shows the voltage source activation.                                            | C6           |
+| 8   | state       | Turn V1 green and keep green                               | major  | Green on V1 shows voltage reaching first circuit point.                                             | C7           |
+| 9   | state       | Turn V2 green and keep green                               | major  | Green on V2 shows voltage reaching second circuit point.                                            | C8           |
+| 10  | state       | Turn V3 green and keep green                               | major  | Green on V3 shows voltage reaching third circuit point.                                             | C9           |
+| 11  | state       | Turn V4 green and keep green                               | major  | Green on V4 shows voltage reaching fourth circuit point.                                            | C10          |
+| 12  | state       | Turn V5 green and keep green                               | major  | Green on V5 shows voltage reaching final endpoint in the circuit.                                   | C11          |
 
 ## Justification
 
-The echo decay visualizer works as expected for sequential acoustic energy simulation. A source circle labeled "Source" displays at the left side. Five echo circles labeled "E1", "E2", "E3", "E4", "E5" display spreading horizontally to the right. An emit button displays and when clicked, the source pulses once and then each echo lights up in sequence with decreasing brightness from E1 brightest down to E5 dimmest, simulating sound decay over distance. Each echo activates 0.5 seconds after the previous one. After E5 lights up, all echoes fade back to dim state. A clear button displays and when clicked, resets all echoes to dim state.
+The voltage cascade simulator works exactly as expected for sequential circuit voltage visualization. Six circular nodes display arranged horizontally in a single row. The leftmost node displays labeled "Power" and the remaining five nodes display labeled "V1", "V2", "V3", "V4", "V5" from left to right. All nodes display in gray color initially. A power on button displays below the nodes. When users click the Power On button, the Power node turns green and stays green, then V1 turns green and stays green, then V2 turns green and stays green, then V3 turns green and stays green, then V4 turns green and stays green, then V5 turns green and stays green, showing voltage flowing through the circuit from power source to endpoints.
