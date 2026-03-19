@@ -13,16 +13,15 @@ Required libraries: react, tailwindcss, lucide-react
 | #   | ID          | Description                                                | Weight | Rationale                                                                                           | Dependent On |
 | --- | ----------- | ---------------------------------------------------------- | ------ | --------------------------------------------------------------------------------------------------- | ------------ |
 | 1   | visual      | Display five concentric circular rings                     | major  | The rings provide the visual structure for ripple propagation.                                      | None         |
-| 2   | layout      | Arrange rings around center point                          | minor  | Concentric arrangement creates the ripple pattern radiating from center.                            | C1           |
-| 3   | content     | Display labels "Center", "Ring 1", "Ring 2", "Ring 3", "Ring 4" | major  | Labels identify each ring position in the propagation sequence.                                     | C1           |
-| 4   | visual      | Display Drop Stone button                                  | major  | The button gives users control to trigger the ripple simulation.                                    | None         |
-| 5   | layout      | Position Drop Stone button below rings                     | minor  | Bottom positioning keeps the button near the simulation area.                                       | C4           |
+| 2   | layout      | Arrange rings around the center point                      | minor  | A concentric arrangement creates the ripple pattern radiating from the center.                      | C1           |
+| 3   | content     | Display labels "Center", "Ring 1", "Ring 2", "Ring 3", "Ring 4" | minor  | Labels identify each ring position in the propagation sequence.                                     | C1           |
+| 4   | visual      | Display the Drop Stone button                              | major  | The button gives users control to trigger the ripple simulation.                                    | None         |
+| 5   | layout      | Position the Drop Stone button below the rings             | minor  | Bottom positioning keeps the button near the simulation area.                                       | C4           |
 | 6   | visual      | Display Clear button                                       | major  | The button gives users control to reset the simulation.                                             | None         |
-| 7   | layout      | Position Clear button below rings                          | minor  | Bottom positioning groups both controls together.                                                   | C6           |
-| 8   | interaction | Glow center point blue when Drop Stone clicked             | major  | Blue glow shows the initial impact point that generates ripples.                                    | C4           |
-| 9   | state       | Light up rings sequentially from Ring 1 to Ring 4          | major  | Sequential activation simulates ripples propagating outward through water.                          | C8           |
-| 10  | visual      | Light up rings in blue color                               | major  | Blue color represents the water ripple wave passing through each ring.                              | C9           |
-| 11  | interaction | Return all rings to gray when Clear clicked                | major  | Gray color resets the visual state for a fresh simulation.                                          | C6           |
+| 7   | layout      | Position the Clear button below the rings                  | minor  | Bottom positioning groups both controls together.                                                   | C6           |
+| 8   | interaction | Glow center point blue when Drop Stone is clicked          | major  | Blue glow shows the initial impact point that generates ripples.                                    | None         |
+| 9   | state       | Light up rings in blue color sequentially from Ring 1 to Ring 4 | major  | Sequential activation simulates ripples propagating outward through water.                          | C6           |
+| 10  | interaction | Return all rings to gray when the Clear button is clicked  | major  | Gray color resets the visual state for a fresh simulation.                                          | None         |
 
 ## Justification
 
