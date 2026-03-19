@@ -12,13 +12,14 @@ Required libraries: react, tailwindcss, lucide-react
 
 | #   | ID          | Description                                          | Weight | Rationale                                                                      | Dependent On |
 | --- | ----------- | ---------------------------------------------------- | ------ | ------------------------------------------------------------------------------ | ------------ |
-| 1   | visual      | Display 4 hexagon shapes                             | major  | The hexagons provide the visual structure for skill progress display.          | None         |
-| 2   | layout      | Arrange hexagons in 2x2 grid                         | minor  | Grid arrangement creates an organized layout for the four skills.              | C1           |
-| 3   | content     | Display skill names: JavaScript, Python, React, SQL  | major  | Skill names identify what each hexagon represents.                             | None         |
-| 4   | layout      | Position skill names inside hexagons                 | minor  | Inside positioning keeps names associated with their progress shapes.          | C3           |
-| 5   | state       | Fill hexagon from bottom to top based on percentage  | major  | Fill level visually represents the progress amount.                            | None         |
-| 6   | visual      | Fill hexagons with green color                       | minor  | Green color makes the filled portion visible against the hexagon background.   | None         |
-| 7   | interaction | Make hexagon border thicker when clicked             | major  | Thicker border provides visual feedback when users click a hexagon.            | None         |
+| 1   | visual      | Display 4 hexagon shapes                             | major  | Users need hexagons as the shape containers for visualizing skill progress.    | None         |
+| 2   | layout      | Arrange hexagons in 2x2 grid                         | minor  | Grid arrangement makes it easy to view all four skills at once.                | C1           |
+| 3   | content     | Display skill names: JavaScript, Python, React, SQL  | major  | Skill names help users identify which technology each hexagon represents.      | None         |
+| 4   | layout      | Position skill names inside hexagons                 | minor  | Positioning names inside keeps labels clearly associated with their hexagons.  | C3           |
+| 5   | content     | Display progress values: 85%, 60%, 75%, 40%          | major  | Progress values tell users the exact proficiency level for each skill.         | None         |
+| 6   | state       | Fill hexagon from bottom to top based on percentage  | major  | Bottom-to-top filling creates a visual gauge showing how much progress is made.| C5           |
+| 7   | visual      | Fill hexagons with green color                       | minor  | Green color makes the progress fill stand out against the hexagon shape.       | None         |
+| 8   | interaction | Make hexagon border thicker when clicked             | major  | Thicker border shows users which hexagon they clicked.                         | None         |
 
 ## Justification
 
