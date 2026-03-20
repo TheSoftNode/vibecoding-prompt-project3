@@ -2,9 +2,9 @@ Category: Data_Visualization
 
 Prompt style: Feature_List
 
-Title: Pipeline Stage Flow Visualizer
+Title: Pipeline Stage Flow
 
-Prompt: Build a pipeline stage flow visualizer that shows data processing stages in a deployment pipeline. Display a source stage node labeled "Source" positioned on the left side of the interface, connected by curved lines to 3 processing stage nodes labeled "Build", "Test", "Deploy" arranged vertically to the right of it. When users click any processing stage node, highlight that specific node in purple color and display its execution time number next to it. Only the clicked node should show its execution time. Keep the clicked node highlighted in purple until a different node is clicked.
+Prompt: Build a pipeline stage flow that shows data processing stages in a deployment pipeline. Display a source stage node labeled "Source" positioned on the left side of the interface, connected by curved lines to 3 processing stage nodes labeled "Build", "Test", "Deploy" arranged vertically to the right of it. When users click any processing stage node, highlight that specific node in purple color and display its execution time number next to it. Only the clicked node should show its execution time. Keep the clicked node highlighted in purple until a different node is clicked.
 
 Required libraries: react, tailwindcss, lucide-react
 
@@ -26,4 +26,4 @@ Required libraries: react, tailwindcss, lucide-react
 
 ## Justification
 
-The pipeline stage flow visualizer works exactly as expected for visualizing deployment pipeline stages. A source stage node labeled "Source" displays positioned on the left side of the interface. Three processing stage nodes labeled "Build", "Test", and "Deploy" display arranged vertically to the right of the source. Curved lines connect each processing stage node to the source node. When users click any processing stage node, that node highlights in purple color and displays its execution time number next to it. Only the clicked node shows its execution time. The clicked node stays highlighted in purple until a different node is clicked.
+The pipeline stage flow works exactly as expected for visualizing deployment pipeline stages. A source stage node labeled "Source" displays positioned on the left side of the interface. Three processing stage nodes labeled "Build", "Test", and "Deploy" display arranged vertically to the right of the source. Curved lines connect each processing stage node to the source node. When users click any processing stage node, that node highlights in purple color and displays its execution time number next to it. Only the clicked node shows its execution time. The clicked node stays highlighted in purple until a different node is clicked.
