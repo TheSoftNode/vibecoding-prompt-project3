@@ -2,28 +2,26 @@ Category: Data_Visualization
 
 Prompt style: Feature_List
 
-Title: Pipeline Stage Flow
+Title: Organization Hierarchy Chart
 
-Prompt: Build a pipeline stage flow that shows data processing stages in a deployment pipeline. Display a source stage node labeled "Source" positioned on the left side of the interface, connected by curved lines to 3 processing stage nodes labeled "Build", "Test", "Deploy" arranged vertically to the right of it. When users click any processing stage node, highlight that specific node in purple color and display its execution time number next to it. Only the clicked node should show its execution time. Keep the clicked node highlighted in purple until a different node is clicked.
+Prompt: Build an organization hierarchy chart that visualizes company reporting structure. Display a tree structure with a CEO node labeled "CEO" positioned at the top of the chart, connected by straight lines to 3 manager nodes labeled "Manager A", "Manager B", "Manager C" positioned below it in a horizontal row. When users click any node in the organizational chart, highlight that specific node in orange color and display its team size number next to it showing how many team members report to that position. Only the clicked node should show its team size number. Keep the clicked node highlighted in orange until a different node is clicked.
 
 Required libraries: react, tailwindcss, lucide-react
 
 ## Rubric
 
-| #   | ID          | Description                                                     | Weight | Rationale                                                                                 | Dependent On |
-| --- | ----------- | --------------------------------------------------------------- | ------ | ----------------------------------------------------------------------------------------- | ------------ |
-| 1   | visual      | Display source stage node                                       | major  | The source node shows the starting point of the pipeline flow.                            | None         |
-| 2   | visual      | Display 3 processing stage nodes                                | major  | The processing nodes show the stages users need to explore.                               | None         |
-| 3   | layout      | Connect processing nodes to source node with curved lines       | major  | Curved lines connecting stages to source establish the pipeline flow visually.            | C1, C2       |
-| 4   | content     | Display label "Source" on source node                           | minor  | The label helps users identify the pipeline entry point.                                  | C1           |
-| 5   | content     | Display labels "Build", "Test", "Deploy" on processing nodes    | minor  | Stage labels help users tell the different processing nodes apart.                        | C2           |
-| 6   | layout      | Position source on left side of interface                       | minor  | Left positioning makes the source the starting point of the flow.                         | C1           |
-| 7   | layout      | Arrange processing nodes vertically to the right of source      | minor  | Vertical arrangement makes the pipeline stages easy to read from top to bottom.           | C2           |
-| 8   | interaction | Highlight clicked processing node in purple color               | major  | Purple highlighting shows users which processing stage they selected.                     | None         |
-| 9   | interaction | Display execution time number next to clicked node              | major  | Showing the time on click is the core behavior that reveals stage performance.            | None         |
-| 10  | state       | Show execution time only on clicked node                        | minor  | Showing the time only on the selected node enforces the exclusivity rule.                 | C9           |
-| 11  | state       | Keep clicked node highlighted until different node is clicked   | minor  | Maintaining the highlight shows which node is currently selected for time display.        | C8           |
+| #   | ID          | Description                                                   | Weight | Rationale                                                                           | Dependent On |
+| --- | ----------- | ------------------------------------------------------------- | ------ | ----------------------------------------------------------------------------------- | ------------ |
+| 1   | visual      | Display CEO node and 3 manager nodes                          | major  | The nodes show the organizational structure users need to explore.                  | None         |
+| 2   | layout      | Connect manager nodes A, B, C to CEO node with lines          | major  | Connecting managers to the CEO establishes the reporting hierarchy visually.        | None         |
+| 3   | content     | Display label "CEO" on CEO node                               | minor  | The label helps users identify the top of the organization.                         | None         |
+| 4   | content     | Display labels "Manager A", "Manager B", "Manager C" on manager nodes | minor  | Manager labels help users tell the different nodes apart.                           | None         |
+| 5   | interaction | Highlight clicked node in orange                              | major  | Orange highlighting shows users which node they selected.                           | None         |
+| 6   | interaction | Calculate team size for clicked node                          | major  | Team size calculation happens when users click, determining the node's team count.  | None         |
+| 7   | interaction | Display team size number next to clicked node                 | major  | Showing the team size on click is the core behavior that reveals org information.   | None         |
+| 8   | layout      | Position CEO at top with manager nodes below                  | minor  | Top-down layout makes the org structure easy to read from CEO downward.             | None         |
+| 9   | state       | Keep clicked node highlighted until different node is clicked | minor  | Maintaining the highlight shows which node is currently selected for team size display. | None         |
 
 ## Justification
 
-The pipeline stage flow works exactly as expected for visualizing deployment pipeline stages. A source stage node labeled "Source" displays positioned on the left side of the interface. Three processing stage nodes labeled "Build", "Test", and "Deploy" display arranged vertically to the right of the source. Curved lines connect each processing stage node to the source node. When users click any processing stage node, that node highlights in purple color and displays its execution time number next to it. Only the clicked node shows its execution time. The clicked node stays highlighted in purple until a different node is clicked.
+The organization hierarchy chart works exactly as expected for visualizing company structure. A CEO node labeled "CEO" appears at the top of the organizational chart. Three manager nodes labeled "Manager A", "Manager B", and "Manager C" display below the CEO. Lines connect each manager node to the CEO node. When users click any node, that node highlights in orange and displays its team size number next to it. Only the clicked node shows its team size. The clicked node stays highlighted in orange until a different node is clicked.
