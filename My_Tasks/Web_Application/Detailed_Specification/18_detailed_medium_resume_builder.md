@@ -1,0 +1,28 @@
+Category: Web Application
+
+Prompt style: Detailed Specification
+
+Title: Document Layout Builder with Visual Links
+
+Prompt: Build a document layout builder with three connected panels showing visual linking between components. Display a header image panel positioned at top-left, a sections list panel positioned at bottom-left directly below the header panel, and a document preview panel positioned at top-right. Load initial sample header image and three pre-populated section items on startup: "Introduction" section, "Content" section, and "Conclusion" section. Draw thin dotted connecting lines from each section in the bottom-left list to its corresponding rendered block in the top-right document preview. When users click a section in the list, highlight both the list item and its preview block, and change the connecting line from dotted to solid. The document preview rendering depends on section priority order: Introduction must render at the top of the preview, Content in the middle after Introduction is positioned, and Conclusion at the bottom after Content is positioned.
+
+Required libraries: react, tailwindcss, lucide-react, react-beautiful-dnd
+
+## Rubric
+
+| ID            | Description                                                                                        | Weight | Rationale                                                                                              | Dependent On       |
+| ------------- | -------------------------------------------------------------------------------------------------- | ------ | ------------------------------------------------------------------------------------------------------ | ------------------ |
+| layout-1      | Display header image panel positioned at top-left                                                  | major  | Top-left positioning creates the primary visual anchor for the document header.                        | None               |
+| layout-2      | Display sections list panel positioned at bottom-left directly below header panel                  | major  | Bottom-left positioning creates vertical panel alignment with header above.                            | layout-1           |
+| layout-3      | Display document preview panel positioned at top-right                                             | major  | Top-right positioning separates the input sections from the output preview.                            | None               |
+| state-1       | Load initial sample header image on startup                                                        | major  | Loading header image provides immediate initial state for the header panel.                            | None               |
+| content-1     | Display Introduction, Content, and Conclusion sections pre-populated in sections list on initial load | major  | Three pre-populated sections provide verifiable initial render state with variety.                     | None               |
+| visual-1      | Draw thin dotted connecting lines from each section in list to its rendered block in preview       | major  | Dotted lines create visual correspondence showing which list item maps to which preview block.         | layout-2, layout-3 |
+| interaction-1 | Highlight list item, preview block, and change connecting line from dotted to solid when clicked   | major  | Triple highlight with line style change provides clear multi-panel interaction feedback.               | visual-1           |
+| state-2       | Render Introduction section at top of document preview                                             | major  | Introduction positioning at top enforces document hierarchy regardless of list order.                  | content-1          |
+| state-3       | Render Content section in middle of document preview after Introduction is positioned              | major  | Content positioning in middle enforces document structure and depends on Introduction first.           | state-2            |
+| state-4       | Render Conclusion section at bottom of document preview after Content is positioned                | major  | Conclusion positioning at bottom completes the document hierarchy and depends on Content first.        | state-3            |
+
+## Justification
+
+The Document Layout Builder with Visual Links will be evaluated based on its ability to coordinate three interconnected panels with visual linking and render dependencies. Success requires displaying the header image panel at top-left with a loaded sample header image, the sections list panel at bottom-left positioned directly below the header panel showing three pre-populated sections (Introduction, Content, Conclusion), and the document preview panel at top-right. Thin dotted connecting lines must be drawn from each section in the bottom-left list to its corresponding rendered block in the top-right document preview. When users click a section in the list, the implementation must highlight both the list item and its preview block while simultaneously changing the connecting line from dotted to solid style. The document preview must enforce section priority order by rendering Introduction at the top, Content in the middle after Introduction is positioned (state-3 depends on state-2), and Conclusion at the bottom after Content is positioned (state-4 depends on state-3). This task tests multi-panel layout positioning with specific spatial relationships (bottom-left directly below top-left), initial data loading (header image on startup), visual linking through connecting lines with dynamic style changes on interaction, and sequential section rendering dependencies where each section depends on the previous one being positioned first.

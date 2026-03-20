@@ -1,0 +1,28 @@
+Category: Web Application
+
+Prompt style: Feature List
+
+Title: Workflow Builder with Step Dependencies
+
+Prompt: Build a workflow builder with three connected panels showing step visualization. Display a templates panel positioned at top-left with sample workflow templates. Display a steps list panel positioned at bottom-left directly below the templates panel showing three pre-populated steps: "Initialize" step, "Execute" step, and "Complete" step. Display a diagram canvas panel positioned at top-right showing the visual diagram. Load initial sample templates and pre-populated steps on startup. Draw thin dotted connecting lines from each step in the bottom-left list to its corresponding node in the top-right canvas. When users click a step in the list, highlight both the list item and its canvas node, and change the connecting line from dotted to solid. The canvas rendering depends on step priority: Initialize must render at the top of the canvas, Execute in the middle after Initialize is positioned, and Complete at the bottom after Execute is positioned.
+
+Required libraries: react, tailwindcss, lucide-react, react-beautiful-dnd
+
+## Rubric
+
+| ID            | Description                                                                                        | Weight | Rationale                                                                                              | Dependent On       |
+| ------------- | -------------------------------------------------------------------------------------------------- | ------ | ------------------------------------------------------------------------------------------------------ | ------------------ |
+| layout-1      | Display templates panel positioned at top-left                                                     | major  | Top-left positioning creates the primary templates display area for the workflow builder.              | None               |
+| layout-2      | Display steps list panel positioned at bottom-left directly below templates panel                  | major  | Bottom-left positioning creates vertical panel alignment with templates panel above.                   | layout-1           |
+| layout-3      | Display diagram canvas panel positioned at top-right                                               | major  | Top-right positioning separates the steps input area from the visual diagram output.                   | None               |
+| state-1       | Load initial sample templates on startup                                                           | major  | Loading sample templates provides immediate initial state for the templates panel.                     | None               |
+| content-1     | Display Initialize, Execute, and Complete steps pre-populated in steps list on initial load        | major  | Three pre-populated steps provide verifiable initial render state with variety.                        | None               |
+| visual-1      | Draw thin dotted connecting lines from each step in list to its corresponding node in canvas       | major  | Dotted lines create visual correspondence showing which list step maps to which canvas node.           | layout-2, layout-3 |
+| interaction-1 | Highlight list item, canvas node, and change line from dotted to solid when step clicked          | major  | Triple highlight with line style change provides clear multi-panel interaction feedback.               | visual-1           |
+| state-2       | Render Initialize step at top of diagram canvas                                                    | major  | Initialize positioning at top enforces workflow entry point hierarchy regardless of list order.        | content-1          |
+| state-3       | Render Execute step in middle of diagram canvas after Initialize is positioned                     | major  | Execute positioning in middle enforces workflow structure and depends on Initialize first.             | state-2            |
+| state-4       | Render Complete step at bottom of diagram canvas after Execute is positioned                       | major  | Complete positioning at bottom completes the workflow hierarchy and depends on Execute first.          | state-3            |
+
+## Justification
+
+The Workflow Builder with Step Dependencies will be evaluated based on its ability to coordinate three interconnected panels with visual linking and render dependencies. Success requires displaying the templates panel at top-left with loaded sample templates, the steps list panel at bottom-left positioned directly below the templates panel showing three pre-populated steps (Initialize, Execute, Complete), and the diagram canvas panel at top-right. Thin dotted connecting lines must be drawn from each step in the bottom-left list to its corresponding node in the top-right canvas. When users click a step in the list, the implementation must highlight both the list item and its canvas node while simultaneously changing the connecting line from dotted to solid style. The canvas must enforce step priority by rendering Initialize at the top, Execute in the middle after Initialize is positioned (state-3 depends on state-2), and Complete at the bottom after Execute is positioned (state-4 depends on state-3). This task tests multi-panel layout positioning with specific spatial relationships (bottom-left directly below top-left), initial data loading (sample templates and pre-populated steps on startup), visual linking through connecting lines with dynamic style changes on interaction, and sequential step rendering dependencies where each step depends on the previous one being positioned first.
