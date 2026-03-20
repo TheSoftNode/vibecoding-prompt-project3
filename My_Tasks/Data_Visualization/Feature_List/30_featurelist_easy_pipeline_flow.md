@@ -10,17 +10,20 @@ Required libraries: react, tailwindcss, lucide-react
 
 ## Rubric
 
-| #   | ID          | Description                                                   | Weight | Rationale                                                                           | Dependent On |
-| --- | ----------- | ------------------------------------------------------------- | ------ | ----------------------------------------------------------------------------------- | ------------ |
-| 1   | visual      | Display CEO node and 3 manager nodes                          | major  | The nodes show the organizational structure users need to explore.                  | None         |
-| 2   | layout      | Connect manager nodes A, B, C to CEO node with lines          | major  | Connecting managers to the CEO establishes the reporting hierarchy visually.        | None         |
-| 3   | content     | Display label "CEO" on CEO node                               | minor  | The label helps users identify the top of the organization.                         | None         |
-| 4   | content     | Display labels "Manager A", "Manager B", "Manager C" on manager nodes | minor  | Manager labels help users tell the different nodes apart.                           | None         |
-| 5   | interaction | Highlight clicked node in orange                              | major  | Orange highlighting shows users which node they selected.                           | None         |
-| 6   | interaction | Calculate team size for clicked node                          | major  | Team size calculation happens when users click, determining the node's team count.  | None         |
-| 7   | interaction | Display team size number next to clicked node                 | major  | Showing the team size on click is the core behavior that reveals org information.   | None         |
-| 8   | layout      | Position CEO at top with manager nodes below                  | minor  | Top-down layout makes the org structure easy to read from CEO downward.             | None         |
-| 9   | state       | Keep clicked node highlighted until different node is clicked | minor  | Maintaining the highlight shows which node is currently selected for team size display. | None         |
+| #   | ID          | Description                                                           | Weight | Rationale                                                                               | Dependent On |
+| --- | ----------- | --------------------------------------------------------------------- | ------ | --------------------------------------------------------------------------------------- | ------------ |
+| 1   | visual      | Display CEO node                                                      | major  | The CEO node shows the top of the organizational structure.                             | None         |
+| 2   | visual      | Display 3 manager nodes                                               | major  | The manager nodes show the reporting structure users need to explore.                   | None         |
+| 3   | layout      | Connect manager nodes A, B, C to CEO node with straight lines         | major  | Straight lines connecting managers to the CEO establish the reporting hierarchy visually. | C1, C2       |
+| 4   | content     | Display label "CEO" on CEO node                                       | minor  | The label helps users identify the top of the organization.                             | C1           |
+| 5   | content     | Display labels "Manager A", "Manager B", "Manager C" on manager nodes | minor  | Manager labels help users tell the different nodes apart.                               | C2           |
+| 6   | layout      | Arrange manager nodes in a horizontal row                             | minor  | Horizontal arrangement makes it easy to compare all managers at the same level.         | C2           |
+| 7   | layout      | Position CEO at top with manager nodes below                          | minor  | Top-down layout makes the org structure easy to read from CEO downward.                 | C1, C2       |
+| 8   | interaction | Highlight clicked node in orange                                      | major  | Orange highlighting shows users which node they selected.                               | None         |
+| 9   | interaction | Calculate team size for clicked node                                  | major  | Team size calculation happens when users click, determining the node's team count.      | None         |
+| 10  | interaction | Display team size number next to clicked node                         | major  | Showing the team size on click is the core behavior that reveals org information.       | None         |
+| 11  | state       | Show team size only on clicked node                                   | minor  | Showing team size only on the selected node enforces the exclusivity rule.              | C10          |
+| 12  | state       | Keep clicked node highlighted until different node is clicked         | minor  | Maintaining the highlight shows which node is currently selected for team size display. | C8           |
 
 ## Justification
 
