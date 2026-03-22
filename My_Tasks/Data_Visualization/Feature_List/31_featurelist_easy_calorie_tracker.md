@@ -16,10 +16,11 @@ Required libraries: react, tailwindcss, lucide-react
 | 2   | layout      | Stack bars horizontally                                                      | minor  | Horizontal stacking makes it easy to compare intake across all meals at once.      | C1           |
 | 3   | content     | Display meal names Breakfast, Lunch, Snack, Dinner, Late Night               | major  | Meal names help users identify which meal each bar represents.                     | None         |
 | 4   | state       | Load initial calorie data with varied intake levels                          | major  | Loading calorie data initializes the bar values for visualization.                 | None         |
-| 5   | visual      | Color bars with 600 or fewer calories blue                                   | major  | Blue color helps users quickly identify meals that stayed within the 600 limit.    | None         |
-| 6   | visual      | Color bars above 600 calories red                                            | major  | Red color helps users spot meals that exceeded the 600 calorie limit.              | None         |
-| 7   | interaction | Display a thumbs-up icon at the bottom if the bar stayed within limit when clicked | major  | Thumbs-up icon confirms that the meal successfully stayed within the calorie limit.| None         |
-| 8   | interaction | Display the warning icon at the bottom if the bar exceeded limit when clicked | major  | Warning icon indicates the meal exceeded the calorie limit.                        | None         |
+| 5   | state       | Load data with some meals meeting and some exceeding the 600 calorie limit   | major  | Mixed data ensures both blue and red bars are visible for comparison.              | C4           |
+| 6   | visual      | Color bars with 600 or fewer calories blue                                   | major  | Blue color helps users quickly identify meals that stayed within the 600 limit.    | None         |
+| 7   | visual      | Color bars above 600 calories red                                            | major  | Red color helps users spot meals that exceeded the 600 calorie limit.              | None         |
+| 8   | interaction | Display a thumbs-up icon at the bottom if the bar stayed within limit when clicked | major  | Thumbs-up icon confirms that the meal successfully stayed within the calorie limit.| None         |
+| 9   | interaction | Display the warning icon at the bottom if the bar exceeded limit when clicked | major  | Warning icon indicates the meal exceeded the calorie limit.                        | None         |
 
 ## Justification
 
