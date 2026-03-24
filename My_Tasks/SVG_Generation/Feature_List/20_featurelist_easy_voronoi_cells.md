@@ -21,7 +21,7 @@ Required libraries: react, tailwindcss, lucide-react
 | 7   | visual      | Display a "Regenerate" button                                                                | major  | Regenerate button provides control for creating new patterns.                                              | None         |
 | 8   | content     | Display "Regenerate" label on the button                                                     | minor  | Label text clarifies the button's regeneration function.                                                   | C7           |
 | 9   | layout      | Position "Regenerate" button below the canvas                                                | minor  | Placing button below separates controls from the visual output.                                            | C7           |
-| 10  | interaction | Randomly reposition all seed points when "Regenerate" button is clicked                      | major  | Random repositioning creates new cell distributions.                                                       | C7           |
+| 10  | interaction | Reposition all seed points randomly when "Regenerate" button is clicked                      | major  | Random repositioning creates new cell distributions.                                                       | C7           |
 | 11  | state       | Redraw Voronoi cells after repositioning seed points                                         | major  | Redrawing updates the pattern to match new seed positions.                                                 | C10          |
 
 ## Justification
