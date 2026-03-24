@@ -10,19 +10,20 @@ Required libraries: react, tailwindcss, framer-motion
 
 ## Rubric
 
-| #   | ID          | Description                                                     | Weight | Rationale                                                                                                           | Dependent On |
-| --- | ----------- | --------------------------------------------------------------- | ------ | ------------------------------------------------------------------------------------------------------------------- | ------------ |
-| 1   | visual      | Display gray smoking source at bottom center                    | major  | The smoke source provides the emission point from which particles originate to begin the dispersion simulation.     | None         |
-| 2   | visual      | Display Emit button                                             | major  | The emit button gives users control to start the particle emission and rising animation.                            | None         |
-| 3   | layout      | Position Emit button to the right of source                     | minor  | Placing the emit button to the right keeps it accessible while avoiding interference with the upward particle path. | C2           |
-| 4   | visual      | Display Clear button                                            | major  | The clear button allows users to remove particles and reset the simulation for a fresh observation.                 | None         |
-| 5   | layout      | Position Clear button to the right of source                    | minor  | Positioning the clear button to the right groups it with the emit button for logical control placement.             | C4           |
-| 6   | interaction | Release dark gray smoke particles upward when Emit clicked      | major  | Clicking emit initiates the particle generation that demonstrates the smoke rising behavior.                        | C2           |
-| 7   | state       | Move smoke particles upward slowly over time                    | major  | Upward motion simulates the buoyancy of warm smoke rising through cooler surrounding air.                           | C6           |
-| 8   | state       | Fade particles from dark gray to lighter gray as they rise      | major  | Color transition from dark to light represents the smoke dissipating and mixing with air at higher altitudes.       | C7           |
-| 9   | state       | Increase particle transparency as they move higher              | major  | Increasing transparency simulates the gradual disappearance of smoke as it becomes more diluted in the atmosphere.  | C7           |
-| 10  | state       | Spread particles outward slightly during upward movement        | major  | Outward spreading represents the natural dispersion of smoke particles as they diffuse laterally through air.       | C7           |
-| 11  | interaction | Remove all visible smoke particles instantly when Clear clicked | major  | Clearing particles resets the visual state immediately so users can restart with a clean simulation space.          | C4           |
+| #   | ID          | Description                                                     | Weight | Rationale                                                                                                              | Dependent On |
+| --- | ----------- | --------------------------------------------------------------- | ------ | ---------------------------------------------------------------------------------------------------------------------- | ------------ |
+| 1   | visual      | Display gray smoking source                                     | major  | The smoke source provides the emission point from which particles originate to begin the dispersion simulation.        | None         |
+| 2   | layout      | Position smoking source at bottom center of screen              | minor  | Bottom center positioning establishes the low starting point for smoke to rise upward through the simulation space.   | C1           |
+| 3   | visual      | Display Emit button                                             | major  | The emit button gives users control to start the particle emission and rising animation.                               | None         |
+| 4   | layout      | Position Emit button to the right of source                     | minor  | Placing the emit button to the right keeps it accessible while avoiding interference with the upward particle path.    | C3           |
+| 5   | visual      | Display Clear button                                            | major  | The clear button allows users to remove particles and reset the simulation for a fresh observation.                    | None         |
+| 6   | layout      | Position Clear button to the right of source                    | minor  | Positioning the clear button to the right groups it with the emit button for logical control placement.                | C5           |
+| 7   | interaction | Release dark gray smoke particles upward when Emit clicked      | major  | Clicking emit initiates the particle generation that demonstrates the smoke rising behavior.                           | C3           |
+| 8   | state       | Move smoke particles upward slowly over time                    | major  | Upward motion simulates the buoyancy of warm smoke rising through cooler surrounding air.                              | C7           |
+| 9   | state       | Fade particles from dark gray to lighter gray as they rise      | major  | The color transition from dark to light represents the smoke dissipating and mixing with air at higher altitudes.      | C8           |
+| 10  | state       | Increase particle transparency as they move higher              | major  | Increasing transparency simulates the gradual disappearance of smoke as it becomes more diluted in the atmosphere.     | C8           |
+| 11  | state       | Spread particles outward slightly during upward movement        | major  | Outward spreading represents the natural dispersion of smoke particles as they diffuse laterally through the air.      | C8           |
+| 12  | interaction | Remove all visible smoke particles instantly when Clear clicked | major  | Clearing particles resets the visual state immediately so users can restart with a clean simulation space.             | C5           |
 
 ## Justification
 
