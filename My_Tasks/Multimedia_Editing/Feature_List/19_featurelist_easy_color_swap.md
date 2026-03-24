@@ -12,17 +12,16 @@ Required libraries: react, tailwindcss, lucide-react
 
 | #   | ID          | Description                                               | Weight | Rationale                                                                                                        | Dependent On |
 | --- | ----------- | --------------------------------------------------------- | ------ | ---------------------------------------------------------------------------------------------------------------- | ------------ |
-| 1   | visual      | Display upload button at top of page                      | major  | Upload button lets users choose which image to shuffle.                                                          | None         |
-| 2   | layout      | Position upload button at top of page                     | minor  | Top positioning makes the control easy to find.                                                                  | C1           |
-| 3   | visual      | Display uploaded image on canvas                          | major  | Canvas shows the image being shuffled.                                                                           | None         |
+| 1   | content     | Display upload button                                     | major  | Upload button lets users choose which image to shuffle.                                                          | None         |
+| 2   | content     | Display canvas                                            | major  | Canvas provides space for displaying the image.                                                                  | None         |
+| 3   | content     | Display uploaded image on canvas                          | major  | Uploaded image shows what will be shuffled.                                                                      | C2           |
 | 4   | state       | Divide image into exactly 8 equal horizontal slices       | major  | Dividing into 8 slices creates the pieces to rearrange.                                                          | C3           |
-| 5   | visual      | Display "Shuffle Slices" button below canvas             | major  | Shuffle button triggers the rearrangement.                                                                       | None         |
-| 6   | layout      | Position "Shuffle Slices" button below canvas            | minor  | Below positioning separates the control from the image.                                                          | C5           |
-| 7   | content     | Display "Shuffle Slices" label on button                  | minor  | Label tells users what the button does.                                                                          | C5           |
-| 8   | interaction | Rearrange slice order when button is clicked              | major  | Clicking shuffles the slices.                                                                                    | C5           |
-| 9   | state       | Randomly determine new positions for all 8 slices         | major  | Random positions create the glitch effect.                                                                       | C8           |
-| 10  | state       | Redraw slices on canvas in new positions                  | major  | Redrawing updates the canvas with the shuffled result.                                                           | C9           |
-| 11  | state       | Generate different random arrangement each click          | major  | Different arrangements each time keep it interesting.                                                            | C8           |
+| 5   | content     | Display "Shuffle Slices" button                           | major  | Shuffle button triggers the rearrangement.                                                                       | C4           |
+| 6   | content     | Display "Shuffle Slices" label on button                  | minor  | Label tells users what the button does.                                                                          | C5           |
+| 7   | interaction | Rearrange slice order when button is clicked              | major  | Clicking shuffles the slices.                                                                                    | C5           |
+| 8   | state       | Determine random positions for all 8 slices               | major  | Random positions create the glitch effect.                                                                       | C7           |
+| 9   | state       | Redraw slices on canvas in new positions                  | major  | Redrawing updates the canvas with the shuffled result.                                                           | C8           |
+| 10  | state       | Generate different random arrangement each click          | major  | Different arrangements each time keep it interesting.                                                            | C7           |
 
 ## Justification
 
