@@ -12,16 +12,17 @@ Required libraries: react, tailwindcss, lucide-react
 
 | #   | ID          | Description                                                     | Weight | Rationale                                                                                                          | Dependent On |
 | --- | ----------- | --------------------------------------------------------------- | ------ | ------------------------------------------------------------------------------------------------------------------ | ------------ |
-| 1   | visual      | Display blue seed crystal in center                            | major  | The seed crystal provides the origin point from which the entire growth pattern emerges.                           | None         |
-| 2   | visual      | Display Grow button                                             | major  | The grow button gives users control to initiate the crystallization process.                                       | None         |
-| 3   | layout      | Position Grow button below seed crystal                         | minor  | Placing the grow button below keeps it accessible while keeping focus on the crystal growth area.                  | C2           |
-| 4   | visual      | Display Clear button                                            | major  | The clear button allows users to reset the simulation for repeated observations.                                   | None         |
-| 5   | layout      | Position Clear button below seed crystal                        | minor  | Positioning the clear button below groups it with the grow button for logical control placement.                   | C4           |
-| 6   | interaction | Expand crystal outward from seed when Grow clicked              | major  | Clicking grow triggers the crystallization animation that demonstrates the formation process.                      | C2           |
-| 7   | state       | Create branching pattern radiating in multiple directions       | major  | Branching in multiple directions simulates the natural geometric growth of real crystal structures.                | C6           |
-| 8   | visual      | Display new crystal structures in blue and cyan shades          | major  | Using blue and cyan colors creates visual distinction between different crystal formations and growth stages.      | C7           |
-| 9   | state       | Grow crystal gradually over time                                | major  | Gradual growth allows users to observe the progressive nature of crystallization rather than instant appearance.   | C6           |
-| 10  | interaction | Remove all grown branches and return to seed when Clear clicked | major  | Clearing the growth resets the visual state so users can start fresh simulations from the original seed.           | C4           |
+| 1   | visual      | Display blue seed crystal                                       | major  | The seed crystal provides the origin point from which the entire growth pattern emerges.                           | None         |
+| 2   | layout      | Position seed crystal at center of screen                       | minor  | Centering the seed creates equal space for growth to radiate in all directions.                                    | C1           |
+| 3   | visual      | Display Grow button                                             | major  | The grow button gives users control to initiate the crystallization process.                                       | None         |
+| 4   | layout      | Position Grow button below seed crystal                         | minor  | Placing the grow button below keeps it accessible while keeping focus on the crystal growth area.                  | C3           |
+| 5   | visual      | Display Clear button                                            | major  | The clear button allows users to reset the simulation for repeated observations.                                   | None         |
+| 6   | layout      | Position Clear button below seed crystal                        | minor  | Positioning the clear button below groups it with the grow button for logical control placement.                   | C5           |
+| 7   | interaction | Expand crystal outward from seed when Grow clicked              | major  | Clicking grow triggers the crystallization animation that demonstrates the formation process.                      | C3           |
+| 8   | state       | Create branching pattern radiating in multiple directions       | major  | Branching in multiple directions simulates the natural geometric growth of real crystal structures.                | C7           |
+| 9   | visual      | Display new crystal structures in blue and cyan shades          | major  | Using blue and cyan colors creates visual distinction between different crystal formations and growth stages.      | C8           |
+| 10  | state       | Grow crystal gradually over time                                | major  | Gradual growth allows users to observe the progressive nature of crystallization rather than instant appearance.   | C7           |
+| 11  | interaction | Remove all grown branches and return to seed when Clear clicked | major  | Clearing the growth resets the visual state so users can start fresh simulations from the original seed.           | C5           |
 
 ## Justification
 
