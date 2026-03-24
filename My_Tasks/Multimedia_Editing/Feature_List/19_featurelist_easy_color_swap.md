@@ -22,7 +22,7 @@ Required libraries: react, tailwindcss, lucide-react
 | 8   | layout      | Position "Shuffle Slices" button below canvas                    | minor  | Placing button below the canvas creates clear workflow from viewing to action.                                             | C3, C7       |
 | 9   | content     | Label button "Shuffle Slices"                                    | minor  | The label communicates what action the button performs.                                                                    | C7           |
 | 10  | interaction | Rearrange slice order when button is clicked                     | major  | Clicking the button triggers the slice rearrangement that creates the glitch art effect.                                   | C7           |
-| 11  | state       | Randomize positions for all 8 slices                             | major  | Random positioning creates the unpredictable scrambled appearance that defines the glitch art aesthetic.                   | C10          |
+| 11  | state       | Determine random positions for all 8 slices                      | major  | Random positioning creates the unpredictable scrambled appearance that defines the glitch art aesthetic.                   | C10          |
 | 12  | state       | Redraw slices on canvas in new positions                         | major  | Redrawing updates the canvas with the shuffled result so users can see the glitch art effect.                              | C11          |
 | 13  | state       | Generate different random arrangement on each click              | major  | Different arrangements each time provide variety and replayability for creating multiple glitch art variations.            | C10          |
 
