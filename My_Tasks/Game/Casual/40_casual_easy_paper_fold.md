@@ -2,9 +2,9 @@ Category: Game
 
 Prompt style: Casual
 
-Title: Color Square Sorter
+Title: Toast Browning Timer
 
-Prompt: Show 4 colored squares in row. Display target color order above. Click square to swap with right neighbor. Win message when order matches target.
+Prompt: Show white bread slice and target shade above. Click Start to toast bread. Bread browns gradually. Click Stop to freeze. Win when shade matches target.
 
 Required libraries: react, tailwindcss, lucide-react
 
@@ -12,15 +12,16 @@ Required libraries: react, tailwindcss, lucide-react
 
 | #   | ID          | Description                                    | Weight | Rationale                                                                             | Dependent On |
 | --- | ----------- | ---------------------------------------------- | ------ | ------------------------------------------------------------------------------------- | ------------ |
-| 1   | content     | Display 4 colored squares                      | major  | The four colored squares provide the objects players rearrange to match the target.   | None         |
-| 2   | layout      | Arrange squares in a row                       | minor  | Row arrangement creates clear left-to-right ordering for the sorting puzzle.          | C1           |
-| 3   | content     | Display target color order                     | major  | The target order shows players the goal sequence they must achieve to win.            | None         |
-| 4   | layout      | Position target order above squares            | minor  | Above positioning keeps the goal visible while players manipulate squares below.      | C3           |
-| 5   | interaction | Swap square with right neighbor when clicked   | major  | Clicking swaps let players rearrange squares to match the target order.               | None         |
-| 6   | state       | Update square positions after each swap        | major  | Updating positions shows the current arrangement after each player action.            | C5           |
-| 7   | state       | Detect when square order matches target order  | major  | Detection determines when the player has achieved the win condition.                  | C6           |
-| 8   | content     | Display win message when order matches target  | major  | The win message communicates victory to the player when the puzzle is solved.         | C7           |
+| 1   | visual      | Display white bread slice                      | major  | The white bread slice provides the object that changes color during toasting.         | None         |
+| 2   | content     | Display target shade above bread               | major  | The target shade shows players the goal browning level they must achieve to win.      | None         |
+| 3   | visual      | Display Start button                           | major  | The Start button gives players control to begin the toasting process.                 | None         |
+| 4   | interaction | Begin browning bread when Start clicked        | major  | Clicking Start initiates the gradual color change from white to brown.                | C3           |
+| 5   | state       | Gradually brown bread from white to golden     | major  | Gradual browning simulates realistic toasting progression over time.                  | C4           |
+| 6   | visual      | Display Stop button                            | major  | The Stop button gives players control to freeze the browning at desired shade.        | None         |
+| 7   | interaction | Freeze browning when Stop clicked              | major  | Clicking Stop halts the color change to lock in the current shade.                    | C6           |
+| 8   | state       | Detect when bread shade matches target shade   | major  | Detection determines when the player has achieved the win condition.                  | C5           |
+| 9   | content     | Display win message when shades match          | major  | The win message communicates victory to the player when the puzzle is solved.         | C8           |
 
 ## Justification
 
-The color square sorter game works as a sequencing puzzle with a clear win condition. Four colored squares display arranged in a row. Above them, a target color order displays showing the goal sequence players must achieve. When players click on a square, it swaps positions with its right neighbor, and the square positions update to show the current arrangement. Players continue clicking and swapping until the square order matches the target order. When the arrangement matches the target, the game detects the win condition and displays a win message to communicate victory to the player.
+The toast browning timer game works as a timing challenge with a clear win condition. A white bread slice displays with a target shade shown above indicating the goal browning level. Players click the Start button to begin toasting, and the bread gradually browns from white to golden over time. Players must click the Stop button at the right moment to freeze the browning when the bread shade matches the target shade. When the shades match, the game detects the win condition and displays a win message to communicate victory to the player.
