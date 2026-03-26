@@ -24,7 +24,7 @@ Required libraries: react, tailwindcss, lucide-react
 | 10  | content     | Display four clickable answer buttons in the voting view            | major  | The buttons are the interactive elements that enable users to cast votes.                      | C7           |
 | 11  | interaction | Register a vote when an answer button is clicked                    | major  | Clicking an answer records the vote for that option.                                           | C10          |
 | 12  | content     | Display the vote count as a number next to each option              | major  | The numeric counts show precisely how many votes each option received.                         | C11          |
-| 13  | layout      | Position the vote count next to a horizontal bar                    | minor  | Next-to positioning associates each count with its corresponding visual bar.                   | C12          |
+| 13  | layout      | Position the vote count next to a horizontal bar                    | minor  | Positioning the count next to the bar associates the numeric value with its visual representation. | C12          |
 | 14  | content     | Display a horizontal bar for each option                            | major  | The horizontal bars provide a visual representation of the vote distribution.                  | C11          |
 | 15  | state       | Set the bar width to represent the vote percentage                  | major  | Width proportional to percentage enables visual comparison of option popularity.               | C14          |
 | 16  | state       | Highlight the bar with the most votes in blue color                 | major  | Blue highlighting visually distinguishes the leading option for immediate recognition.         | C15          |
